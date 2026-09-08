@@ -1,50 +1,60 @@
 `ifndef I3C_CONTROLLER_MONITOR_BFM_INCLUDED_
 `define I3C_CONTROLLER_MONITOR_BFM_INCLUDED_
 
-import i3c_globals_pkg::*; 
+interface i3c_controller_monitor_bfm(input pclk,
+                                      input areset,
+                                      input scl_i,
+                                      input scl_o,
+                                      input scl_oen,
+                                      input sda_i,
+                                      input sda_o,
+                                      input sda_oen
+                                     );
 
-interface i3c_controller_monitor_bfm(input pclk, 
-                                 input areset, 
-                                 input scl_i,
-                                 input scl_o,
-                                 input scl_oen,
-                                 input sda_i,
-                                 input sda_o,
-                                 input sda_oen
-                                );
- 
   import uvm_pkg::*;
-  `include "uvm_macros.svh" 
+  `include "uvm_macros.svh"
+
+  import i3c_globals_pkg::*;
   import i3c_controller_pkg::*;
   import i3c_controller_pkg::i3c_controller_monitor_proxy;
-   
+
   i3c_controller_monitor_proxy i3c_controller_mon_proxy_h;
   i3c_fsm_state_e state;
 
   string name = "I3C_CONTROLLER_MONITOR_BFM";
+
   initial begin
     $display(name);
   end
-  
+
+
   task wait_for_reset();
     @(negedge areset);
     @(posedge areset);
-  endtask: wait_for_reset
+  endtask : wait_for_reset
+
 
   task sample_idle_state();
     @(posedge pclk);
-    state <= IDLE;
-  endtask: sample_idle_state
-  
+    state <= I3C_IDLE;
+  endtask : sample_idle_state
+
+
   task wait_for_idle_state();
     @(posedge pclk);
-    while(scl_i!=1 && sda_i!=1) begin
-     @(posedge pclk);
+
+    while(scl_i != 1 && sda_i != 1) begin
+      @(posedge pclk);
     end
-    state = IDLE;
-  endtask: wait_for_idle_state
-  
-  task sample_data(inout i3c_transfer_bits_s struct_packet,input i3c_transfer_cfg_s struct_cfg);
+
+    state = I3C_IDLE;
+  endtask : wait_for_idle_state
+
+
+  task sample_data(
+    inout i3c_transfer_bits_s struct_packet,
+    input i3c_transfer_cfg_s struct_cfg
+  );
 
     detect_start();
     sample_target_address(struct_packet);
@@ -52,190 +62,327 @@ interface i3c_controller_monitor_bfm(input pclk,
     sampleAddressAck(struct_packet.targetAddressStatus);
 
     if(struct_packet.targetAddressStatus == ACK) begin
-      if(struct_packet.operation == WRITE) begin
+
+      if(struct_packet.operation == I3C_WRITE) begin
         sampleWriteDataAndACK(struct_packet, struct_cfg);
-      end else begin
+      end
+      else begin
         sampleReadDataAndACK(struct_packet, struct_cfg);
-        end
-      end else begin
+      end
+
+    end
+    else begin
       detect_stop();
     end
-  endtask: sample_data
-  
 
-  task sampleWriteDataAndACK(inout i3c_transfer_bits_s structPacket,
-                             input i3c_transfer_cfg_s structConfig);
+  endtask : sample_data
+
+
+  task sampleWriteDataAndACK(
+    inout i3c_transfer_bits_s structPacket,
+    input i3c_transfer_cfg_s structConfig
+  );
+
     fork
       begin
-        for(int i=0;i<MAXIMUM_BYTES;i++) begin
-          sample_write_data(structPacket,
-                            i,
-                            structConfig.dataTransferDirection);
+
+        for(int i = 0; i < MAXIMUM_BYTES; i++) begin
+
+          sample_write_data(
+            structPacket,
+            i,
+            structConfig.dataTransferDirection
+          );
+
           sampleWdataAck(structPacket.writeDataStatus[i]);
+
           if(structPacket.writeDataStatus[i] == NACK)
             break;
+
         end
+
       end
     join_none
 
     wrDetect_stop();
     disable fork;
-  endtask: sampleWriteDataAndACK 
+
+  endtask : sampleWriteDataAndACK
 
 
-  task sampleReadDataAndACK(inout i3c_transfer_bits_s structPacket,
-                             input i3c_transfer_cfg_s structConfig);
+  task sampleReadDataAndACK(
+    inout i3c_transfer_bits_s structPacket,
+    input i3c_transfer_cfg_s structConfig
+  );
+
     fork
       begin
-        for(int i=0;i<MAXIMUM_BYTES;i++) begin
-          sample_read_data(structPacket,i,
-                           structConfig.dataTransferDirection);
+
+        for(int i = 0; i < MAXIMUM_BYTES; i++) begin
+
+          sample_read_data(
+            structPacket,
+            i,
+            structConfig.dataTransferDirection
+          );
+
           sample_ack(structPacket.readDataStatus[i]);
+
           if(structPacket.readDataStatus[i] == NACK)
             break;
+
         end
+
       end
     join_none
 
     wrDetect_stop();
     disable fork;
-  endtask: sampleReadDataAndACK 
+
+  endtask : sampleReadDataAndACK
 
 
   task detect_start();
+
     bit [1:0] scl_local;
     bit [1:0] sda_local;
-    state = START;
-  
+
+    state = I3C_START;
+
     do begin
+
       @(negedge pclk);
+
       scl_local = {scl_local[0], scl_i};
       sda_local = {sda_local[0], sda_i};
-    end while(!(sda_local == NEGEDGE && scl_local == 2'b11) );
-  endtask: detect_start
-  
 
-  task sample_target_address(inout i3c_transfer_bits_s pkt);
+    end while(!(sda_local == NEGEDGE && scl_local == 2'b11));
+
+  endtask : detect_start
+
+
+  task sample_target_address(
+    inout i3c_transfer_bits_s pkt
+  );
+
     bit [TARGET_ADDRESS_WIDTH-1:0] address;
-    state = ADDRESS;
-    for(int k=TARGET_ADDRESS_WIDTH-1;k>=0; k--) begin
+
+    state = I3C_ADDRESS;
+
+    for(int k = TARGET_ADDRESS_WIDTH-1; k >= 0; k--) begin
+
       detectEdge_scl(POSEDGE);
       address[k] = sda_i;
+
     end
+
     pkt.targetAddress = address;
-  endtask: sample_target_address
-  
 
-  task sample_operation(output operationType_e wr_rd);
+  endtask : sample_target_address
+
+
+  task sample_operation(
+    output operationType_e wr_rd
+  );
+
     bit operation;
-    state = WR_BIT;
+
+    state = I3C_WR_BIT;
+
     detectEdge_scl(POSEDGE);
+
     operation = sda_i;
-   if(operation == 0)
-     wr_rd = WRITE;
-   else
-     wr_rd = READ;
-  endtask: sample_operation
-  
 
-  task sampleAddressAck(output bit ack);
-    state = ACK_NACK;
+    if(operation == 0)
+      wr_rd = I3C_WRITE;
+    else
+      wr_rd = I3C_READ;
+
+  endtask : sample_operation
+
+
+  task sampleAddressAck(
+    output bit ack
+  );
+
+    state = I3C_ACK_NACK;
+
     detectEdge_scl(POSEDGE);
+
     ack = sda_i;
-  endtask: sampleAddressAck
+
+  endtask : sampleAddressAck
 
 
-  task sample_write_data(inout i3c_transfer_bits_s pkt, input int i, input dataTransferDirection_e dir);
-    bit[DATA_WIDTH-1:0] wdata;
-    state = WRITE_DATA;
-    `uvm_info("Controller_Monitor_BFM", $sformatf("Direction %s", dir.name()), UVM_HIGH);
-    for(int k=0, bit_no=0; k<DATA_WIDTH; k++) begin
-      // Logic for MSB first or LSB first 
-      bit_no = (dir == MSB_FIRST) ? 
-                ((DATA_WIDTH - 1) - k) : k;
+  task sample_write_data(
+    inout i3c_transfer_bits_s pkt,
+    input int i,
+    input dataTransferDirection_e dir
+  );
+
+    bit [I3C_DATA_WIDTH-1:0] wdata;
+
+    state = I3C_WRITE_DATA;
+
+    `uvm_info(
+      "Controller_Monitor_BFM",
+      $sformatf("Direction %s", dir.name()),
+      UVM_HIGH
+    );
+
+    for(int k = 0, bit_no = 0;
+        k < I3C_DATA_WIDTH;
+        k++) begin
+
+      // Logic for MSB first or LSB first
+      bit_no = (dir == MSB_FIRST) ?
+               ((I3C_DATA_WIDTH - 1) - k) : k;
 
       detectEdge_scl(POSEDGE);
+
       wdata[bit_no] = sda_i;
+
       pkt.no_of_i3c_bits_transfer++;
+
     end
+
     pkt.writeData[i] = wdata;
-  endtask: sample_write_data
-  
 
-  task sampleWdataAck(output bit ack);
-    state = ACK_NACK;
+  endtask : sample_write_data
+
+
+  task sampleWdataAck(
+    output bit ack
+  );
+
+    state = I3C_ACK_NACK;
+
     detectEdge_scl(POSEDGE);
-    ack = sda_i;
-  endtask: sampleWdataAck
-  
 
-  task sample_read_data(inout i3c_transfer_bits_s pkt,input int i, input dataTransferDirection_e dir);
-    bit [DATA_WIDTH-1:0] rdata;
-    state = READ_DATA;
-    for(int k=0, bit_no=0; k<DATA_WIDTH; k++) begin
-      // Logic for MSB first or LSB first 
-      bit_no = (dir == MSB_FIRST) ? 
-                ((DATA_WIDTH - 1) - k) : k;
+    ack = sda_i;
+
+  endtask : sampleWdataAck
+
+
+  task sample_read_data(
+    inout i3c_transfer_bits_s pkt,
+    input int i,
+    input dataTransferDirection_e dir
+  );
+
+    bit [I3C_DATA_WIDTH-1:0] rdata;
+
+    state = I3C_READ_DATA;
+
+    for(int k = 0, bit_no = 0;
+        k < I3C_DATA_WIDTH;
+        k++) begin
+
+      // Logic for MSB first or LSB first
+      bit_no = (dir == MSB_FIRST) ?
+               ((I3C_DATA_WIDTH - 1) - k) : k;
 
       detectEdge_scl(POSEDGE);
-      rdata[bit_no] = sda_i;
-      pkt.no_of_i3c_bits_transfer++;
-    end
-    pkt.readData[i] = rdata;
-  endtask :sample_read_data
-  
 
-  task sample_ack(output bit ack);
-    state    = ACK_NACK;
+      rdata[bit_no] = sda_i;
+
+      pkt.no_of_i3c_bits_transfer++;
+
+    end
+
+    pkt.readData[i] = rdata;
+
+  endtask : sample_read_data
+
+
+  task sample_ack(
+    output bit ack
+  );
+
+    state = I3C_ACK_NACK;
+
     detectEdge_scl(POSEDGE);
+
     ack = sda_i;
-  endtask :sample_ack
-  
+
+  endtask : sample_ack
+
 
   task wrDetect_stop();
-    // 2bit shift register to check the edge on sda and stability on scl
+
+    // 2-bit shift register to check the edge on SDA
+    // and stability on SCL
     bit [1:0] scl_local;
     bit [1:0] sda_local;
 
     do begin
+
       @(negedge pclk);
+
       scl_local = {scl_local[0], scl_i};
       sda_local = {sda_local[0], sda_i};
-    end while(!(sda_local == POSEDGE && scl_local == 2'b11) );
-    state = STOP;
-    `uvm_info(name, $sformatf("Stop condition is detected"), UVM_HIGH);
-  endtask: wrDetect_stop
-  
+
+    end while(!(sda_local == POSEDGE && scl_local == 2'b11));
+
+    state = I3C_STOP;
+
+    `uvm_info(
+      name,
+      $sformatf("Stop condition is detected"),
+      UVM_HIGH
+    );
+
+  endtask : wrDetect_stop
+
 
   task detect_stop();
+
     bit [1:0] scl_local;
     bit [1:0] sda_local;
-    state = STOP;
-  
+
+    state = I3C_STOP;
+
     do begin
+
       @(negedge pclk);
+
       scl_local = {scl_local[0], scl_i};
       sda_local = {sda_local[0], sda_i};
-    end while(!(sda_local == POSEDGE && scl_local == 2'b11) );
-  endtask: detect_stop
+
+    end while(!(sda_local == POSEDGE && scl_local == 2'b11));
+
+  endtask : detect_stop
 
 
-  task detectEdge_scl(input edge_detect_e edgeSCL);
-    // 2bit shift register to check the edge on scl
+  task detectEdge_scl(
+    input edge_detect_e edgeSCL
+  );
+
+    // 2-bit shift register to check the edge on SCL
     bit [1:0] scl_local;
     edge_detect_e scl_edge_value;
-    // default value of scl_local is logic 1
+
+    // Default value of scl_local is logic 1
     scl_local = 2'b11;
 
     do begin
+
       @(negedge pclk);
+
       scl_local = {scl_local[0], scl_i};
+
     end while(!(scl_local == edgeSCL));
 
     scl_edge_value = edge_detect_e'(scl_local);
-    `uvm_info("TARGET_DRIVER_BFM", $sformatf("scl %s detected", scl_edge_value.name()), UVM_HIGH);
-  endtask: detectEdge_scl
-  
+
+    `uvm_info(
+      "TARGET_DRIVER_BFM",
+      $sformatf("scl %s detected", scl_edge_value.name()),
+      UVM_HIGH
+    );
+
+  endtask : detectEdge_scl
+
 
 endinterface : i3c_controller_monitor_bfm
 

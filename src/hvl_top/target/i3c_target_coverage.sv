@@ -20,7 +20,7 @@ class i3c_target_coverage extends uvm_subscriber#(i3c_target_tx);
       bins TARGET_ADDRESS_STATUS_ACK  = {0};
       bins TARGET_ADDRESS_STATUS_NACK = {1};
     }
-    WRITEDATA_CP : coverpoint packet.writeData.size() * DATA_WIDTH {
+    WRITEDATA_CP : coverpoint packet.writeData.size() * I3C_DATA_WIDTH {
       option.comment = "writeData size of the packet transfer";
       bins WRITEDATA_WIDTH_1 = {8};
       bins WRITEDATA_WIDTH_2 = {16};
@@ -29,7 +29,7 @@ class i3c_target_coverage extends uvm_subscriber#(i3c_target_tx);
       bins WRITEDATA_WIDTH_5 = {64};
       bins WRITEDATA_WIDTH_6 = {[72:MAXIMUM_BITS]};
     }
-    READDATA_CP : coverpoint packet.readData.size() * DATA_WIDTH {
+    READDATA_CP : coverpoint packet.readData.size() * I3C_DATA_WIDTH {
       option.comment = "readData size of the packet transfer";
       bins READDATA_WIDTH_1 = {8};
       bins READDATA_WIDTH_2 = {16};
@@ -38,33 +38,14 @@ class i3c_target_coverage extends uvm_subscriber#(i3c_target_tx);
       bins READDATA_WIDTH_5 = {64};
       bins READDATA_WIDTH_6 = {[72:MAXIMUM_BITS]};
     }
-    // NOTE -- flagged, not changed: since the SDR write redesign in
-    // i3c_target_driver_bfm.sv/i3c_target_monitor_bfm.sv (no more
-    // per-byte ACK slot on write -- just data+parity, with
-    // writeDataStatus[i] unconditionally set to ACK by both the driver
-    // and the monitor), WRITEDATA_STATUS_ALL_NACK and WRITEDATA_STATUS_MIX
-    // below are now permanently unreachable -- writeDataStatus can never
-    // be anything but all-ACK anymore. A parity mismatch is logged
-    // ("PARITY MISMATCH") but not currently surfaced anywhere on
-    // i3c_target_tx, so there's no field left to build real write-status
-    // coverage from. Left as-is (additive-only scope) rather than
-    // deciding this for you -- if you want parity-mismatch coverage back,
-    // it would need a new field threaded through i3c_target_tx /
-    // driver+monitor BFM / proxies (happy to do that as a separate
-    // change if wanted).
+    
     WRITEDATA_STATUS_CP : coverpoint packet.getWriteDataStatus() {
       option.comment = "writeData status";
       bins WRITEDATA_STATUS_ALL_ACK  = {2'b00};
       bins WRITEDATA_STATUS_ALL_NACK = {2'b11};
       bins WRITEDATA_STATUS_MIX      = {2'b01, 2'b10};
     }
-    // READDATA_STATUS_CP is still meaningful post-redesign: readDataStatus[i]
-    // now reflects the target's T-bit / controller-continue result per
-    // byte (ACK=continue, NACK=last byte or controller abort) instead of
-    // a traditional per-byte ACK -- MIX and ALL_NACK are the common case
-    // (a multi-byte read ends with NACK on its final byte by design),
-    // ALL_ACK is only reachable if a read runs the full MAXIMUM_BYTES
-    // with T=1 continuing through every byte.
+   
     READDATA_STATUS_CP : coverpoint packet.getReadDataStatus() {
       option.comment = "readData status";
       bins READDATA_STATUS_ALL_ACK  = {2'b00};
@@ -116,15 +97,13 @@ endgroup : target_covergroup
       option.comment = "IBI Mandatory Data Byte";
       bins IBI_MDB_BIN = {[0:255]};
     }
-    // T-bit driven by the target after the MDB (and after each extra byte).
-    // Generalized -- NEW: samples the T-bit result of the N-byte loop.
+    
     IBI_T1_CP : coverpoint packet.ibi_t1 {
       option.comment = "T-bit after MDB: 1=more data follows, 0=STOP";
       bins T1_MORE_DATA = {1};
       bins T1_STOP      = {0};
     }
-    // How many extra data bytes (beyond the MDB) the target actually sent.
-    // Generalized -- NEW: replaces the old hardcoded single-extra-byte case.
+    
     IBI_NUM_EXTRA_BYTES_CP : coverpoint packet.ibi_extra_data_sent.size() {
       option.comment = "Number of IBI extra data bytes sent beyond the MDB";
       bins ZERO_EXTRA        = {0};
@@ -172,9 +151,6 @@ function void i3c_target_coverage::write(i3c_target_tx t);
       daa_covergroup.sample(t);
     end
     i3c_target_tx::HOTJOIN: begin
-      // Hot-join completions are currently reported with txn_type=DAA
-      // (see i3c_target_monitor_proxy), but sample here too in case a
-      // future caller reports HOTJOIN directly.
       daa_covergroup.sample(t);
     end
     i3c_target_tx::IBI: begin
@@ -182,7 +158,7 @@ function void i3c_target_coverage::write(i3c_target_tx t);
     end
     default: begin
       `uvm_warning("DEBUG_m_coverage",
-        $sformatf("Unknown txn_type=%0s — not sampled", t.txn_type.name()))
+        $sformatf("Unknown txn_type=%0s \u2014 not sampled", t.txn_type.name()))
     end
   endcase
 endfunction: write

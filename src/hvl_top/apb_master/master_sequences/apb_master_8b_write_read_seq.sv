@@ -37,7 +37,7 @@ task apb_master_8b_write_read_seq::body();
   start_item(req);
   if(!req.randomize() with {req.pselx == SLAVE_0;
                             req.transfer_size == BIT_8;
-                            req.pwrite == READ;}) begin
+                            req.pwrite == APB_READ;}) begin
     `uvm_fatal("APB","Rand failed");
   end
   finish_item(req);

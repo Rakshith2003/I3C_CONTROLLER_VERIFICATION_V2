@@ -6,12 +6,12 @@ class i3c_target_seq_item_converter extends uvm_object;
   extern function new(string name="i3c_target_seq_item_converter");
 
   extern static function void from_class(
-      input  i3c_target_tx input_conv_h,
+      input i3c_target_tx input_conv_h,
       output i3c_transfer_bits_s output_conv
   );
 
   extern static function void to_class(
-      input  i3c_transfer_bits_s input_conv_h,
+      input i3c_transfer_bits_s input_conv_h,
       output i3c_target_tx output_conv
   );
 
@@ -95,7 +95,7 @@ int byte_count;
  
 
 
-  byte_count = input_conv_h.no_of_i3c_bits_transfer / DATA_WIDTH;
+  byte_count = input_conv_h.no_of_i3c_bits_transfer / I3C_DATA_WIDTH;
 
   output_conv.readData = new[byte_count];
   output_conv.readDataStatus = new[byte_count];
@@ -103,7 +103,7 @@ int byte_count;
   for(int i=0;i<byte_count;i++)
   begin
     output_conv.readData[i] =
-        input_conv_h.readData[i][DATA_WIDTH-1:0];
+        input_conv_h.readData[i][I3C_DATA_WIDTH-1:0];
 
     output_conv.readDataStatus[i] =
         acknowledge_e'(input_conv_h.readDataStatus[i]);

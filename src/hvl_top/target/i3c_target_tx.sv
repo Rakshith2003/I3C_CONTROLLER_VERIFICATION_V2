@@ -2,17 +2,15 @@
 `define I3C_TARGET_TX_INCLUDED_
 class i3c_target_tx extends uvm_sequence_item;
   `uvm_object_utils(i3c_target_tx)
-  rand bit [DATA_WIDTH-1:0]       readData[];
+  rand bit [I3C_DATA_WIDTH-1:0]       readData[];
   rand acknowledge_e              targetAddressStatus;
   rand acknowledge_e              writeDataStatus[];
        operationType_e            operation;
        bit [TARGET_ADDRESS_WIDTH-1:0] targetAddress;
-       bit [DATA_WIDTH-1:0]       writeData[];
+       bit [I3C_DATA_WIDTH-1:0]       writeData[];
        acknowledge_e              readDataStatus[];
   rand bit [31:0]                 size;
-  // NOTE: widened from bit[1:0] to bit[2:0] solely to make room for the
-  // new HDR_DDR value below. SDR/DAA/HOTJOIN/IBI keep their exact original
-  // encodings, so this is backward compatible.
+  
   typedef enum bit [2:0] {
     SDR     = 3'b000,
     DAA     = 3'b001,
@@ -29,13 +27,7 @@ class i3c_target_tx extends uvm_sequence_item;
   rand bit [6:0]    hotjoin_addr;
   rand bit [7:0]    ibi_mdb;
 
-  // --- IBI T-bit / N extra data byte support ---------------------------
-  // Per the I3C Basic spec (4.3.6.2 Target Interrupt Request) the TARGET
-  // itself drives the T-bit after every IBI data byte: T=1 means another
-  // byte follows, T=0 means the byte just sent was the last one and the
-  // controller then issues STOP. The target can send the MDB alone
-  // (ibi_num_extra_bytes==0) or loop through any number of additional
-  // bytes (bounded below for randomization only).
+  
   rand int unsigned ibi_num_extra_bytes;    // # of bytes beyond the MDB the target intends to send
   rand bit [7:0]    ibi_extra_data[];       // values of those bytes (size == ibi_num_extra_bytes)
 
@@ -70,13 +62,10 @@ class i3c_target_tx extends uvm_sequence_item;
     soft ibi_mdb == 8'h17;
   }
 
-  // --- IBI T-bit / N extra data byte defaults --------------------------
   constraint ibi_num_extra_bytes_default_c {
     soft ibi_num_extra_bytes == 0;
   }
   constraint ibi_num_extra_bytes_range_c {
-    // Bound purely for randomization sanity -- the driver/monitor loop
-    // itself is not hardcoded to any fixed N. Widen if you need more.
     ibi_num_extra_bytes inside {[0:4]};
   }
   constraint ibi_extra_data_size_c {
@@ -168,7 +157,7 @@ function void i3c_target_tx::do_print(uvm_printer printer);
     printer.print_string("targetAddressStatus",
       targetAddressStatus.name());
     printer.print_string("operation", operation.name());
-    if(operation == WRITE) begin
+    if(operation == I3C_WRITE) begin
       foreach(writeData[i])
         printer.print_field($sformatf("writeData[%0d]", i),
           this.writeData[i], $bits(writeData[i]), UVM_HEX);

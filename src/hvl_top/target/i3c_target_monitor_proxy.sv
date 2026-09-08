@@ -182,9 +182,9 @@ task i3c_target_monitor_proxy::run_phase(uvm_phase phase);
                   struct_packet.operation ? "READ" : "WRITE",
                   struct_packet.no_of_i3c_bits_transfer),
         UVM_NONE)
-      if (struct_packet.operation == WRITE) begin
+      if (struct_packet.operation == I3C_WRITE) begin
         for (int b = 0; b < MAXIMUM_BYTES; b++) begin
-          if (b * DATA_WIDTH < struct_packet.no_of_i3c_bits_transfer) begin
+          if (b * I3C_DATA_WIDTH < struct_packet.no_of_i3c_bits_transfer) begin
             `uvm_info(get_type_name(),
               $sformatf("[target_id=%0d] SDR write data[%0d] = 0x%0h",
                         i3c_target_agent_cfg_h.target_id, b,
@@ -285,9 +285,9 @@ task i3c_target_monitor_proxy::run_phase(uvm_phase phase);
                   struct_packet.no_of_i3c_bits_transfer),
         UVM_NONE)
       // Log write data bytes if it was a write operation
-      if (struct_packet.operation == WRITE) begin
+      if (struct_packet.operation == I3C_WRITE) begin
         for (int b = 0; b < MAXIMUM_BYTES; b++) begin
-          if (b * DATA_WIDTH < struct_packet.no_of_i3c_bits_transfer) begin
+          if (b * I3C_DATA_WIDTH < struct_packet.no_of_i3c_bits_transfer) begin
             `uvm_info(get_type_name(),
               $sformatf("[target_id=%0d] SDR write data[%0d] = 0x%0h",
                         i3c_target_agent_cfg_h.target_id, b,
@@ -308,8 +308,7 @@ task i3c_target_monitor_proxy::run_phase(uvm_phase phase);
     end
     `uvm_info(get_type_name(),
       $sformatf("[target_id=%0d] --> writing to analysis port (scoreboard): txn_type=%s",
-                i3c_target_agent_cfg_h.target_id,
-                tx.txn_type.name()),
+                i3c_target_agent_cfg_h.target_id, tx.txn_type.name()),
       UVM_NONE)
     target_analysis_port.write(tx);
   end // forever

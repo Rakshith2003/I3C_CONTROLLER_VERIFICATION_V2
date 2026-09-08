@@ -1,5 +1,5 @@
-`ifndef APB_IF_INCLUDED_
-`define APB_IF_INCLUDED_
+`ifndef APB_I3C_WRAPPER_INCLUDED_
+`define APB_I3C_WRAPPER_INCLUDED_
 `include "apb_if.sv"
 import apb_global_pkg::*;
 module apb_i3c_wrapper(

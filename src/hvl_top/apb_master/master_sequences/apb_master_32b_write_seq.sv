@@ -37,7 +37,7 @@ task apb_master_32b_write_seq::body();
   start_item(req);
   if(!req.randomize() with {req.pselx == SLAVE_0;
                             req.transfer_size == BIT_32;
-                            req.pwrite == WRITE;}) begin
+                            req.pwrite == APB_WRITE;}) begin
     `uvm_fatal("APB","Rand failed");
   end
   finish_item(req);

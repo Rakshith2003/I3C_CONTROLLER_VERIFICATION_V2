@@ -42,11 +42,11 @@ function uvm_sequence_item apb_master_adapter::reg2bus( const ref uvm_reg_bus_op
 
   if ( rw.kind == UVM_READ )
   begin
-    apb_tx.pwrite = READ;
+    apb_tx.pwrite = APB_READ;
   end
   else if ( rw.kind == UVM_WRITE ) 
   begin 
-    apb_tx.pwrite = WRITE;
+    apb_tx.pwrite = APB_WRITE;
     apb_tx.pwdata = rw.data;
     apb_tx.pstrb  = 4'b1111; //4bytes 
   end
@@ -81,11 +81,11 @@ function void apb_master_adapter::bus2reg( uvm_sequence_item bus_item,
   // TODO(mshariff): Need to add more logic to be intelligent to pick correct pselx value
   apb_tx.pselx = SLAVE_0; 
 
-  rw.kind = ( apb_tx.pwrite == READ ) ? UVM_READ : UVM_WRITE;
+  rw.kind = ( apb_tx.pwrite == APB_READ ) ? UVM_READ : UVM_WRITE;
   rw.addr = apb_tx.paddr;
 //  rw.data = apb_tx.prdata;
   
-if (apb_tx.pwrite == WRITE)
+if (apb_tx.pwrite == APB_WRITE)
     rw.data = apb_tx.pwdata;
   else
     rw.data = apb_tx.prdata;
@@ -97,4 +97,3 @@ rw.status = UVM_IS_OK;
 endfunction: bus2reg
 
 `endif
-

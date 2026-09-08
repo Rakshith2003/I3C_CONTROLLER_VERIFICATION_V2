@@ -21,7 +21,7 @@ task i3c_target_writeOperationWith8bitsData_seq::body();
 
 req.targetAddress = p_sequencer.i3c_target_agent_cfg_h.targetAddress;
 
-req.operation     = WRITE;
+req.operation     = I3C_WRITE;
 
     if(!req.randomize() with {
         targetAddressStatus == ACK;   

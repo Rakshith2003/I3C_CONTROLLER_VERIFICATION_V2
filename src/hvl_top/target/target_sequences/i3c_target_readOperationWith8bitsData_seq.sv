@@ -22,7 +22,7 @@ task i3c_target_readOperationWith8bitsData_seq::body();
   `uvm_info(get_type_name(), "Before randomization - req created", UVM_NONE)
 
   req.targetAddress = p_sequencer.i3c_target_agent_cfg_h.targetAddress;
-  req.operation     = READ;
+  req.operation     = I3C_READ;
 
   if(!req.randomize() with {
     targetAddressStatus == ACK;

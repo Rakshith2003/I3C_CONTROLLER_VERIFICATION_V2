@@ -7,11 +7,11 @@
 //--------------------------------------------------------------------------------------------
 class apb_master_coverage extends uvm_subscriber #(apb_master_tx);
   `uvm_component_utils(apb_master_coverage)
- 
+
   //Variable: apb_master_agent_cfg_h
-  //Declaring handle for master agent configuration class 
+  //Declaring handle for master agent configuration class
   apb_master_agent_config apb_master_agent_cfg_h;
-  
+
   //-------------------------------------------------------
   // Covergroup: apb_master_covergroup
   //  Covergroup consists of the various coverpoints based on
@@ -21,15 +21,23 @@ class apb_master_coverage extends uvm_subscriber #(apb_master_tx);
     option.per_instance = 1;
 
    //To check the number slaves we used
-   PSEL_CP : coverpoint slave_no_e'(packet.pselx) {
+   PSEL_CP : coverpoint packet.pselx {
      option.comment = " psel of apb";
-     bins APB_PSELX[] = {[0:NO_OF_SLAVES]};
+     // packet.pselx is declared `rand slave_no_e pselx;` in apb_master_tx.sv -
+     // a genuine enum, one-hot encoded (SLAVE_0=1, SLAVE_1=2, SLAVE_2=4, ...).
+     // A numeric range bin like {[0:NO_OF_SLAVES-1]} can never match an enum
+     // coverpoint - VCS requires bin values to be actual enum members, and
+     // 0 isn't one (SLAVE_0 is 1, not 0). List the legal slave(s) by name
+     // instead. NO_OF_SLAVES = 1 in apb_global_pkg.sv today, so SLAVE_0 is
+     // the only value pselx's own constraints (pselx_c1/pselx_c2) ever allow -
+     // extend this list (SLAVE_1, SLAVE_2, ...) if NO_OF_SLAVES is raised.
+     bins APB_PSELX[] = {SLAVE_0};
    }
 
    PADDR_CP : coverpoint cfg.paddr {
      option.comment = " apb address";
      bins APB_PADDR = {5};
-      bins APB_PADDR_1 = {20};  
+      bins APB_PADDR_1 = {20};
    }
 
    //To check whether the apb has done both read and write operations
@@ -40,7 +48,7 @@ class apb_master_coverage extends uvm_subscriber #(apb_master_tx);
 
    PWDATA_CP : coverpoint packet.pwdata {
      option.comment = "apb write data";
-     bins APB_WRITE_DATA[] = {0,25,396}; 
+     bins APB_WRITE_DATA[] = {0,25,396};
      }
 
   PRDATA_CP : coverpoint packet.prdata{
@@ -58,7 +66,7 @@ class apb_master_coverage extends uvm_subscriber #(apb_master_tx);
   //To check whether the apb has used strobe for all 4 lanes or not
   PSTRB_CP : coverpoint packet.pstrb{
     option.comment = "apb strobe data";
-    bins APB_PSTRB[] = {[0:2**(DATA_WIDTH/8)-1]};
+    bins APB_PSTRB[] = {[0:2**(APB_DATA_WIDTH/8)-1]};
   }
 
   PPROT_CP : coverpoint packet.pprot{
@@ -106,7 +114,7 @@ endfunction : new
 //  t - apb_master_tx
 //--------------------------------------------------------------------------------------------
 function void apb_master_coverage::write(apb_master_tx t);
-  
+
   `uvm_info(get_type_name(),$sformatf("Before calling SAMPLE METHOD"),UVM_HIGH);
   apb_master_covergroup.sample(apb_master_agent_cfg_h,t);
   `uvm_info(get_type_name(),"After calling SAMPLE METHOD",UVM_HIGH);
@@ -122,4 +130,3 @@ function void apb_master_coverage::report_phase(uvm_phase phase);
 endfunction: report_phase
 
 `endif
-

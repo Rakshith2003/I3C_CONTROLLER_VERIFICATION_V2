@@ -47,7 +47,7 @@ task apb_master_8b_write_seq::body();
                             paddr == address_seq;
                             transfer_size == BIT_8;
                             cont_write_read == cont_write_read_seq;
-                            pwrite == WRITE;}) begin
+                            pwrite == APB_WRITE;}) begin
     `uvm_fatal("APB","Rand failed");
   end
   req.paddr = address_seq;

@@ -39,7 +39,7 @@ task apb_master_16b_write_seq::body();
   start_item(req);
   `uvm_info(get_type_name(),"req_print",UVM_LOW);
   if(!req.randomize() with {req.pselx == SLAVE_0; 
-                            req.pwrite == WRITE;
+                            req.pwrite == APB_WRITE;
                             req.transfer_size == BIT_16;}) begin
     `uvm_fatal("APB","Rand failed")
   end

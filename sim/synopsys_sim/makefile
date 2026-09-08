@@ -65,7 +65,7 @@ all:
 # For Assertions use +acc options
 #  +cover=becstf
 
-VCS_CMD_RAND = vcs -full64 -sverilog +v2k -debug_access+all -debug_acc+pp+dmptf -ntb_opts uvm-1.2 +ntb_random_seed_automatic +memcbk +vcs+fsdbon+all -override_timescale=1ns/1ps 
+VCS_CMD_RAND = vcs -full64 -sverilog +v2k -debug_access+all -debug_acc+pp+dmptf -ntb_opts uvm-1.1 +ntb_random_seed_automatic +memcbk +vcs+fsdbon+all -override_timescale=1ns/1ps 
 
  
 compile:
@@ -109,7 +109,6 @@ simulate:
 	./simv \
 	+UVM_TESTNAME=$(test) \
 	+UVM_VERBOSITY=$(uvm_verbosity) \
-	+define+$(i3c_type) \
 	-l $(test_folder)/$(test).log
 
 	# For checking and reporting simulation errors

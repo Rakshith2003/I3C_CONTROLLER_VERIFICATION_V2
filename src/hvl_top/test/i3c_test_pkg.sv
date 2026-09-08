@@ -27,7 +27,7 @@ package i3c_test_pkg;
   `include "i3c_invalid_addr_write_test.sv"
   `include "i3c_fifo_full_write_test.sv"
   `include "i3c_ccc_coverage_test.sv"
-  `include"i3c_daa_write_nack_8b_test.sv"
+  `include "i3c_daa_write_nack_8b_test.sv"
   `include "i3c_write_read_multi_transfer_len_test.sv"
   `include "i3c_daa_diff_ccc_test.sv"
 	`include "i3c_daa_write_8b_test_len_0.sv"

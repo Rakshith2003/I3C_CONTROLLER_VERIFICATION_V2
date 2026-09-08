@@ -31,15 +31,15 @@
 
   //Variable: pwdata
   //Used to store the wdata
-  rand bit [DATA_WIDTH-1:0]pwdata;
+  rand bit [APB_DATA_WIDTH-1:0]pwdata;
 
   //Variable: pstrb
   //Used to transfer the data to pwdata bus
-  rand bit [(DATA_WIDTH/8)-1:0]pstrb;              
+  rand bit [(APB_DATA_WIDTH/8)-1:0]pstrb;              
     
   //Variable: prdata
   //Used to store the rdata from the slave
-  bit [DATA_WIDTH-1:0]prdata;
+  bit [APB_DATA_WIDTH-1:0]prdata;
 
   //Variable: pslverr
   //Goes high when a transfer fails
@@ -199,7 +199,7 @@ function void apb_master_tx::post_randomize();
   end
 
   //Constraint to make pwdata non-zero when pstrb is high for that 8-bit lane
-  for(int i=0; i<DATA_WIDTH/8; i++) begin
+  for(int i=0; i<APB_DATA_WIDTH/8; i++) begin
     `uvm_info(get_type_name(),$sformatf("MASTER-TX-pstrb[%0d]=%0d",i,pstrb[i]),UVM_HIGH);
     if(pstrb[i]) begin
       `uvm_info(get_type_name(),$sformatf("MASTER-TX-pstrb[%0d]=%0d",i,pstrb[i]),UVM_HIGH);
@@ -215,4 +215,3 @@ function void apb_master_tx::post_randomize();
 endfunction : post_randomize
 
 `endif
-
