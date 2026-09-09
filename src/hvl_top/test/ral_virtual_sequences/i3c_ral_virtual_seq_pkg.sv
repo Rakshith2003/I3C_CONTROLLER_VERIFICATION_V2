@@ -40,19 +40,19 @@ package i3c_ral_virtual_seq_pkg;
   `include "i3c_multi_write_read_back_req.sv"
   `include "i3c_sdr_write_nack_virtual_seq.sv"
   `include "i3c_sdr_write_read_multi_transfer_len_virtual_seq.sv"
-	`include "i3c_daa_diff_ccc_virtual_seq.sv"
-	`include "i3c_sdr_write_virtual_seq_len_0.sv"
-	`include "i3c_sdr_write_virtual_seq_len_128.sv"
-	`include "i3c_sdr_write_virtual_seq_len_16.sv"
-	`include "i3c_sdr_write_virtual_seq_len_16_wdata_0000.sv"
-	`include "i3c_sdr_write_virtual_seq_len_16_wdata_5555.sv"
-	`include "i3c_sdr_write_virtual_seq_len_16_wdata_AAAA.sv"
-	`include "i3c_sdr_write_virtual_seq_len_16_wdata_FFFF.sv"
-	`include "i3c_sdr_write_virtual_seq_len_17.sv"
-	`include "i3c_sdr_write_virtual_seq_len_1.sv"
-	`include "i3c_sdr_write_virtual_seq_len_1_wdata_0.sv"
-`include "i3c_sdr_write_virtual_seq_len_1_wdata_55.sv"	
-`include "i3c_sdr_write_virtual_seq_len_1_wdata_AA.sv"	
+  `include "i3c_daa_diff_ccc_virtual_seq.sv"
+  `include "i3c_sdr_write_virtual_seq_len_0.sv"
+  `include "i3c_sdr_write_virtual_seq_len_128.sv"
+  `include "i3c_sdr_write_virtual_seq_len_16.sv"
+  `include "i3c_sdr_write_virtual_seq_len_16_wdata_0000.sv"
+  `include "i3c_sdr_write_virtual_seq_len_16_wdata_5555.sv"
+  `include "i3c_sdr_write_virtual_seq_len_16_wdata_AAAA.sv"
+  `include "i3c_sdr_write_virtual_seq_len_16_wdata_FFFF.sv"
+  `include "i3c_sdr_write_virtual_seq_len_17.sv"
+  `include "i3c_sdr_write_virtual_seq_len_1.sv"
+  `include "i3c_sdr_write_virtual_seq_len_1_wdata_0.sv"
+`include "i3c_sdr_write_virtual_seq_len_1_wdata_55.sv"  
+`include "i3c_sdr_write_virtual_seq_len_1_wdata_AA.sv"  
 `include "i3c_sdr_write_virtual_seq_len_1_wdata_FF.sv"
 `include "i3c_sdr_write_virtual_seq_wdata_00.sv"
 `include "i3c_sdr_write_virtual_seq_wdata_55.sv"
@@ -71,15 +71,21 @@ package i3c_ral_virtual_seq_pkg;
 `include "i3c_sdr_write_read_transfer_len_3_virtual_seq.sv"
 `include "i3c_sdr_write_read_transfer_len_4_virtual_seq.sv"
 `include "i3c_sdr_write_read_transfer_len_8_virtual_seq.sv"
-				// DAA virtual sequences
+        // DAA virtual sequences
   `include "i3c_daa_virtual_seq.sv"
   `include "i3c_sdr_or_daa_virtual_seq.sv"
 `include "i3c_hot_join_virtual_seq.sv"  //hot join seq
 `include "i3c_ibi_virtual_seq.sv"
 `include "i3c_hot_join_invalid_addr_virtual_seq.sv" 
+`include "i3c_hdr_write_read_virtual_seq.sv"             // HDR-DDR write+read, NEW
+`include "i3c_hdr_write_read_virtual_seq_len2.sv"        // HDR-DDR write+read len2, NEW
+`include "i3c_hdr_write_read_virtual_seq_len3.sv"        // HDR-DDR write+read len3, NEW
+`include "i3c_hdr_write_read_virtual_seq_len4.sv"        // HDR-DDR write+read len4, NEW
+`include "i3c_hdr_write_read_virtual_seq_randomized.sv"  // HDR-DDR write+read randomized, NEW
 
 //`include "i3c_ibi_t0_virtual_seq.sv"
 endpackage : i3c_ral_virtual_seq_pkg
 
 `endif
+
 

@@ -85,7 +85,7 @@ endgroup : target_covergroup
     }
     DAA_DYNADDR_X_ACK : cross DAA_DYNADDR_CP, DAA_ACK_CP;
   endgroup : daa_covergroup
-  // IBI (In-Band Interrupt) covergroup -- NEW, additive only.
+  // IBI (In-Band Interrupt) covergroup 
   covergroup ibi_covergroup with function sample(i3c_target_tx packet);
     option.per_instance = 1;
     IBI_ACK_CP : coverpoint packet.daa_ack {
@@ -113,6 +113,65 @@ endgroup : target_covergroup
     }
     IBI_T1_X_NUM_EXTRA : cross IBI_T1_CP, IBI_NUM_EXTRA_BYTES_CP;
   endgroup : ibi_covergroup
+  ////////////////////////HDR
+  covergroup hdr_covergroup with function sample(i3c_target_tx packet);
+    option.per_instance = 1;
+
+    HDR_OPERATION_CP : coverpoint packet.operation {
+      option.comment = "HDR Operation";
+      bins HDR_OPERATION_WRITE = {0};
+      bins HDR_OPERATION_READ  = {1};
+    }
+
+    HDR_TARGET_ADDRESS_CP : coverpoint packet.targetAddress {
+      option.comment    = "HDR TargetAddress";
+      bins HDR_TARGETADDRESS          = {[8:119]};
+      illegal_bins HDR_RESERVEDADDRESS = {[0:7], [120:127]};
+    }
+
+    HDR_TARGET_ADDRESS_STATUS_CP : coverpoint packet.targetAddressStatus {
+      option.comment = "HDR targetAddressStatus";
+      bins HDR_TARGET_ADDRESS_STATUS_ACK  = {0};
+      bins HDR_TARGET_ADDRESS_STATUS_NACK = {1};
+    }
+
+    HDR_WRITEDATA_CP : coverpoint packet.writeData.size() * I3C_DATA_WIDTH {
+      option.comment = "HDR writeData size of the packet transfer";
+      bins HDR_WRITEDATA_WIDTH_1 = {16};
+      bins HDR_WRITEDATA_WIDTH_2 = {32};
+      bins HDR_WRITEDATA_WIDTH_3 = {48};
+      bins HDR_WRITEDATA_WIDTH_4 = {64};
+      bins HDR_WRITEDATA_WIDTH_5 = {[72:MAXIMUM_BITS]};
+    }
+
+    HDR_READDATA_CP : coverpoint packet.readData.size() * I3C_DATA_WIDTH {
+      option.comment = "HDR readData size of the packet transfer";
+      bins HDR_READDATA_WIDTH_1 = {16};
+      bins HDR_READDATA_WIDTH_2 = {32};
+      bins HDR_READDATA_WIDTH_3 = {48};
+      bins HDR_READDATA_WIDTH_4 = {64};
+      bins HDR_READDATA_WIDTH_5 = {[72:MAXIMUM_BITS]};
+    }
+
+    HDR_WRITEDATA_STATUS_CP : coverpoint packet.getWriteDataStatus() {
+      option.comment = "HDR writeData status";
+      bins HDR_WRITEDATA_STATUS_ALL_ACK  = {2'b00};
+      bins HDR_WRITEDATA_STATUS_ALL_NACK = {2'b11};
+      bins HDR_WRITEDATA_STATUS_MIX      = {2'b01, 2'b10};
+    }
+
+    HDR_READDATA_STATUS_CP : coverpoint packet.getReadDataStatus() {
+      option.comment = "HDR readData status";
+      bins HDR_READDATA_STATUS_ALL_ACK  = {2'b00};
+      bins HDR_READDATA_STATUS_ALL_NACK = {2'b11};
+      bins HDR_READDATA_STATUS_MIX      = {2'b01, 2'b10};
+    }
+
+    HDR_OPERATION_CP_X_HDR_READDATA_CP : cross HDR_OPERATION_CP, HDR_READDATA_CP {
+      ignore_bins invalid_write =
+        binsof(HDR_OPERATION_CP) intersect {0};
+    }
+  endgroup : hdr_covergroup
   extern function new(string name = "i3c_target_coverage",
                       uvm_component parent = null);
   extern virtual function void display();
@@ -126,6 +185,7 @@ function i3c_target_coverage::new(
   target_covergroup = new();
   daa_covergroup    = new();
   ibi_covergroup    = new();
+  hdr_covergroup    = new();
 endfunction : new
 function void i3c_target_coverage::display();
   $display("");
@@ -156,6 +216,9 @@ function void i3c_target_coverage::write(i3c_target_tx t);
     i3c_target_tx::IBI: begin
       ibi_covergroup.sample(t);
     end
+    i3c_target_tx::HDR_WRITE, i3c_target_tx::HDR_READ: begin
+      hdr_covergroup.sample(t);
+    end
     default: begin
       `uvm_warning("DEBUG_m_coverage",
         $sformatf("Unknown txn_type=%0s \u2014 not sampled", t.txn_type.name()))
@@ -174,8 +237,12 @@ function void i3c_target_coverage::report_phase(uvm_phase phase);
     $sformatf("target Agent IBI Coverage = %0.2f %%",
               ibi_covergroup.get_coverage()), UVM_NONE)
   `uvm_info(get_type_name(),
+    $sformatf("target Agent HDR-DDR Coverage = %0.2f %%",
+              hdr_covergroup.get_coverage()), UVM_NONE)
+  `uvm_info(get_type_name(),
     $sformatf("target Agent Total Coverage = %0.2f %%",
               (target_covergroup.get_coverage() +
                daa_covergroup.get_coverage()) / 2.0), UVM_NONE)
 endfunction: report_phase
 `endif
+

@@ -28,10 +28,17 @@ class i3c_scoreboard extends uvm_component;
   int ibi_pass;
   int ibi_fail;
 
+  // HDR-DDR 
+  int hdr_write_pass;
+  int hdr_write_fail;
+  int hdr_read_pass;
+  int hdr_read_fail;
+
   bit [6:0] exp_address;
   bit [7:0] exp_length;
   bit       exp_direction;
   bit [1:0] exp_cmd_type;
+  bit       exp_cmd_mode;  //CTRL[26], selects HDR-DDR path in the RTL
   bit [7:0] exp_ccc;
 
   // SDR data queues
@@ -78,6 +85,10 @@ class i3c_scoreboard extends uvm_component;
 
   extern protected task compare_with_daa_target();
 
+  // HDR-DDR 
+  extern protected function bit is_hdr_transaction();
+  extern protected task compare_with_hdr_target();
+
   // HOT JOIN
   extern protected task check_hot_join_results();
 
@@ -92,9 +103,7 @@ class i3c_scoreboard extends uvm_component;
 endclass : i3c_scoreboard
 
 
-//--------------------------------------------------------------------------------------------
 // Constructor
-//--------------------------------------------------------------------------------------------
 
 function i3c_scoreboard::new(
   string name = "i3c_scoreboard",
@@ -105,10 +114,7 @@ function i3c_scoreboard::new(
 
 endfunction : new
 
-
-//--------------------------------------------------------------------------------------------
 // Build Phase
-//--------------------------------------------------------------------------------------------
 
 function void i3c_scoreboard::build_phase(uvm_phase phase);
 
@@ -204,9 +210,7 @@ function void i3c_scoreboard::build_phase(uvm_phase phase);
 endfunction : build_phase
 
 
-//--------------------------------------------------------------------------------------------
 // Run Phase
-//--------------------------------------------------------------------------------------------
 
 task i3c_scoreboard::run_phase(uvm_phase phase);
 
@@ -241,6 +245,15 @@ task i3c_scoreboard::run_phase(uvm_phase phase);
       -> daa_initial_round_done_ev;
 
     end
+    else if (is_hdr_transaction()) begin
+
+      `uvm_info("SB",
+        $sformatf("HDR-DDR transaction detected: cmd_mode=%0b addr=0x%0x dir=%0b len=%0d",
+                  exp_cmd_mode, exp_address, exp_direction, exp_length), UVM_MEDIUM)
+
+      compare_with_hdr_target();
+
+    end
     else begin
 
       compare_with_target();
@@ -252,9 +265,7 @@ task i3c_scoreboard::run_phase(uvm_phase phase);
 endtask : run_phase
 
 
-//--------------------------------------------------------------------------------------------
 // Collect APB Transaction
-//--------------------------------------------------------------------------------------------
 
 task i3c_scoreboard::collect_apb_transaction();
 
@@ -325,9 +336,7 @@ task i3c_scoreboard::collect_apb_transaction();
 endtask : collect_apb_transaction
 
 
-//--------------------------------------------------------------------------------------------
 // Decode CTRL
-//--------------------------------------------------------------------------------------------
 
 function void i3c_scoreboard::decode_ctrl(
   bit [31:0] ctrl_val
@@ -348,12 +357,13 @@ function void i3c_scoreboard::decode_ctrl(
   exp_cmd_type =
     ctrl_val[25:24];
 
+  exp_cmd_mode =
+    ctrl_val[26];  
+
 endfunction : decode_ctrl
 
 
-//--------------------------------------------------------------------------------------------
 // Check DAA Transaction
-//--------------------------------------------------------------------------------------------
 
 function bit i3c_scoreboard::is_daa_transaction();
 
@@ -371,9 +381,7 @@ function bit i3c_scoreboard::is_daa_transaction();
 endfunction : is_daa_transaction
 
 
-//--------------------------------------------------------------------------------------------
 // Compare DAA Target
-//--------------------------------------------------------------------------------------------
 
 task i3c_scoreboard::compare_with_daa_target();
 
@@ -696,9 +704,109 @@ task i3c_scoreboard::compare_with_daa_target();
 endtask : compare_with_daa_target
 
 
-//--------------------------------------------------------------------------------------------
+// HDR-DDR 
+function bit i3c_scoreboard::is_hdr_transaction();
+  return (exp_cmd_mode == 1'b1);
+endfunction : is_hdr_transaction
+
+task i3c_scoreboard::compare_with_hdr_target();
+  i3c_target_tx tgt;
+  int           tgt_idx;
+  tgt_idx = find_target_by_address(exp_address);
+  if (tgt_idx < 0) begin
+    `uvm_error("SB_HDR_NO_TARGET",
+      $sformatf("HDR-DDR: Cannot find target for address 0x%0x", exp_address))
+    return;
+  end
+  `uvm_info("SB_HDR",
+    $sformatf("HDR-DDR: collecting from target_analysis_fifo[%0d] addr=0x%0x dir=%0s",
+              tgt_idx, exp_address, exp_direction ? "READ" : "WRITE"), UVM_MEDIUM)
+  target_analysis_fifo[tgt_idx].get(tgt);
+  target_tx_count++;
+  `uvm_info("SB", $sformatf("Target[%0d] HDR pkt:\n%s", tgt_idx, tgt.sprint()),
+    UVM_HIGH)
+  if (exp_direction == 1'b0) begin
+    // -- HDR WRITE --
+    int actual_bytes;
+    if (tgt.txn_type !== i3c_target_tx::HDR_WRITE) begin
+      `uvm_error("SB_HDR_TXN_TYPE",
+        $sformatf("[target %0d] Expected HDR_WRITE txn but got txn_type=%s",
+                  tgt_idx, tgt.txn_type.name()))
+    end
+    actual_bytes = tgt.writeData.size();
+    `uvm_info("SB",
+      $sformatf("[target %0d] HDR WRITE: APB sent %0d bytes, target received %0d bytes",
+                tgt_idx, exp_write_data.size(), actual_bytes), UVM_MEDIUM)
+    for (int i = 0; i < actual_bytes; i++) begin
+      bit [7:0] exp_val;
+      exp_val = (i < exp_write_data.size()) ? exp_write_data[i] : 8'hFF;
+      if (exp_val == tgt.writeData[i][7:0]) begin
+        `uvm_info("SB_HDR_WDATA_MATCH",
+          $sformatf("[target %0d] HDR writeData[%0d]: expected 0x%0x got 0x%0x PASS",
+                    tgt_idx, i, exp_val, tgt.writeData[i][7:0]), UVM_MEDIUM)
+        hdr_write_pass++;
+      end else begin
+        `uvm_error("SB_HDR_WDATA_MISMATCH",
+          $sformatf("[target %0d] HDR writeData[%0d]: expected 0x%0x got 0x%0x FAIL",
+                    tgt_idx, i, exp_val, tgt.writeData[i][7:0]))
+        hdr_write_fail++;
+      end
+    end
+  end else begin
+    // -- HDR READ --
+    bit [7:0]     apb_read_data[$];
+    apb_master_tx rd_pkt;
+    int           rd_count = 0;
+    if (tgt.txn_type !== i3c_target_tx::HDR_READ) begin
+      `uvm_error("SB_HDR_TXN_TYPE",
+        $sformatf("[target %0d] Expected HDR_READ txn but got txn_type=%s",
+                  tgt_idx, tgt.txn_type.name()))
+    end
+    while (rd_count < int'(exp_length)) begin
+      apb_analysis_fifo.get(rd_pkt);
+      apb_tx_count++;
+      if (rd_pkt.pwrite == apb_global_pkg::APB_READ &&
+          rd_pkt.paddr[6:0] == 7'h40) begin
+        apb_read_data.push_back(rd_pkt.prdata[7:0]);
+        `uvm_info("SB",
+          $sformatf("[target %0d] HDR RDATAB[%0d] = 0x%0x",
+                    tgt_idx, rd_count, rd_pkt.prdata[7:0]), UVM_HIGH)
+        rd_count++;
+      end
+    end
+    if (apb_read_data.size() != tgt.readData.size()) begin
+      `uvm_error("SB_HDR_RDATA_SIZE",
+        $sformatf("[target %0d] HDR read size mismatch: apb=%0d target=%0d",
+                  tgt_idx, apb_read_data.size(), tgt.readData.size()))
+    end else begin
+      for (int i = 0; i < tgt.readData.size(); i++) begin
+        bit [7:0] exp_val;
+        if (i < exp_rd_wr_data.size())
+          exp_val = exp_rd_wr_data[i];
+        else begin
+          exp_val = 8'hFF;
+          `uvm_warning("SB_HDR_RDATA_EMPTY",
+            $sformatf("[target %0d] exp_rd_wr_data queue too small", tgt_idx))
+        end
+        if (exp_val == tgt.readData[i][7:0]) begin
+          `uvm_info("SB_HDR_RDATA_MATCH",
+            $sformatf("[target %0d] HDR readData[%0d]: expected 0x%0x got 0x%0x PASS",
+                      tgt_idx, i, exp_val, tgt.readData[i][7:0]), UVM_MEDIUM)
+          hdr_read_pass++;
+        end else begin
+          `uvm_error("SB_HDR_RDATA_MISMATCH",
+            $sformatf("[target %0d] HDR readData[%0d]: expected 0x%0x got 0x%0x FAIL",
+                      tgt_idx, i, exp_val, tgt.readData[i][7:0]))
+          hdr_read_fail++;
+        end
+      end
+    end
+    exp_rd_wr_data.delete();
+  end
+endtask : compare_with_hdr_target
+
+
 // Hot Join Results
-//--------------------------------------------------------------------------------------------
 
 task i3c_scoreboard::check_hot_join_results();
 
@@ -896,9 +1004,7 @@ task i3c_scoreboard::check_hot_join_results();
 endtask : check_hot_join_results
 
 
-//--------------------------------------------------------------------------------------------
 // IBI Results
-//--------------------------------------------------------------------------------------------
 
 task i3c_scoreboard::check_ibi_results();
 
@@ -1151,9 +1257,7 @@ task i3c_scoreboard::check_ibi_results();
 endtask : check_ibi_results
 
 
-//--------------------------------------------------------------------------------------------
 // Find Target By Address
-//--------------------------------------------------------------------------------------------
 
 function int i3c_scoreboard::find_target_by_address(
   bit [6:0] addr
@@ -1176,9 +1280,7 @@ function int i3c_scoreboard::find_target_by_address(
 endfunction : find_target_by_address
 
 
-//--------------------------------------------------------------------------------------------
 // Compare With Target
-//--------------------------------------------------------------------------------------------
 
 task i3c_scoreboard::compare_with_target();
 
@@ -1229,9 +1331,7 @@ task i3c_scoreboard::compare_with_target();
     UVM_HIGH
   )
 
-  //------------------------------------------------------------------------------------------
   // Operation check
-  //------------------------------------------------------------------------------------------
 
   begin
 
@@ -1737,9 +1837,23 @@ function void i3c_scoreboard::check_phase(
       )
     )
 
-  //------------------------------------------------------------------------------------------
+  // HDR-DDR summary 
+  `uvm_info("SB_SUMMARY", $sformatf({
+    "\n============= HDR-DDR SUMMARY =============\n",
+    "  HDR write byte pass / fail : %0d / %0d\n",
+    "  HDR read  byte pass / fail : %0d / %0d\n",
+    "============================================="},
+    hdr_write_pass, hdr_write_fail,
+    hdr_read_pass,  hdr_read_fail),
+    UVM_NONE)
+  if (hdr_write_fail != 0)
+    `uvm_error("SB_SUMMARY",
+      $sformatf("%0d HDR write data mismatch(es)", hdr_write_fail))
+  if (hdr_read_fail != 0)
+    `uvm_error("SB_SUMMARY",
+      $sformatf("%0d HDR read data mismatch(es)", hdr_read_fail))
+
   // Per-slave IBI FIFO drain check
-  //------------------------------------------------------------------------------------------
 
   foreach (ibi_analysis_fifo[i]) begin
 
@@ -1758,9 +1872,7 @@ function void i3c_scoreboard::check_phase(
 
   end
 
-  //------------------------------------------------------------------------------------------
   // APB FIFO drain check
-  //------------------------------------------------------------------------------------------
 
   if (
     apb_analysis_fifo.size() != 0
@@ -1783,3 +1895,4 @@ function void i3c_scoreboard::check_phase(
 endfunction : check_phase
 
 `endif
+

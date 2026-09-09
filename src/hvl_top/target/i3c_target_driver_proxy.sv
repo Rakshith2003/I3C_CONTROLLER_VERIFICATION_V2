@@ -152,7 +152,27 @@ task i3c_target_driver_proxy::run_phase(uvm_phase phase);
                   i3c_target_agent_cfg_h.target_id,
                   req.dynamic_address, req.ibi_mdb, ibi_ack_out,
                   t1_out, extra_data_sent_out.size()), UVM_NONE)
-    end else begin
+    end else if(req.txn_type == i3c_target_tx::HDR_WRITE) begin
+`uvm_info("TGT_DRV_PROXY",
+      "Transaction type = HDR_WRITE", UVM_NONE)
+    i3c_target_seq_item_converter::from_class(req, struct_packet);
+    i3c_target_drv_bfm_h.drive_hdr_write(
+      struct_packet,
+      struct_cfg
+    );
+    i3c_target_seq_item_converter::to_class(struct_packet, req);
+  end
+    else  if(req.txn_type == i3c_target_tx::HDR_READ) begin
+`uvm_info("TGT_DRV_PROXY",
+      "Transaction type = HDR_READ", UVM_NONE)
+    i3c_target_seq_item_converter::from_class(req, struct_packet);
+    i3c_target_drv_bfm_h.drive_hdr_read(
+      struct_packet,
+      struct_cfg
+    );
+    i3c_target_seq_item_converter::to_class(struct_packet, req);
+  end
+else begin
       // SDR TRANSACTION
       `uvm_info("TGT_DRV_PROXY",
         $sformatf("[target_id=%0d] SDR transaction",
@@ -168,3 +188,4 @@ task i3c_target_driver_proxy::run_phase(uvm_phase phase);
   end
 endtask : run_phase
 `endif
+

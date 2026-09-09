@@ -1932,11 +1932,191 @@ interface i3c_target_driver_bfm (
 
   endtask : drive_ibi_data
 
-
-  // HDR-DDR block -- fully commented out, untouched, unchanged from before.
-  /* ... (unchanged) ... */
+    //hdr///////////////////////////////////////////////////
+task detect_stop_hdr();
+  bit [1:0] scl_d;
+  bit [1:0] sda_d;
+  localparam int STOP_CONFIRM_CYCLES = 8;
+  int stable_count;
+  state = I3C_STOP;
+  forever begin
+    do begin
+      @(negedge pclk);
+      #1;
+      scl_d = {scl_d[0], scl_i};
+      sda_d = {sda_d[0], sda_i};
+    end while (!(sda_d == POSEDGE && scl_d == 2'b11));
+    stable_count = 0;
+    while (stable_count < STOP_CONFIRM_CYCLES) begin
+      @(negedge pclk);
+      #1;
+      if (scl_i === 1'b1 && sda_i === 1'b1)
+        stable_count++;
+      else
+        break;
+    end
+    if (stable_count == STOP_CONFIRM_CYCLES) begin
+      `uvm_info(name, "Stop condition detected", UVM_HIGH)
+      return;
+    end
+  end
+endtask : detect_stop_hdr
+    task wrDetect_stop_hdr();
+  bit [1:0] scl_d;
+  bit [1:0] sda_d;
+  localparam int STOP_CONFIRM_CYCLES = 8;
+  int stable_count;
+  bit timed_out;
+  timed_out = 0;
+  fork
+    begin : stop_scan
+      forever begin
+        do begin
+          @(negedge pclk);
+          #1;
+          scl_d = {scl_d[0], scl_i};
+          sda_d = {sda_d[0], sda_i};
+        end while (!(sda_d == POSEDGE && scl_d == 2'b11));
+        stable_count = 0;
+        while (stable_count < STOP_CONFIRM_CYCLES) begin
+          @(negedge pclk);
+          #1;
+          if (scl_i === 1'b1 && sda_i === 1'b1)
+            stable_count++;
+          else
+            break;
+        end
+        if (stable_count == STOP_CONFIRM_CYCLES) begin
+          state = I3C_STOP;
+          `uvm_info(name, "Stop condition detected", UVM_HIGH)
+          disable stop_scan;
+        end
+      end
+    end
+    begin : stop_timeout
+      #20000;
+      timed_out = 1;
+    end
+  join_any
+  disable fork;
+  if (timed_out)
+    `uvm_warning(name, "wrDetect_stop: timed out waiting for debounced STOP")
+endtask : wrDetect_stop_hdr
+task sample_hdr_ddr_word_wr(output bit [15:0] word);
+  word = '0;
+  for (int b = 15; b >= 0; b -= 2) begin
+    detectEdge_scl(POSEDGE);
+    word[b]   = sda_i;
+`uvm_info(name,
+          $sformatf("HDR SAMPLE bit[%0d]=%0b", b, sda_i),
+          UVM_NONE)
+    detectEdge_scl(NEGEDGE);
+    word[b-1] = sda_i;
+`uvm_info(name,
+          $sformatf("HDR SAMPLE bit[%0d]=%0b", b-1, sda_i),
+          UVM_NONE)
+  end
+  `uvm_info(name,
+      $sformatf("HDR WORD COMPLETE = 0x%04h", word),
+      UVM_NONE)
+endtask : sample_hdr_ddr_word_wr
+task drive_hdr_write(
+    inout i3c_transfer_bits_s dataPacketStruck,
+    input i3c_transfer_cfg_s  configPacketStruck);
+  int byte_idx;
+  `uvm_info(name, "HDR WRITE started", UVM_HIGH)
+  detect_start();
+  sample_target_address(configPacketStruck, dataPacketStruck);
+  sample_operation(dataPacketStruck.operation);
+  driveAddressAck(dataPacketStruck.targetAddressStatus);
+  if (dataPacketStruck.targetAddressStatus != ACK) begin
+    detect_stop_hdr();
+    return;
+  end
+  byte_idx = 0;
+  fork
+    begin
+      bit [15:0] w;
+      while (byte_idx < 4) begin
+        sample_hdr_ddr_word_wr(w);
+        targetFIFOMemory.push_back(w[15:8]);
+        targetFIFOMemory.push_back(w[7:0]);
+        dataPacketStruck.writeData[byte_idx]         = w[15:8];
+        dataPacketStruck.writeData[byte_idx+1]       = w[7:0];
+        dataPacketStruck.writeDataStatus[byte_idx]   = ACK;
+        dataPacketStruck.writeDataStatus[byte_idx+1] = ACK;
+        dataPacketStruck.no_of_i3c_bits_transfer    += 16;
+        `uvm_info(name,
+          $sformatf("HDR WRITE: stored word 0x%04h, byte_idx=%0d",
+                    w, byte_idx), UVM_HIGH)
+        byte_idx += 2;
+      end
+    end
+  join_none
+  wrDetect_stop_hdr();
+  disable fork;
+  `uvm_info(name, $sformatf("HDR WRITE done: %0d bytes", byte_idx), UVM_HIGH)
+endtask : drive_hdr_write
+task drive_hdr_ddr_word_rd(input bit [15:0] word);
+  for (int b = 15; b >= 0; b -= 2) begin
+    drive_sda(word[b]);
+`uvm_info(name, $sformatf("[%0t] HDR DRIVE bit[%0d]=%0b", $time, b, word[b]), UVM_NONE)
+    detectEdge_scl(NEGEDGE);
+    #35;
+    drive_sda(word[b-1]);
+     `uvm_info(name, $sformatf("[%0t] HDR DRIVE bit[%0d]=%0b", $time, b-1, word[b-1]), UVM_NONE)
+    detectEdge_scl(POSEDGE);
+    #35;
+  end
+endtask : drive_hdr_ddr_word_rd
+task drive_hdr_read(
+    inout i3c_transfer_bits_s dataPacketStruck,
+    input i3c_transfer_cfg_s  configPacketStruck);
+  int byte_idx;
+  `uvm_info(name, "HDR READ started", UVM_HIGH)
+  detect_start();
+  sample_target_address(configPacketStruck, dataPacketStruck);
+  sample_operation(dataPacketStruck.operation);
+  driveAddressAck(dataPacketStruck.targetAddressStatus);
+  if (dataPacketStruck.targetAddressStatus != ACK) begin
+    detect_stop_hdr();
+    return;
+  end
+  byte_idx = 0;
+  fork
+    begin
+      bit [15:0] w;
+      bit [7:0]  b0, b1;
+      while (byte_idx < 2 ) begin
+        if (targetFIFOMemory.size() >= 2) begin
+          b0 = targetFIFOMemory.pop_front();
+          $display(" b0 = %d ", b0);
+          b1 = targetFIFOMemory.pop_front();
+          $display("b1 = %d", b1);
+        end else begin
+          b0 = configPacketStruck.defaultReadData;
+          b1 = configPacketStruck.defaultReadData;
+        end
+        drive_hdr_ddr_word_rd({b0, b1});
+        dataPacketStruck.readData[byte_idx]         = b0;
+        dataPacketStruck.readData[byte_idx+1]       = b1;
+        dataPacketStruck.readDataStatus[byte_idx]   = ACK;
+        dataPacketStruck.readDataStatus[byte_idx+1] = ACK;
+        dataPacketStruck.no_of_i3c_bits_transfer   += 16;
+        `uvm_info(name,
+          $sformatf("HDR READ: drove word 0x%02h%02h, byte_idx=%0d",
+                    b0, b1, byte_idx), UVM_HIGH)
+        byte_idx += 2;
+      end
+    end
+  join_none
+  wrDetect_stop_hdr();
+  disable fork;
+  `uvm_info(name, $sformatf("HDR READ done: %0d bytes", byte_idx), UVM_HIGH)
+endtask : drive_hdr_read
 
 
 endinterface : i3c_target_driver_bfm
 
 `endif
+

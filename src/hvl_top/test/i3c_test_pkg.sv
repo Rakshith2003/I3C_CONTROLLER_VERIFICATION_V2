@@ -30,18 +30,18 @@ package i3c_test_pkg;
   `include "i3c_daa_write_nack_8b_test.sv"
   `include "i3c_write_read_multi_transfer_len_test.sv"
   `include "i3c_daa_diff_ccc_test.sv"
-	`include "i3c_daa_write_8b_test_len_0.sv"
-	`include "i3c_daa_write_8b_test_len_128.sv"
-	`include "i3c_daa_write_8b_test_len_16.sv"
-	`include "i3c_daa_write_8b_test_len_16_wdata_0000.sv"
-	`include "i3c_daa_write_8b_test_len_16_wdata_5555.sv"
-	`include "i3c_daa_write_8b_test_len_16_wdata_AAAA.sv"
-	`include "i3c_daa_write_8b_test_len_16_wdata_FFFF.sv"
-	`include "i3c_daa_write_8b_test_len_17.sv"
-	`include "i3c_daa_write_8b_test_len_1.sv"
-	`include "i3c_daa_write_8b_test_len_1_wdata_0.sv"
-`include "i3c_daa_write_8b_test_len_1_wdata_55.sv"	
-`include "i3c_daa_write_8b_test_len_1_wdata_AA.sv"	
+  `include "i3c_daa_write_8b_test_len_0.sv"
+  `include "i3c_daa_write_8b_test_len_128.sv"
+  `include "i3c_daa_write_8b_test_len_16.sv"
+  `include "i3c_daa_write_8b_test_len_16_wdata_0000.sv"
+  `include "i3c_daa_write_8b_test_len_16_wdata_5555.sv"
+  `include "i3c_daa_write_8b_test_len_16_wdata_AAAA.sv"
+  `include "i3c_daa_write_8b_test_len_16_wdata_FFFF.sv"
+  `include "i3c_daa_write_8b_test_len_17.sv"
+  `include "i3c_daa_write_8b_test_len_1.sv"
+  `include "i3c_daa_write_8b_test_len_1_wdata_0.sv"
+`include "i3c_daa_write_8b_test_len_1_wdata_55.sv"  
+`include "i3c_daa_write_8b_test_len_1_wdata_AA.sv"  
 `include "i3c_daa_write_8b_test_len_1_wdata_FF.sv"
 `include "i3c_daa_write_8b_test_wdata_00.sv"
 `include "i3c_daa_write_8b_test_wdata_55.sv"
@@ -60,7 +60,7 @@ package i3c_test_pkg;
 `include "i3c_write_read_transfer_len_3_test.sv"
 `include "i3c_write_read_transfer_len_4_test.sv"
 `include "i3c_write_read_transfer_len_8_test.sv"
-				// DAA tests
+        // DAA tests
   `include "i3c_daa_write_8b_test.sv"
   `include "i3c_daa_read_8b_test.sv"
   `include "i3c_daa_write_read_write_read_8b_test.sv"
@@ -71,9 +71,16 @@ package i3c_test_pkg;
 `include "i3c_hot_join_invalid_reserved_addr.sv"
 //ibi
 `include "i3c_ibi_test.sv"
-//`include "i3c_ibi_t0_test.sv"				
+//`include "i3c_ibi_t0_test.sv"       
+
+//hdr-ddr
+`include "i3c_hdr_write_read_test.sv"
+`include "i3c_hdr_write_read_test_len2.sv"
+`include "i3c_hdr_write_read_test_len4.sv"
+`include "i3c_hdr_write_read_test_randomized.sv"
 
 endpackage : i3c_test_pkg
 
 `endif
+
 

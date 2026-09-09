@@ -271,6 +271,50 @@ task i3c_target_monitor_proxy::run_phase(uvm_phase phase);
                   tx.daa_ack,
                   tx.dynamic_address),
         UVM_NONE)
+    end else if (i3c_target_agent_cfg_h != null &&
+        i3c_target_agent_cfg_h.pending_hdr_write) begin
+      // HDR-DDR WRITE 
+      `uvm_info(get_type_name(),
+        $sformatf("[target_id=%0d] Waiting to sample HDR-DDR WRITE transaction (pending_hdr_write gated)",
+                  i3c_target_agent_cfg_h.target_id), UVM_HIGH)
+      i3c_target_mon_bfm_h.sample_hdr_write(struct_packet, struct_cfg);
+      `uvm_info(get_type_name(),
+        $sformatf("[target_id=%0d] HDR WRITE BFM returned struct -> targetAddress=0x%0h  targetAddressStatus=%0b  no_of_bits=%0d",
+                  i3c_target_agent_cfg_h.target_id,
+                  struct_packet.targetAddress,
+                  struct_packet.targetAddressStatus,
+                  struct_packet.no_of_i3c_bits_transfer),
+        UVM_NONE)
+      i3c_target_seq_item_converter::to_class(struct_packet, tx);
+      tx.txn_type = i3c_target_tx::HDR_WRITE;
+      i3c_target_agent_cfg_h.pending_hdr_write = 0;
+      `uvm_info(get_type_name(),
+        $sformatf("[target_id=%0d] HDR WRITE tx -> txn_type=%s  targetAddress=0x%0h  bytes=%0d",
+                  i3c_target_agent_cfg_h.target_id, tx.txn_type.name(),
+                  tx.targetAddress,
+                  struct_packet.no_of_i3c_bits_transfer/8), UVM_NONE)
+    end else if (i3c_target_agent_cfg_h != null &&
+        i3c_target_agent_cfg_h.pending_hdr_read) begin
+      // HDR-DDR READ 
+      `uvm_info(get_type_name(),
+        $sformatf("[target_id=%0d] Waiting to sample HDR-DDR READ transaction (pending_hdr_read gated)",
+                  i3c_target_agent_cfg_h.target_id), UVM_HIGH)
+      i3c_target_mon_bfm_h.sample_hdr_read(struct_packet, struct_cfg);
+      `uvm_info(get_type_name(),
+        $sformatf("[target_id=%0d] HDR READ BFM returned struct -> targetAddress=0x%0h  targetAddressStatus=%0b  no_of_bits=%0d",
+                  i3c_target_agent_cfg_h.target_id,
+                  struct_packet.targetAddress,
+                  struct_packet.targetAddressStatus,
+                  struct_packet.no_of_i3c_bits_transfer),
+        UVM_NONE)
+      i3c_target_seq_item_converter::to_class(struct_packet, tx);
+      tx.txn_type = i3c_target_tx::HDR_READ;
+      i3c_target_agent_cfg_h.pending_hdr_read = 0;
+      `uvm_info(get_type_name(),
+        $sformatf("[target_id=%0d] HDR READ tx -> txn_type=%s  targetAddress=0x%0h  bytes=%0d",
+                  i3c_target_agent_cfg_h.target_id, tx.txn_type.name(),
+                  tx.targetAddress,
+                  struct_packet.no_of_i3c_bits_transfer/8), UVM_NONE)
     end else begin
       `uvm_info(get_type_name(),
         $sformatf("[target_id=%0d] Waiting to sample SDR transaction (fallback, has_daa=0)",
@@ -314,3 +358,4 @@ task i3c_target_monitor_proxy::run_phase(uvm_phase phase);
   end // forever
 endtask : run_phase
 `endif
+

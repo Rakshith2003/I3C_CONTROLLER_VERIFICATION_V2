@@ -25,6 +25,13 @@
 
     bit                            pending_sdr          = 0;
 
+    // HDR-DDR dispatch gates Each
+    // flag is cleared by the monitor proxy once it has sampled that frame.
+    bit                            pending_hdr_write    = 0;
+    bit                            pending_hdr_read     = 0;
+
+    bit                            hdr_mode             = 0;
+
     bit                            daa_accept_address   = 1;
 
     bit [47:0]                     pid                  = 48'hAABBCCDDEEFF;
@@ -137,6 +144,27 @@
     );
 
     printer.print_field(
+      "pending_hdr_write",
+      pending_hdr_write,
+      1,
+      UVM_BIN
+    );
+
+    printer.print_field(
+      "pending_hdr_read",
+      pending_hdr_read,
+      1,
+      UVM_BIN
+    );
+
+    printer.print_field(
+      "hdr_mode",
+      hdr_mode,
+      1,
+      UVM_BIN
+    );
+
+    printer.print_field(
       "pid",
       pid,
       48,
@@ -160,3 +188,4 @@
   endfunction : do_print
 
 `endif
+

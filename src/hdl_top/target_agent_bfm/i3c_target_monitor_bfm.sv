@@ -12,8 +12,6 @@ interface i3c_target_monitor_bfm (
   input sda_oen
 );
 
-  // Package imports are kept inside the interface
-  // to avoid $unit wildcard-import conflicts.
   import i3c_globals_pkg::*;
   import uvm_pkg::*;
   `include "uvm_macros.svh"
@@ -33,18 +31,12 @@ interface i3c_target_monitor_bfm (
   localparam int         ARB_BIT_CNT = 64;
 
 
-  //--------------------------------------------------------------------------
-  // Initial
-  //--------------------------------------------------------------------------
 
   initial begin
     $display(name);
   end
 
 
-  //--------------------------------------------------------------------------
-  // Reset / Idle
-  //--------------------------------------------------------------------------
 
   task wait_for_reset();
     @(negedge areset);
@@ -68,9 +60,6 @@ interface i3c_target_monitor_bfm (
   endtask : wait_for_idle_state
 
 
-  //--------------------------------------------------------------------------
-  // Normal SDR transaction sampling
-  //--------------------------------------------------------------------------
 
   task sample_data(
     inout i3c_transfer_bits_s pkt,
@@ -103,9 +92,7 @@ interface i3c_target_monitor_bfm (
   endtask : sample_data
 
 
-  //--------------------------------------------------------------------------
   // SDR WRITE
-  //--------------------------------------------------------------------------
 
   task sampleWriteDataAndAck(
     inout i3c_transfer_bits_s pkt,
@@ -227,9 +214,7 @@ interface i3c_target_monitor_bfm (
   endtask : sampleWriteDataAndAck
 
 
-  //--------------------------------------------------------------------------
   // SDR READ
-  //--------------------------------------------------------------------------
 
   task sampleReadDataAndAck(
     inout i3c_transfer_bits_s pkt,
@@ -320,9 +305,7 @@ interface i3c_target_monitor_bfm (
   endtask : sampleReadDataAndAck
 
 
-  //--------------------------------------------------------------------------
   // Addressed flag
-  //--------------------------------------------------------------------------
 
   bit has_address = 0;
 
@@ -332,9 +315,7 @@ interface i3c_target_monitor_bfm (
   endfunction : is_addressed
 
 
-  //--------------------------------------------------------------------------
   // DAA
-  //--------------------------------------------------------------------------
 
   task sample_daa_data(
     inout i3c_transfer_bits_s pkt,
@@ -419,10 +400,8 @@ interface i3c_target_monitor_bfm (
     detectEdge_scl(NEGEDGE);
 
 
-    //--------------------------------------------------------------------------
     // Steps 4-11:
     // Loop per round until STOP.
-    //--------------------------------------------------------------------------
 
     // Detect first Rep-START
     detect_rep_start(
@@ -554,9 +533,7 @@ interface i3c_target_monitor_bfm (
       detectEdge_scl(NEGEDGE);
 
 
-      //--------------------------------------------------------------------------
       // Does this round's winner match THIS target?
-      //--------------------------------------------------------------------------
 
       if (
         round_pid == cfg.pid &&
@@ -1236,8 +1213,6 @@ interface i3c_target_monitor_bfm (
       UVM_NONE
     )
 
-
-    // Electrically identical pattern to an IBI request.
     detect_start();
 
 
@@ -1261,8 +1236,6 @@ interface i3c_target_monitor_bfm (
 
 
     ibi_addr_out = full_byte[7:1];
-
-
     // ACK slot driven by the controller
     // for this read-direction byte.
 
@@ -1528,6 +1501,135 @@ interface i3c_target_monitor_bfm (
   endtask : sample_ibi_data
 
 
+  // HDR-DDR monitoring 
+  task sample_hdr_ddr_word_wr(output bit [15:0] word);
+    word = '0;
+    for (int b = 15; b >= 0; b -= 2) begin
+      detectEdge_scl(POSEDGE);
+      word[b]   = sda_i;
+      detectEdge_scl(NEGEDGE);
+      word[b-1] = sda_i;
+    end
+    `uvm_info(name, $sformatf("HDR WRITE MON WORD = 0x%04h", word), UVM_HIGH)
+  endtask : sample_hdr_ddr_word_wr
+  task sample_hdr_ddr_word_rd(output bit [15:0] word);
+    word = '0;
+    for (int b = 15; b >= 0; b -= 2) begin
+      detectEdge_scl(NEGEDGE);
+      word[b]   = sda_i;
+      detectEdge_scl(POSEDGE);
+      word[b-1] = sda_i;
+    end
+    `uvm_info(name, $sformatf("HDR READ MON WORD = 0x%04h", word), UVM_HIGH)
+  endtask : sample_hdr_ddr_word_rd
+  task automatic hdrDetect_stop();
+    bit [1:0] scl_d;
+    bit [1:0] sda_d;
+    localparam int STOP_CONFIRM_CYCLES = 8;
+    int stable_count;
+    forever begin
+      do begin
+        @(negedge pclk);
+        #1;
+        scl_d = {scl_d[0], scl_i};
+        sda_d = {sda_d[0], sda_i};
+      end while (!(sda_d == POSEDGE && scl_d == 2'b11));
+      stable_count = 0;
+      while (stable_count < STOP_CONFIRM_CYCLES) begin
+        @(negedge pclk);
+        #1;
+        if (scl_i === 1'b1 && sda_i === 1'b1)
+          stable_count++;
+        else
+          break;
+      end
+      if (stable_count == STOP_CONFIRM_CYCLES) begin
+        state = I3C_STOP;
+        `uvm_info(name, "HDR MON: Stop condition confirmed (debounced)", UVM_HIGH)
+        return;
+      end
+    end
+  endtask : hdrDetect_stop
+  task sample_hdr_write(inout i3c_transfer_bits_s pkt,
+                         inout i3c_transfer_cfg_s  cfg);
+    int byte_idx;
+    `uvm_info(name, "HDR WRITE MON started", UVM_HIGH)
+    detect_start();
+    sample_target_address(pkt);
+    sample_operation(pkt.operation);
+    sampleAddressAck(pkt.targetAddressStatus);
+    if (pkt.targetAddressStatus != ACK) begin
+      detect_stop();
+      return;
+    end
+    byte_idx = 0;
+    fork
+      begin
+        bit [15:0] w;
+        while (byte_idx < 18) begin
+          sample_hdr_ddr_word_wr(w);
+          pkt.writeData[byte_idx]         = w[15:8];
+          pkt.writeData[byte_idx+1]       = w[7:0];
+          pkt.writeDataStatus[byte_idx]   = ACK;
+          pkt.writeDataStatus[byte_idx+1] = ACK;
+          pkt.no_of_i3c_bits_transfer    += 16;
+          `uvm_info(name,
+            $sformatf("HDR WRITE MON: sampled word 0x%04h, byte_idx=%0d", w, byte_idx),
+            UVM_HIGH)
+          byte_idx += 2;
+        end
+      end
+    join_none
+    hdrDetect_stop();
+    disable fork;
+    `uvm_info(name, $sformatf("HDR WRITE MON done: %0d bytes", byte_idx), UVM_HIGH)
+  endtask : sample_hdr_write
+  task sample_hdr_read(inout i3c_transfer_bits_s pkt,
+                        inout i3c_transfer_cfg_s  cfg);
+    int byte_idx;
+    bit timed_out;
+    `uvm_info(name, "HDR READ MON started", UVM_HIGH)
+    detect_start();
+    sample_target_address(pkt);
+    sample_operation(pkt.operation);
+    sampleAddressAck(pkt.targetAddressStatus);
+    if (pkt.targetAddressStatus != ACK) begin
+      detect_stop();
+      return;
+    end
+    byte_idx = 0;
+    timed_out = 0;
+    fork
+      begin
+        bit [15:0] w;
+        while (byte_idx < MAXIMUM_BYTES) begin
+          sample_hdr_ddr_word_rd(w);
+          pkt.readData[byte_idx]         = w[15:8];
+          pkt.readData[byte_idx+1]       = w[7:0];
+          pkt.readDataStatus[byte_idx]   = ACK;
+          pkt.readDataStatus[byte_idx+1] = ACK;
+          pkt.no_of_i3c_bits_transfer   += 16;
+          `uvm_info(name,
+            $sformatf("HDR READ MON: sampled word 0x%04h, byte_idx=%0d", w, byte_idx),
+            UVM_HIGH)
+          byte_idx += 2;
+        end
+      end
+      begin : idle_timeout
+        #20000;
+        timed_out = 1;
+      end
+    join_any
+    disable fork;
+    if (timed_out)
+      `uvm_warning(name,
+        $sformatf("HDR READ MON: timed out after %0d bytes, DUT stopped clocking (transaction incomplete)",
+                  byte_idx))
+    `uvm_info(name, $sformatf("HDR READ MON done: %0d bytes", byte_idx), UVM_HIGH)
+  endtask : sample_hdr_read
+
+
 endinterface : i3c_target_monitor_bfm
 
 `endif
+

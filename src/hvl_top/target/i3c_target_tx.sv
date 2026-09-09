@@ -11,13 +11,17 @@ class i3c_target_tx extends uvm_sequence_item;
        acknowledge_e              readDataStatus[];
   rand bit [31:0]                 size;
   
+
   typedef enum bit [2:0] {
-    SDR     = 3'b000,
-    DAA     = 3'b001,
-    HOTJOIN = 3'b010,
-    IBI     = 3'b011,
-    HDR_DDR = 3'b100
+    SDR       = 3'b000,
+    DAA       = 3'b001,
+    HOTJOIN   = 3'b010,
+    IBI       = 3'b011,
+    HDR_WRITE = 3'b100,
+    HDR_READ  = 3'b101
   } txn_type_e;
+
+
   rand txn_type_e   txn_type;
   rand bit [47:0]   pid;
   rand bit [7:0]    bcr;
@@ -26,12 +30,19 @@ class i3c_target_tx extends uvm_sequence_item;
        bit          daa_ack;
   rand bit [6:0]    hotjoin_addr;
   rand bit [7:0]    ibi_mdb;
+  // HDR-DDR 
+
+
+  rand bit [15:0]   hdr_data[$];
+  bit [4:0]         hdr_crc;
+  bit               hdr_parity;
+  bit               hdr_tbit;
 
   
   rand int unsigned ibi_num_extra_bytes;    // # of bytes beyond the MDB the target intends to send
   rand bit [7:0]    ibi_extra_data[];       // values of those bytes (size == ibi_num_extra_bytes)
 
-  // Results, filled in by the driver/monitor BFM after the transaction:
+
   bit               ibi_t1;                // T-bit driven/sampled after byte 1 (MDB)
   bit [7:0]         ibi_extra_data_sent[];  // extra bytes actually driven/sampled
   bit               ibi_extra_t_bits[];     // T-bit driven/sampled after each entry above (last is 0)
@@ -111,6 +122,10 @@ function void i3c_target_tx::do_copy(uvm_object rhs);
   daa_ack         = target_rhs.daa_ack;
   hotjoin_addr    = target_rhs.hotjoin_addr;
   ibi_mdb         = target_rhs.ibi_mdb;
+  hdr_data        = target_rhs.hdr_data;
+  hdr_crc         = target_rhs.hdr_crc;
+  hdr_parity      = target_rhs.hdr_parity;
+  hdr_tbit        = target_rhs.hdr_tbit;
 
   // --- IBI T-bit / N extra data bytes ---
   ibi_num_extra_bytes = target_rhs.ibi_num_extra_bytes;
@@ -142,6 +157,10 @@ function bit i3c_target_tx::do_compare(uvm_object rhs,
     daa_ack         == target_rhs.daa_ack         &&
     hotjoin_addr    == target_rhs.hotjoin_addr    &&
     ibi_mdb         == target_rhs.ibi_mdb         &&
+    hdr_data        == target_rhs.hdr_data        &&
+    hdr_crc         == target_rhs.hdr_crc         &&
+    hdr_parity      == target_rhs.hdr_parity      &&
+    hdr_tbit        == target_rhs.hdr_tbit        &&
     ibi_num_extra_bytes == target_rhs.ibi_num_extra_bytes &&
     ibi_extra_data       == target_rhs.ibi_extra_data       &&
     ibi_t1                == target_rhs.ibi_t1                &&
@@ -186,6 +205,14 @@ function void i3c_target_tx::do_print(uvm_printer printer);
     if (txn_type == HOTJOIN)
       printer.print_field("hotjoin_addr",
         this.hotjoin_addr, $bits(hotjoin_addr), UVM_HEX);
+    if (txn_type == HDR_WRITE || txn_type == HDR_READ) begin
+      foreach(writeData[i])
+        printer.print_field($sformatf("hdr_writeData[%0d]", i),
+          this.writeData[i], $bits(writeData[i]), UVM_HEX);
+      foreach(readData[i])
+        printer.print_field($sformatf("hdr_readData[%0d]", i),
+          this.readData[i], $bits(readData[i]), UVM_HEX);
+    end
     if (txn_type == IBI) begin
       printer.print_field("ibi_mdb",
         this.ibi_mdb, $bits(ibi_mdb), UVM_HEX);
@@ -229,3 +256,4 @@ function bit[1:0] i3c_target_tx::getReadDataStatus();
   return ({ack_value, nack_value});
 endfunction : getReadDataStatus
 `endif
+
