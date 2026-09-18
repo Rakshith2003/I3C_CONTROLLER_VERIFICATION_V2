@@ -725,6 +725,22 @@ task i3c_scoreboard::compare_with_hdr_target();
   target_tx_count++;
   `uvm_info("SB", $sformatf("Target[%0d] HDR pkt:\n%s", tgt_idx, tgt.sprint()),
     UVM_HIGH)
+
+  // -- Operation check -- NEW, merged in from teammate's HDR scoreboard.
+  begin
+    operationType_e exp_op = (exp_direction == 1'b0) ?
+                             i3c_globals_pkg::I3C_WRITE :
+                             i3c_globals_pkg::I3C_READ;
+    if (exp_op == tgt.operation)
+      `uvm_info("SB_HDR_OP_MATCH",
+        $sformatf("[target %0d] HDR Operation %s PASS", tgt_idx, exp_op.name()),
+        UVM_MEDIUM)
+    else
+      `uvm_error("SB_HDR_OP_MISMATCH",
+        $sformatf("[target %0d] HDR Operation: expected %s got %s",
+                  tgt_idx, exp_op.name(), tgt.operation.name()))
+  end
+
   if (exp_direction == 1'b0) begin
     // -- HDR WRITE --
     int actual_bytes;
@@ -753,7 +769,6 @@ task i3c_scoreboard::compare_with_hdr_target();
       end
     end
   end else begin
-    // -- HDR READ --
     bit [7:0]     apb_read_data[$];
     apb_master_tx rd_pkt;
     int           rd_count = 0;
@@ -776,27 +791,19 @@ task i3c_scoreboard::compare_with_hdr_target();
     end
     if (apb_read_data.size() != tgt.readData.size()) begin
       `uvm_error("SB_HDR_RDATA_SIZE",
-        $sformatf("[target %0d] HDR read size mismatch: apb=%0d target=%0d",
+        $sformatf("[target %0d] HDR read size mismatch: apb=%0d target_driven=%0d",
                   tgt_idx, apb_read_data.size(), tgt.readData.size()))
     end else begin
-      for (int i = 0; i < tgt.readData.size(); i++) begin
-        bit [7:0] exp_val;
-        if (i < exp_rd_wr_data.size())
-          exp_val = exp_rd_wr_data[i];
-        else begin
-          exp_val = 8'hFF;
-          `uvm_warning("SB_HDR_RDATA_EMPTY",
-            $sformatf("[target %0d] exp_rd_wr_data queue too small", tgt_idx))
-        end
-        if (exp_val == tgt.readData[i][7:0]) begin
+      for (int i = 0; i < apb_read_data.size(); i++) begin
+        if (apb_read_data[i] == tgt.readData[i][7:0]) begin
           `uvm_info("SB_HDR_RDATA_MATCH",
-            $sformatf("[target %0d] HDR readData[%0d]: expected 0x%0x got 0x%0x PASS",
-                      tgt_idx, i, exp_val, tgt.readData[i][7:0]), UVM_MEDIUM)
+            $sformatf("[target %0d] HDR readData[%0d]: target drove 0x%0x, APB received 0x%0x PASS",
+                      tgt_idx, i, tgt.readData[i][7:0], apb_read_data[i]), UVM_MEDIUM)
           hdr_read_pass++;
         end else begin
           `uvm_error("SB_HDR_RDATA_MISMATCH",
-            $sformatf("[target %0d] HDR readData[%0d]: expected 0x%0x got 0x%0x FAIL",
-                      tgt_idx, i, exp_val, tgt.readData[i][7:0]))
+            $sformatf("[target %0d] HDR readData[%0d]: target drove 0x%0x, APB received 0x%0x FAIL",
+                      tgt_idx, i, tgt.readData[i][7:0], apb_read_data[i]))
           hdr_read_fail++;
         end
       end
@@ -1895,4 +1902,3 @@ function void i3c_scoreboard::check_phase(
 endfunction : check_phase
 
 `endif
-
