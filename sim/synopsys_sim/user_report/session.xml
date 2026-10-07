@@ -1,0 +1,38 @@
+<session version="1.1" release="Q-2020.03-SP2-8" timestp="2026-10-06 09:43:26 GMT">
+  <info>
+    <attr name="datetime" value="Tue Oct  6 15:14:34 2026
+"/>
+    <attr name="command" value="urg -report user_report -dir simv.vdb"/>
+  </info>
+  <hvp>
+    <datadef>
+      <metdef name="Group" type="percent" aggregator="average" builtin="1" />
+    </datadef>
+  </hvp>
+  <old_coverage>
+  <scope type="top" name="top">
+    <metric name="Group" value="0%" />
+  </scope>
+  <scope type="instance" name="top">
+  </scope>
+  <scope type="group" name="top">
+    <scope type="group" name="i3c_target_pkg::i3c_target_coverage::target_covergroup">
+      <metric name="Group" value="0%" />
+    </scope>
+    <scope type="group" name="i3c_target_pkg::i3c_target_coverage::daa_covergroup">
+      <metric name="Group" value="0%" />
+    </scope>
+    <scope type="group" name="i3c_target_pkg::i3c_target_coverage::ibi_covergroup">
+      <metric name="Group" value="0%" />
+    </scope>
+    <scope type="group" name="i3c_target_pkg::i3c_target_coverage::hdr_covergroup">
+      <metric name="Group" value="0%" />
+    </scope>
+    <scope type="group" name="apb_master_pkg::apb_master_coverage::apb_master_covergroup">
+      <metric name="Group" value="0%" />
+    </scope>
+  </scope>
+  <scope type="assert" name="Statistics">
+  </scope>
+  </old_coverage>
+</session>

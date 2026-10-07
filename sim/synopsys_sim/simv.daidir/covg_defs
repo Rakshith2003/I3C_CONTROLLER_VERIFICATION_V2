@@ -1,0 +1,952 @@
+global coverage_group 0 i3c_target_pkg::i3c_target_coverage::target_covergroup __coverage_i3c_target_coverage.target_covergroup unused_i3c_target_coverage_target_covergroup_loop_label i3c_target_pkg 0 1 0 0 0  ( 0 
+)
+ 1 2
+ 169 /fetools/work_area/frontend/Batch_10/rakshith_shetty/DV_PROJECTS/PROTOCOL/I3C_CONTROLLER_VERIFICATION_V2/sim/synopsys_sim/../../src/hvl_top/target/i3c_target_coverage.sv
+ 173 /fetools/work_area/frontend/Batch_10/rakshith_shetty/DV_PROJECTS/PROTOCOL/I3C_CONTROLLER_VERIFICATION_V2/sim/synopsys_sim/../../src/hvl_top/apb_master/apb_master_coverage.sv
+ 6 0 0 0 1 0 0 0 0  1
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_1f
+0
+0
+0
+64
+0
+ 0
+
+7
+0
+1
+0
+ 12 OPERATION_CP 8 0 0 0 0 0 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 7 1 1 32 i3c_globals_pkg::operationType_e 1 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_2
+ 0
+ 2 1 1 0 0 1 1 15 OPERATION_WRITE 10 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 14 OPERATION_READ 11 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 17 TARGET_ADDRESS_CP 13 0 0 0 0 0 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_3 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_3 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 7 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_a
+ 0
+ 2 1 1 0 0 1 1 13 TARGETADDRESS 15 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_4 0 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_5 0 0 0 0 0
+ 0
+ 1 3 0 0 1 1 15 RESERVEDADDRESS 16 0 0 3 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_6 0 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_7 0 0 0 0 0
+ 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_8 0 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_9 0 0 0 0 0
+ 0
+
+ 24 TARGET_ADDRESS_STATUS_CP 18 0 0 0 0 0 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_b 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_b 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 7 1 1 30 i3c_globals_pkg::acknowledge_e 1 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_c
+ 0
+ 2 1 1 0 0 1 1 25 TARGET_ADDRESS_STATUS_ACK 20 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 26 TARGET_ADDRESS_STATUS_NACK 21 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 12 WRITEDATA_CP 23 0 0 0 0 0 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_d 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_d 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 1 32 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_14
+ 0
+ 6 1 1 0 0 1 1 17 WRITEDATA_WIDTH_1 25 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_4 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 17 WRITEDATA_WIDTH_2 26 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_e 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 17 WRITEDATA_WIDTH_3 27 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_f 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 17 WRITEDATA_WIDTH_4 28 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_10 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 17 WRITEDATA_WIDTH_5 29 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_11 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 17 WRITEDATA_WIDTH_6 30 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_12 0 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_13 0 0 0 0 0
+ 0
+
+ 11 READDATA_CP 32 0 0 0 0 0 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_15 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_15 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 1 32 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_16
+ 0
+ 6 1 1 0 0 1 1 16 READDATA_WIDTH_1 34 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_4 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 16 READDATA_WIDTH_2 35 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_e 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 16 READDATA_WIDTH_3 36 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_f 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 16 READDATA_WIDTH_4 37 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_10 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 16 READDATA_WIDTH_5 38 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_11 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 16 READDATA_WIDTH_6 39 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_12 0 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_13 0 0 0 0 0
+ 0
+
+ 19 WRITEDATA_STATUS_CP 42 0 0 0 0 0 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_17 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_17 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 2 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_1c
+ 0
+ 3 1 1 0 0 1 1 24 WRITEDATA_STATUS_ALL_ACK 44 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_18 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 25 WRITEDATA_STATUS_ALL_NACK 45 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_19 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 20 WRITEDATA_STATUS_MIX 46 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_1a 0 0 0 0 0 0 0
+ 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_1b 0 0 0 0 0 0 0
+ 0
+
+ 18 READDATA_STATUS_CP 49 0 0 0 0 0 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_1d 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_1d 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 2 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_1e
+ 0
+ 3 1 1 0 0 1 1 23 READDATA_STATUS_ALL_ACK 51 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_18 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 24 READDATA_STATUS_ALL_NACK 52 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_19 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 19 READDATA_STATUS_MIX 53 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_1a 0 0 0 0 0 0 0
+ 1 1 144 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_1b 0 0 0 0 0 0 0
+ 0
+
+ 26 OPERATION_CP_X_READDATA_CP 0 55 0 0 0 0 0 2 0 4 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 1 1 2 0 0 -1 0 0 1 1 13 invalid_write 57 0 2 0 1 1 1 0 0 0 1 1 1 143 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_target_covergroup_fn_6 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+end_coverage_group
+global coverage_group 0 i3c_target_pkg::i3c_target_coverage::daa_covergroup __coverage_i3c_target_coverage.daa_covergroup unused_i3c_target_coverage_daa_covergroup_loop_label i3c_target_pkg 0 1 0 0 0  ( 0 
+)
+ 0 60 0 0 0 1 0 0 0 0  1
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_13
+0
+0
+0
+64
+0
+ 0
+
+5
+0
+1
+0
+ 10 DAA_ACK_CP 62 0 0 0 0 0 138 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn 138 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 1 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_2
+ 0
+ 2 1 1 0 0 1 1 7 DAA_ACK 64 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 2 0 0 1 1 8 DAA_NACK 65 0 0 2 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 14 DAA_DYNADDR_CP 67 0 0 0 0 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_3 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_3 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 7 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_a
+ 0
+ 2 1 1 0 0 1 1 11 DYNADDR_BIN 69 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_4 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_5 0 0 0 0 0
+ 0
+ 1 3 0 0 1 1 16 DYNADDR_RESERVED 70 0 0 3 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_6 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_7 0 0 0 0 0
+ 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_8 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_9 0 0 0 0 0
+ 0
+
+ 19 DAA_PID_TOP_BYTE_CP 72 0 0 0 0 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_b 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_b 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 8 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_e
+ 0
+ 2 1 1 0 0 1 1 11 PID_NONZERO 74 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_c 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_d 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 8 PID_ZERO 75 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_6 0 0 0 0 0 0 0
+ 0
+
+ 15 DAA_BCR_ROLE_CP 77 0 0 0 0 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_f 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_f 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 1 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_10
+ 0
+ 2 1 1 0 0 1 1 11 TARGET_ROLE 79 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 2 0 0 1 1 15 CONTROLLER_ROLE 80 0 0 2 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 10 DAA_DCR_CP 82 0 0 0 0 0 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_11 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_11 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 8 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_12
+ 0
+ 1 1 1 0 0 1 1 7 DCR_BIN 84 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_6 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_daa_covergroup_fn_d 0 0 0 0 0
+ 0
+
+ 17 DAA_DYNADDR_X_ACK 0 86 0 0 0 0 0 2 1 0 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+end_coverage_group
+global coverage_group 0 i3c_target_pkg::i3c_target_coverage::ibi_covergroup __coverage_i3c_target_coverage.ibi_covergroup unused_i3c_target_coverage_ibi_covergroup_loop_label i3c_target_pkg 0 1 0 0 0  ( 0 
+)
+ 0 89 0 0 0 1 0 0 0 0  1
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_f
+0
+0
+0
+64
+0
+ 0
+
+4
+0
+1
+0
+ 10 IBI_ACK_CP 91 0 0 0 0 0 138 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn 138 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 1 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_2
+ 0
+ 2 1 1 0 0 1 1 7 IBI_ACK 93 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 2 0 0 1 1 8 IBI_NACK 94 0 0 2 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 10 IBI_MDB_CP 96 0 0 0 0 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_3 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_3 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 8 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_6
+ 0
+ 1 1 1 0 0 1 1 11 IBI_MDB_BIN 98 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_4 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_5 0 0 0 0 0
+ 0
+
+ 9 IBI_T1_CP 101 0 0 0 0 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_7 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_7 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 1 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_8
+ 0
+ 2 1 1 0 0 1 1 12 T1_MORE_DATA 103 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_1 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 7 T1_STOP 104 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_0 0 0 0 0 0 0 0
+ 0
+
+ 22 IBI_NUM_EXTRA_BYTES_CP 107 0 0 0 0 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_9 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_9 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 1 32 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_e
+ 0
+ 4 1 1 0 0 1 1 10 ZERO_EXTRA 109 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_4 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 9 ONE_EXTRA 110 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_a 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 9 TWO_EXTRA 111 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_b 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 19 THREE_OR_MORE_EXTRA 112 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_c 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_ibi_covergroup_fn_d 0 0 0 0 0
+ 0
+
+ 18 IBI_T1_X_NUM_EXTRA 0 114 0 0 0 0 0 2 2 3 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+end_coverage_group
+global coverage_group 0 i3c_target_pkg::i3c_target_coverage::hdr_covergroup __coverage_i3c_target_coverage.hdr_covergroup unused_i3c_target_coverage_hdr_covergroup_loop_label i3c_target_pkg 0 1 0 0 0  ( 0 
+)
+ 0 117 0 0 0 1 0 0 0 0  1
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_1f
+0
+0
+0
+64
+0
+ 0
+
+7
+0
+1
+0
+ 16 HDR_OPERATION_CP 120 0 0 0 0 0 138 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn 138 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 7 1 1 32 i3c_globals_pkg::operationType_e 1 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_2
+ 0
+ 2 1 1 0 0 1 1 19 HDR_OPERATION_WRITE 122 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 18 HDR_OPERATION_READ 123 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 21 HDR_TARGET_ADDRESS_CP 126 0 0 0 0 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_3 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_3 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 7 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_a
+ 0
+ 2 1 1 0 0 1 1 17 HDR_TARGETADDRESS 128 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_4 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_5 0 0 0 0 0
+ 0
+ 1 3 0 0 1 1 19 HDR_RESERVEDADDRESS 129 0 0 3 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_6 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_7 0 0 0 0 0
+ 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_8 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_9 0 0 0 0 0
+ 0
+
+ 28 HDR_TARGET_ADDRESS_STATUS_CP 132 0 0 0 0 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_b 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_b 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 7 1 1 30 i3c_globals_pkg::acknowledge_e 1 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_c
+ 0
+ 2 1 1 0 0 1 1 29 HDR_TARGET_ADDRESS_STATUS_ACK 134 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 30 HDR_TARGET_ADDRESS_STATUS_NACK 135 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 16 HDR_WRITEDATA_CP 138 0 0 0 0 0 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_d 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_d 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 1 32 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_14
+ 0
+ 5 1 1 0 0 1 1 21 HDR_WRITEDATA_WIDTH_1 140 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_e 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 21 HDR_WRITEDATA_WIDTH_2 141 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_f 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 21 HDR_WRITEDATA_WIDTH_3 142 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_10 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 21 HDR_WRITEDATA_WIDTH_4 143 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_11 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 21 HDR_WRITEDATA_WIDTH_5 144 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_12 0 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_13 0 0 0 0 0
+ 0
+
+ 15 HDR_READDATA_CP 147 0 0 0 0 0 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_15 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_15 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 1 32 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_16
+ 0
+ 5 1 1 0 0 1 1 20 HDR_READDATA_WIDTH_1 149 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_e 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 20 HDR_READDATA_WIDTH_2 150 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_f 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 20 HDR_READDATA_WIDTH_3 151 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_10 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 20 HDR_READDATA_WIDTH_4 152 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_11 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 20 HDR_READDATA_WIDTH_5 153 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_12 0 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_13 0 0 0 0 0
+ 0
+
+ 23 HDR_WRITEDATA_STATUS_CP 156 0 0 0 0 0 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_17 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_17 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 2 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_1c
+ 0
+ 3 1 1 0 0 1 1 28 HDR_WRITEDATA_STATUS_ALL_ACK 158 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_18 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 29 HDR_WRITEDATA_STATUS_ALL_NACK 159 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_19 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 24 HDR_WRITEDATA_STATUS_MIX 160 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_1a 0 0 0 0 0 0 0
+ 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_1b 0 0 0 0 0 0 0
+ 0
+
+ 22 HDR_READDATA_STATUS_CP 163 0 0 0 0 0 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_1d 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_1d 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 2 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_1e
+ 0
+ 3 1 1 0 0 1 1 27 HDR_READDATA_STATUS_ALL_ACK 165 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_18 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 28 HDR_READDATA_STATUS_ALL_NACK 166 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_19 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 23 HDR_READDATA_STATUS_MIX 167 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_1a 0 0 0 0 0 0 0
+ 1 1 141 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_1b 0 0 0 0 0 0 0
+ 0
+
+ 34 HDR_OPERATION_CP_X_HDR_READDATA_CP 0 170 0 0 0 0 0 2 0 4 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 1 1 2 0 0 -1 0 0 1 1 13 invalid_write 172 0 2 0 1 1 1 0 0 0 1 1 1 140 i3c_target_pkg_i3c_target_coverage_11_0::i3c_target_pkg_i3c_target_coverage_11_0_i3c_target_pkg_i3c_target_coverage_11_0_hdr_covergroup_fn_6 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0
+
+end_coverage_group
+global coverage_group 0 apb_master_pkg::apb_master_coverage::apb_master_covergroup __coverage_apb_master_coverage.apb_master_covergroup unused_apb_master_coverage_apb_master_covergroup_loop_label apb_master_pkg 0 1 0 0 0  ( 0 
+)
+ 0 20 1 0 0 1 0 0 0 0  1
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 148 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_19
+0
+0
+0
+64
+0
+ 0
+
+8
+0
+4
+0
+ 7 PSEL_CP 24 1 0 0 0 0 145 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn 145 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 7 16 1 26 apb_global_pkg::slave_no_e 1 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_1
+ 0
+ 1 1 1 1 0 1 1 9 APB_PSELX 34 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_0 0 0 0 0 0 0 0
+ 0
+
+ 8 PADDR_CP 37 1 0 0 0 0 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_2 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_2 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 32 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_5
+ 0
+ 2 1 1 0 0 1 1 9 APB_PADDR 39 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_3 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 11 APB_PADDR_1 40 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_4 0 0 0 0 0 0 0
+ 0
+
+ 9 PWRITE_CP 44 1 0 0 0 0 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_6 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_6 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 7 1 1 25 apb_global_pkg::tx_type_e 1 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_9
+ 0
+ 1 1 1 1 0 1 1 16 TRANSACTION_TYPE 46 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_7 0 0 0 0 0 0 0
+ 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_8 0 0 0 0 0 0 0
+ 0
+
+ 9 PWDATA_CP 49 1 0 0 0 0 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_a 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_a 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 32 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_e
+ 0
+ 1 1 1 1 0 1 1 14 APB_WRITE_DATA 51 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 3 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_b 0 0 0 0 0 0 0
+ 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_c 0 0 0 0 0 0 0
+ 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_d 0 0 0 0 0 0 0
+ 0
+
+ 9 PRDATA_CP 54 1 0 0 0 0 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_f 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_f 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 32 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 148 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_10
+ 0
+ 1 1 1 1 0 1 1 13 APB_READ_DATA 56 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 3 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_b 0 0 0 0 0 0 0
+ 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_c 0 0 0 0 0 0 0
+ 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_d 0 0 0 0 0 0 0
+ 0
+
+ 10 PSLVERR_CP 60 1 0 0 0 0 148 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_11 148 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_11 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 7 1 1 29 apb_global_pkg::slave_error_e 1 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 148 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_12
+ 0
+ 2 1 1 0 0 1 1 18 APB_SLAVE_NO_ERROR 62 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_7 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 15 APB_SLAVE_ERROR 63 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_8 0 0 0 0 0 0 0
+ 0
+
+ 8 PSTRB_CP 67 1 0 0 0 0 148 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_13 148 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_13 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 4 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 148 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_15
+ 0
+ 1 1 1 1 0 1 1 9 APB_PSTRB 69 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_b 0 148 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_14 0 0 0 0 0
+ 0
+
+ 8 PPROT_CP 72 1 0 0 0 0 148 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_16 148 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_16 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 7 3 1 33 apb_global_pkg::protection_type_e 0 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 148 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_18
+ 0
+ 1 1 1 1 0 1 1 9 APB_PPROT 74 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 147 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_b 0 148 apb_master_pkg_apb_master_coverage_11_0::apb_master_pkg_apb_master_coverage_11_0_apb_master_pkg_apb_master_coverage_11_0_apb_master_covergroup_fn_17 0 0 0 0 0
+ 0
+
+ 20 PADDR_CP_X_PWDATA_CP 0 80 1 0 0 0 0 2 1 3 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 20 PADDR_CP_X_PRDATA_CP 0 81 1 0 0 0 0 2 1 4 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 20 PSTRB_CP_X_PWDATA_CP 0 82 1 0 0 0 0 2 6 3 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 20 PSTRB_CP_X_PRDATA_CP 0 83 1 0 0 0 0 2 6 4 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+end_coverage_group

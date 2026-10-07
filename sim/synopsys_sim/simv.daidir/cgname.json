@@ -1,0 +1,236 @@
+{
+    "_vcs_DPI_package": [
+        "_vcs_DPI_package",
+        "uM9F1",
+        "module",
+        1
+    ],
+    "fsdbDumpDesign$$": [
+        "fsdbDumpDesign0x240x24",
+        "cfx32",
+        "module",
+        2
+    ],
+    "vcs_paramclassrepository": [
+        "vcs_paramclassrepository",
+        "hEeZs",
+        "module",
+        3
+    ],
+    "_vcs_unit__2257996528": [
+        "_vcs_unit__2257996528",
+        "Dbqbm",
+        "module",
+        4
+    ],
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        5
+    ],
+    "uvm_pkg": [
+        "uvm_pkg",
+        "zr7M1",
+        "module",
+        6
+    ],
+    "_vcs_msglog": [
+        "_vcs_msglog",
+        "zQBzV",
+        "module",
+        7
+    ],
+    "uvm_custom_install_recording": [
+        "uvm_custom_install_recording",
+        "nhiwz",
+        "module",
+        8
+    ],
+    "uvm_custom_install_verdi_recording": [
+        "uvm_custom_install_verdi_recording",
+        "EbjT3",
+        "module",
+        9
+    ],
+    "i3c_globals_pkg": [
+        "i3c_globals_pkg",
+        "hTpej",
+        "module",
+        10
+    ],
+    "apb_global_pkg": [
+        "apb_global_pkg",
+        "Qqjd9",
+        "module",
+        11
+    ],
+    "i3c_target_pkg": [
+        "i3c_target_pkg",
+        "Paa64",
+        "module",
+        12
+    ],
+    "apb_master_pkg": [
+        "apb_master_pkg",
+        "uBHNZ",
+        "module",
+        13
+    ],
+    "i3c_target_seq_pkg": [
+        "i3c_target_seq_pkg",
+        "x5GZa",
+        "module",
+        14
+    ],
+    "apb_master_seq_pkg": [
+        "apb_master_seq_pkg",
+        "UiSaj",
+        "module",
+        15
+    ],
+    "i3c_env_pkg": [
+        "i3c_env_pkg",
+        "rJwF4",
+        "module",
+        16
+    ],
+    "i3c_ral_virtual_seq_pkg": [
+        "i3c_ral_virtual_seq_pkg",
+        "K1ian",
+        "module",
+        17
+    ],
+    "i3c_test_pkg": [
+        "i3c_test_pkg",
+        "pp8Yf",
+        "module",
+        18
+    ],
+    "i3c_if_0000": [
+        "i3c_if_0000",
+        "LdEUV",
+        "module",
+        19
+    ],
+    "apb_if": [
+        "apb_if",
+        "d9vZk",
+        "module",
+        20
+    ],
+    "i3c_target_driver_bfm": [
+        "i3c_target_driver_bfm",
+        "eQSHt",
+        "module",
+        21
+    ],
+    "i3c_target_monitor_bfm": [
+        "i3c_target_monitor_bfm",
+        "geJSQ",
+        "module",
+        22
+    ],
+    "i3c_target_agent_bfm": [
+        "i3c_target_agent_bfm",
+        "IDwu6",
+        "module",
+        23
+    ],
+    "i3c_target_agent_bfm_0000": [
+        "i3c_target_agent_bfm_0000",
+        "QMJSu",
+        "module",
+        24
+    ],
+    "i3c_target_agent_bfm_0001": [
+        "i3c_target_agent_bfm_0001",
+        "q52R0",
+        "module",
+        25
+    ],
+    "i3c_target_agent_bfm_0002": [
+        "i3c_target_agent_bfm_0002",
+        "egN3n",
+        "module",
+        26
+    ],
+    "apb_master_driver_bfm": [
+        "apb_master_driver_bfm",
+        "sfMtz",
+        "module",
+        27
+    ],
+    "apb_master_monitor_bfm": [
+        "apb_master_monitor_bfm",
+        "km5Mf",
+        "module",
+        28
+    ],
+    "apb_master_agent_bfm": [
+        "apb_master_agent_bfm",
+        "RK1HC",
+        "module",
+        29
+    ],
+    "hdl_top": [
+        "hdl_top",
+        "Svwsh",
+        "module",
+        30
+    ],
+    "hvl_top": [
+        "hvl_top",
+        "hLrg8",
+        "module",
+        31
+    ],
+    "i3c_cmd_ctrl": [
+        "i3c_cmd_ctrl",
+        "Szj9W",
+        "module",
+        32
+    ],
+    "i3c_device_table": [
+        "i3c_device_table",
+        "MP6GK",
+        "module",
+        33
+    ],
+    "i3c_reg_interface": [
+        "i3c_reg_interface",
+        "eMGxj",
+        "module",
+        34
+    ],
+    "i3c_Rx_FIFO": [
+        "i3c_Rx_FIFO",
+        "T9ysZ",
+        "module",
+        35
+    ],
+    "i3c_scl_gen": [
+        "i3c_scl_gen",
+        "PJjZN",
+        "module",
+        36
+    ],
+    "i3c_Tx_FIFO": [
+        "i3c_Tx_FIFO",
+        "wsgBc",
+        "module",
+        37
+    ],
+    "i3c_hdr_fsm": [
+        "i3c_hdr_fsm",
+        "E35n8",
+        "module",
+        38
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        39
+    ]
+}

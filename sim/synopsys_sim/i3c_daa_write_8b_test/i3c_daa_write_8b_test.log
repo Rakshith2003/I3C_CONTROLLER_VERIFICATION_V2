@@ -1,0 +1,1017 @@
+Command: /fetools/work_area/frontend/Batch_10/rakshith_shetty/DV_PROJECTS/PROTOCOL/I3C_CONTROLLER_VERIFICATION_V2/sim/synopsys_sim/./simv +UVM_TESTNAME=i3c_daa_write_8b_test +UVM_VERBOSITY=UVM_NONE -l i3c_daa_write_8b_test/i3c_daa_write_8b_test.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep  9 14:01 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+*Verdi* Loading libsscore_vcs202003.so
+FSDB Dumper for VCS, Release Verdi_Q-2020.03-SP2-8, Linux x86_64/64bit, 08/31/2021
+(C) 1996 - 2021 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'novas.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : Enable +all dumping.
+*Verdi* : End of traversing.
+I3C_TARGET_DRIVER_BFM
+I3C_TARGET_MONITOR_BFM
+i3c_target_agent_bfm: target_ID=0
+I3C_TARGET_DRIVER_BFM
+I3C_TARGET_MONITOR_BFM
+i3c_target_agent_bfm: target_ID=1
+I3C_TARGET_DRIVER_BFM
+I3C_TARGET_MONITOR_BFM
+i3c_target_agent_bfm: target_ID=2
+I3C_TARGET_DRIVER_BFM
+I3C_TARGET_MONITOR_BFM
+i3c_target_agent_bfm: target_ID=3
+HDL TOP – multi-slave (4 targets)
+UVM_INFO ../../src/hvl_top/test/i3c_base_test.sv(77) @ 0: uvm_test_top [i3c_daa_write_8b_test] target_agent_cfg[0]:
+----------------------------------------------------------------------
+Name                       Type                     Size  Value       
+----------------------------------------------------------------------
+i3c_target_agent_cfg_h[0]  i3c_target_agent_config  -     @519        
+  isActive                 string                   10    UVM_ACTIVE  
+  dataTransferDirection    string                   9     MSB_FIRST   
+  hasCoverage              string                   4     TRUE        
+  targetAddress            integral                 7     'h68        
+  target_id                integral                 32    'd0         
+  daa_accept_address       integral                 1     'b1         
+  pending_hot_join         integral                 1     'b0         
+  hotjoin_addr             integral                 7     'h20        
+  pending_ibi              integral                 1     'b0         
+  ibi_mdb                  integral                 8     'h17        
+  ibi_num_extra_bytes      integral                 32    'd0         
+  pending_sdr              integral                 1     'b0         
+  pending_hdr_write        integral                 1     'b0         
+  pending_hdr_read         integral                 1     'b0         
+  hdr_mode                 integral                 1     'b0         
+  pid                      integral                 48    'haabbcc0001
+  bcr                      integral                 8     'h0         
+  dcr                      integral                 8     'hc2        
+----------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/test/i3c_base_test.sv(77) @ 0: uvm_test_top [i3c_daa_write_8b_test] target_agent_cfg[1]:
+----------------------------------------------------------------------
+Name                       Type                     Size  Value       
+----------------------------------------------------------------------
+i3c_target_agent_cfg_h[1]  i3c_target_agent_config  -     @520        
+  isActive                 string                   10    UVM_ACTIVE  
+  dataTransferDirection    string                   9     MSB_FIRST   
+  hasCoverage              string                   4     TRUE        
+  targetAddress            integral                 7     'h6c        
+  target_id                integral                 32    'd1         
+  daa_accept_address       integral                 1     'b1         
+  pending_hot_join         integral                 1     'b0         
+  hotjoin_addr             integral                 7     'h20        
+  pending_ibi              integral                 1     'b0         
+  ibi_mdb                  integral                 8     'h17        
+  ibi_num_extra_bytes      integral                 32    'd0         
+  pending_sdr              integral                 1     'b0         
+  pending_hdr_write        integral                 1     'b0         
+  pending_hdr_read         integral                 1     'b0         
+  hdr_mode                 integral                 1     'b0         
+  pid                      integral                 48    'haabbcc0002
+  bcr                      integral                 8     'h0         
+  dcr                      integral                 8     'hc3        
+----------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/test/i3c_base_test.sv(77) @ 0: uvm_test_top [i3c_daa_write_8b_test] target_agent_cfg[2]:
+----------------------------------------------------------------------
+Name                       Type                     Size  Value       
+----------------------------------------------------------------------
+i3c_target_agent_cfg_h[2]  i3c_target_agent_config  -     @521        
+  isActive                 string                   10    UVM_ACTIVE  
+  dataTransferDirection    string                   9     MSB_FIRST   
+  hasCoverage              string                   4     TRUE        
+  targetAddress            integral                 7     'h7c        
+  target_id                integral                 32    'd2         
+  daa_accept_address       integral                 1     'b1         
+  pending_hot_join         integral                 1     'b0         
+  hotjoin_addr             integral                 7     'h20        
+  pending_ibi              integral                 1     'b0         
+  ibi_mdb                  integral                 8     'h17        
+  ibi_num_extra_bytes      integral                 32    'd0         
+  pending_sdr              integral                 1     'b0         
+  pending_hdr_write        integral                 1     'b0         
+  pending_hdr_read         integral                 1     'b0         
+  hdr_mode                 integral                 1     'b0         
+  pid                      integral                 48    'haabbcc0003
+  bcr                      integral                 8     'h0         
+  dcr                      integral                 8     'hc4        
+----------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/test/i3c_base_test.sv(77) @ 0: uvm_test_top [i3c_daa_write_8b_test] target_agent_cfg[3]:
+----------------------------------------------------------------------
+Name                       Type                     Size  Value       
+----------------------------------------------------------------------
+i3c_target_agent_cfg_h[3]  i3c_target_agent_config  -     @522        
+  isActive                 string                   10    UVM_ACTIVE  
+  dataTransferDirection    string                   9     MSB_FIRST   
+  hasCoverage              string                   4     TRUE        
+  targetAddress            integral                 7     'h4c        
+  target_id                integral                 32    'd3         
+  daa_accept_address       integral                 1     'b1         
+  pending_hot_join         integral                 1     'b0         
+  hotjoin_addr             integral                 7     'h20        
+  pending_ibi              integral                 1     'b0         
+  ibi_mdb                  integral                 8     'h17        
+  ibi_num_extra_bytes      integral                 32    'd0         
+  pending_sdr              integral                 1     'b0         
+  pending_hdr_write        integral                 1     'b0         
+  pending_hdr_read         integral                 1     'b0         
+  hdr_mode                 integral                 1     'b0         
+  pid                      integral                 48    'haabbcc0004
+  bcr                      integral                 8     'h0         
+  dcr                      integral                 8     'hc5        
+----------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/test/i3c_base_test.sv(85) @ 0: uvm_test_top [i3c_daa_write_8b_test] i3c_env_cfg:
+----------------------------------------------------
+Name                     Type            Size  Value
+----------------------------------------------------
+i3c_env_cfg_h            i3c_env_config  -     @500 
+  has_scoreboard         integral        1     1    
+  has_virtual_sequencer  integral        1     1    
+  no_of_targets          integral        32    'd4  
+  has_daa                integral        1     1    
+  no_of_daa_devices      integral        32    'd4  
+----------------------------------------------------
+
+---------------------------------------------------------------------------------
+Name                              Type                                Size  Value
+---------------------------------------------------------------------------------
+uvm_test_top                      i3c_daa_write_8b_test               -     @492 
+  i3c_env_h                       i3c_env                             -     @501 
+    apb_master_agent_h            apb_master_agent                    -     @536 
+      apb_master_cov_h            apb_master_coverage                 -     @957 
+        analysis_imp              uvm_analysis_imp                    -     @965 
+      apb_master_drv_proxy_h      apb_master_driver_proxy             -     @791 
+        rsp_port                  uvm_analysis_port                   -     @808 
+        seq_item_port             uvm_seq_item_pull_port              -     @799 
+      apb_master_mon_proxy_h      apb_master_monitor_proxy            -     @940 
+        apb_master_analysis_port  uvm_analysis_port                   -     @948 
+      apb_master_seqr_h           apb_master_sequencer                -     @817 
+        rsp_export                uvm_analysis_export                 -     @825 
+        seq_item_export           uvm_seq_item_pull_imp               -     @931 
+        arbitration_queue         array                               0     -    
+        lock_queue                array                               0     -    
+        num_last_reqs             integral                            32    'd1  
+        num_last_rsps             integral                            32    'd1  
+    i3c_scoreboard_h              i3c_scoreboard                      -     @699 
+      apb_analysis_fifo           uvm_tlm_analysis_fifo #(T)          -     @983 
+        analysis_export           uvm_analysis_imp                    -     @1027
+        get_ap                    uvm_analysis_port                   -     @1018
+        get_peek_export           uvm_get_peek_imp                    -     @1000
+        put_ap                    uvm_analysis_port                   -     @1009
+        put_export                uvm_put_imp                         -     @991 
+      ibi_analysis_fifo_0         uvm_tlm_analysis_fifo #(T)          -     @1248
+        analysis_export           uvm_analysis_imp                    -     @1292
+        get_ap                    uvm_analysis_port                   -     @1283
+        get_peek_export           uvm_get_peek_imp                    -     @1265
+        put_ap                    uvm_analysis_port                   -     @1274
+        put_export                uvm_put_imp                         -     @1256
+      ibi_analysis_fifo_1         uvm_tlm_analysis_fifo #(T)          -     @1301
+        analysis_export           uvm_analysis_imp                    -     @1345
+        get_ap                    uvm_analysis_port                   -     @1336
+        get_peek_export           uvm_get_peek_imp                    -     @1318
+        put_ap                    uvm_analysis_port                   -     @1327
+        put_export                uvm_put_imp                         -     @1309
+      ibi_analysis_fifo_2         uvm_tlm_analysis_fifo #(T)          -     @1354
+        analysis_export           uvm_analysis_imp                    -     @1398
+        get_ap                    uvm_analysis_port                   -     @1389
+        get_peek_export           uvm_get_peek_imp                    -     @1371
+        put_ap                    uvm_analysis_port                   -     @1380
+        put_export                uvm_put_imp                         -     @1362
+      ibi_analysis_fifo_3         uvm_tlm_analysis_fifo #(T)          -     @1407
+        analysis_export           uvm_analysis_imp                    -     @1451
+        get_ap                    uvm_analysis_port                   -     @1442
+        get_peek_export           uvm_get_peek_imp                    -     @1424
+        put_ap                    uvm_analysis_port                   -     @1433
+        put_export                uvm_put_imp                         -     @1415
+      target_analysis_fifo_0      uvm_tlm_analysis_fifo #(T)          -     @1036
+        analysis_export           uvm_analysis_imp                    -     @1080
+        get_ap                    uvm_analysis_port                   -     @1071
+        get_peek_export           uvm_get_peek_imp                    -     @1053
+        put_ap                    uvm_analysis_port                   -     @1062
+        put_export                uvm_put_imp                         -     @1044
+      target_analysis_fifo_1      uvm_tlm_analysis_fifo #(T)          -     @1089
+        analysis_export           uvm_analysis_imp                    -     @1133
+        get_ap                    uvm_analysis_port                   -     @1124
+        get_peek_export           uvm_get_peek_imp                    -     @1106
+        put_ap                    uvm_analysis_port                   -     @1115
+        put_export                uvm_put_imp                         -     @1097
+      target_analysis_fifo_2      uvm_tlm_analysis_fifo #(T)          -     @1142
+        analysis_export           uvm_analysis_imp                    -     @1186
+        get_ap                    uvm_analysis_port                   -     @1177
+        get_peek_export           uvm_get_peek_imp                    -     @1159
+        put_ap                    uvm_analysis_port                   -     @1168
+        put_export                uvm_put_imp                         -     @1150
+      target_analysis_fifo_3      uvm_tlm_analysis_fifo #(T)          -     @1195
+        analysis_export           uvm_analysis_imp                    -     @1239
+        get_ap                    uvm_analysis_port                   -     @1230
+        get_peek_export           uvm_get_peek_imp                    -     @1212
+        put_ap                    uvm_analysis_port                   -     @1221
+        put_export                uvm_put_imp                         -     @1203
+    i3c_target_agent_h[0]         i3c_target_agent                    -     @544 
+      i3c_target_cov_h            i3c_target_coverage                 -     @1640
+        analysis_imp              uvm_analysis_imp                    -     @1648
+      i3c_target_drv_proxy_h      i3c_target_driver_proxy             -     @1491
+        rsp_port                  uvm_analysis_port                   -     @1508
+        seq_item_port             uvm_seq_item_pull_port              -     @1499
+      i3c_target_mon_proxy_h      i3c_target_monitor_proxy            -     @1461
+        ibi_analysis_port         uvm_analysis_port                   -     @1478
+        target_analysis_port      uvm_analysis_port                   -     @1469
+      i3c_target_seqr_h           i3c_target_sequencer                -     @1517
+        rsp_export                uvm_analysis_export                 -     @1525
+        seq_item_export           uvm_seq_item_pull_imp               -     @1631
+        arbitration_queue         array                               0     -    
+        lock_queue                array                               0     -    
+        num_last_reqs             integral                            32    'd1  
+        num_last_rsps             integral                            32    'd1  
+    i3c_target_agent_h[1]         i3c_target_agent                    -     @552 
+      i3c_target_cov_h            i3c_target_coverage                 -     @1842
+        analysis_imp              uvm_analysis_imp                    -     @1850
+      i3c_target_drv_proxy_h      i3c_target_driver_proxy             -     @1693
+        rsp_port                  uvm_analysis_port                   -     @1710
+        seq_item_port             uvm_seq_item_pull_port              -     @1701
+      i3c_target_mon_proxy_h      i3c_target_monitor_proxy            -     @1663
+        ibi_analysis_port         uvm_analysis_port                   -     @1680
+        target_analysis_port      uvm_analysis_port                   -     @1671
+      i3c_target_seqr_h           i3c_target_sequencer                -     @1719
+        rsp_export                uvm_analysis_export                 -     @1727
+        seq_item_export           uvm_seq_item_pull_imp               -     @1833
+        arbitration_queue         array                               0     -    
+        lock_queue                array                               0     -    
+        num_last_reqs             integral                            32    'd1  
+        num_last_rsps             integral                            32    'd1  
+    i3c_target_agent_h[2]         i3c_target_agent                    -     @560 
+      i3c_target_cov_h            i3c_target_coverage                 -     @2044
+        analysis_imp              uvm_analysis_imp                    -     @2052
+      i3c_target_drv_proxy_h      i3c_target_driver_proxy             -     @1895
+        rsp_port                  uvm_analysis_port                   -     @1912
+        seq_item_port             uvm_seq_item_pull_port              -     @1903
+      i3c_target_mon_proxy_h      i3c_target_monitor_proxy            -     @1865
+        ibi_analysis_port         uvm_analysis_port                   -     @1882
+        target_analysis_port      uvm_analysis_port                   -     @1873
+      i3c_target_seqr_h           i3c_target_sequencer                -     @1921
+        rsp_export                uvm_analysis_export                 -     @1929
+        seq_item_export           uvm_seq_item_pull_imp               -     @2035
+        arbitration_queue         array                               0     -    
+        lock_queue                array                               0     -    
+        num_last_reqs             integral                            32    'd1  
+        num_last_rsps             integral                            32    'd1  
+    i3c_target_agent_h[3]         i3c_target_agent                    -     @568 
+      i3c_target_cov_h            i3c_target_coverage                 -     @2246
+        analysis_imp              uvm_analysis_imp                    -     @2254
+      i3c_target_drv_proxy_h      i3c_target_driver_proxy             -     @2097
+        rsp_port                  uvm_analysis_port                   -     @2114
+        seq_item_port             uvm_seq_item_pull_port              -     @2105
+      i3c_target_mon_proxy_h      i3c_target_monitor_proxy            -     @2067
+        ibi_analysis_port         uvm_analysis_port                   -     @2084
+        target_analysis_port      uvm_analysis_port                   -     @2075
+      i3c_target_seqr_h           i3c_target_sequencer                -     @2123
+        rsp_export                uvm_analysis_export                 -     @2131
+        seq_item_export           uvm_seq_item_pull_imp               -     @2237
+        arbitration_queue         array                               0     -    
+        lock_queue                array                               0     -    
+        num_last_reqs             integral                            32    'd1  
+        num_last_rsps             integral                            32    'd1  
+    topPredictor                  uvm_reg_predictor #(apb_master_tx)  -     @708 
+      bus_in                      uvm_analysis_imp                    -     @720 
+      reg_ap                      uvm_analysis_port                   -     @729 
+    top_virtual_seqr_h            top_virtual_sequencer               -     @576 
+      rsp_export                  uvm_analysis_export                 -     @584 
+      seq_item_export             uvm_seq_item_pull_imp               -     @690 
+      arbitration_queue           array                               0     -    
+      lock_queue                  array                               0     -    
+      num_last_reqs               integral                            32    'd1  
+      num_last_rsps               integral                            32    'd1  
+---------------------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(89) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] cfg snapshot -> targetAddress=0x68  pid=0xaabbcc0001  bcr=0x0  dcr=0xc2  has_daa=1  pending_sdr=0
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(89) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=1] cfg snapshot -> targetAddress=0x6c  pid=0xaabbcc0002  bcr=0x0  dcr=0xc3  has_daa=1  pending_sdr=0
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(89) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=2] cfg snapshot -> targetAddress=0x7c  pid=0xaabbcc0003  bcr=0x0  dcr=0xc4  has_daa=1  pending_sdr=0
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(89) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=3] cfg snapshot -> targetAddress=0x4c  pid=0xaabbcc0004  bcr=0x0  dcr=0xc5  has_daa=1  pending_sdr=0
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(161) @ 90000: reporter [DEBUG_MSHA] drive_apb_idle state = APB_IDLE and state = 1
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(57) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=3] Got item from sequencer, txn_type=DAA
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(63) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=3] DAA transaction
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(410) @ 90000: reporter [I3C_TARGET_DRIVER_BFM] DAA transaction started
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(57) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=2] Got item from sequencer, txn_type=DAA
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(63) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=2] DAA transaction
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(410) @ 90000: reporter [I3C_TARGET_DRIVER_BFM] DAA transaction started
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(57) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=1] Got item from sequencer, txn_type=DAA
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(63) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=1] DAA transaction
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(410) @ 90000: reporter [I3C_TARGET_DRIVER_BFM] DAA transaction started
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(57) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=0] Got item from sequencer, txn_type=DAA
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(63) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=0] DAA transaction
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(410) @ 90000: reporter [I3C_TARGET_DRIVER_BFM] DAA transaction started
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(219) @ 110000: reporter [DEBUG_MSHA] drive_apb_setup state = APB_SETUP and state = 2
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(119) @ 170000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] AFTER :: received req packet 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @2306             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'hc               
+  pwrite                      string         9     APB_WRITE         
+  pwdata                      integral       32    'h83070000        
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b1111            
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(219) @ 190000: reporter [DEBUG_MSHA] drive_apb_setup state = APB_SETUP and state = 2
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(119) @ 250000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] AFTER :: received req packet 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @2524             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'hc               
+  pwrite                      string         8     APB_READ          
+  pwdata                      integral       32    'h0               
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b0               
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1058) @ 280000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=0] start detected@ time=280000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(442) @ 280000: reporter [I3C_TARGET_DRIVER_BFM] DAA: START detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(842) @ 280000: reporter [I3C_TARGET_MONITOR_BFM] start detected @ time=280000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1058) @ 280000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=1] start detected@ time=280000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(442) @ 280000: reporter [I3C_TARGET_DRIVER_BFM] DAA: START detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(842) @ 280000: reporter [I3C_TARGET_MONITOR_BFM] start detected @ time=280000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1058) @ 280000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=2] start detected@ time=280000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(442) @ 280000: reporter [I3C_TARGET_DRIVER_BFM] DAA: START detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(842) @ 280000: reporter [I3C_TARGET_MONITOR_BFM] start detected @ time=280000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1058) @ 280000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=3] start detected@ time=280000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(442) @ 280000: reporter [I3C_TARGET_DRIVER_BFM] DAA: START detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(842) @ 280000: reporter [I3C_TARGET_MONITOR_BFM] start detected @ time=280000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(743) @ 1560000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast addr = 0xfc (expect 0xFC)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(743) @ 1560000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast addr = 0xfc (expect 0xFC)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(743) @ 1560000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast addr = 0xfc (expect 0xFC)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(743) @ 1560000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast addr = 0xfc (expect 0xFC)
+[1790000] SEND_7E_W completed, NACK=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(787) @ 3000000: reporter [I3C_TARGET_DRIVER_BFM] DAA: CCC byte = 0x7 (expect 0x07)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(787) @ 3000000: reporter [I3C_TARGET_DRIVER_BFM] DAA: CCC byte = 0x7 (expect 0x07)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(787) @ 3000000: reporter [I3C_TARGET_DRIVER_BFM] DAA: CCC byte = 0x7 (expect 0x07)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(787) @ 3000000: reporter [I3C_TARGET_DRIVER_BFM] DAA: CCC byte = 0x7 (expect 0x07)
+[3230000] SEND_ENTDAA completed, NACK=0
+[3250000] REP_START completed
+[3270000] REP_START completed
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(735) @ 3340000: reporter [I3C_TARGET_MONITOR_BFM] repeated start detected @ time=3340000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(735) @ 3340000: reporter [I3C_TARGET_MONITOR_BFM] repeated start detected @ time=3340000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(735) @ 3340000: reporter [I3C_TARGET_MONITOR_BFM] repeated start detected @ time=3340000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(735) @ 3340000: reporter [I3C_TARGET_MONITOR_BFM] repeated start detected @ time=3340000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 4600000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 4600000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 4600000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 4600000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 4680000: reporter [DAA_ACK_DEBUG] [target_id=0] has_address=0 -> driving  ACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 4680000: reporter [DAA_ACK_DEBUG] [target_id=1] has_address=0 -> driving  ACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 4680000: reporter [DAA_ACK_DEBUG] [target_id=2] has_address=0 -> driving  ACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 4680000: reporter [DAA_ACK_DEBUG] [target_id=3] has_address=0 -> driving  ACK on 7E+R ACK slot
+[4810000] SEND_7E_R completed, NACK=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(622) @ 12120000: reporter [I3C_TARGET_DRIVER_BFM] DAA ARB: Lost at bit 18 (drove 1, bus=0)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(470) @ 12120000: reporter [I3C_TARGET_DRIVER_BFM] DAA: Lost arbitration
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(622) @ 12280000: reporter [I3C_TARGET_DRIVER_BFM] DAA ARB: Lost at bit 17 (drove 1, bus=0)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(470) @ 12280000: reporter [I3C_TARGET_DRIVER_BFM] DAA: Lost arbitration
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(622) @ 12280000: reporter [I3C_TARGET_DRIVER_BFM] DAA ARB: Lost at bit 17 (drove 1, bus=0)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(470) @ 12280000: reporter [I3C_TARGET_DRIVER_BFM] DAA: Lost arbitration
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(662) @ 15000000: reporter [I3C_TARGET_DRIVER_BFM] DAA ARB: WON all 64 bits
+[15030000] ARB_BITS completed, Captured Data = 00aabbcc000100c2
+[15070000] ASSIGN completed : PID=00aabbcc0001 BCR=00 DCR=c2 DYN_ADDR=08
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(476) @ 15080000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 1] bus winner PID=0xaabbcc0001 BCR=0x0 DCR=0xc2 | my PID=0xaabbcc0001
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(476) @ 15080000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 1] bus winner PID=0xaabbcc0001 BCR=0x0 DCR=0xc2 | my PID=0xaabbcc0002
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(476) @ 15080000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 1] bus winner PID=0xaabbcc0001 BCR=0x0 DCR=0xc2 | my PID=0xaabbcc0003
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(476) @ 15080000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 1] bus winner PID=0xaabbcc0001 BCR=0x0 DCR=0xc2 | my PID=0xaabbcc0004
+[15090000] LOOP completed : Next Dynamic Address = 0x9
+[15110000] REP_START completed
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(991) @ 16280000: reporter [COUNT_SLAVE] Slave addr assignment done count=          1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1004) @ 16280000: reporter [I3C_TARGET_DRIVER_BFM] DAA: dynamic addr=8 dyn_add+parity=10 parity OK =0? ACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1260) @ 16360000: reporter [I3C_TARGET_DRIVER_BFM] [16360000] TARGET driving ACK=0 sda_o=1 sda_oen=0 sda_i=0
+[16510000] REP_START completed
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1279) @ 16520000: reporter [I3C_TARGET_DRIVER_BFM] [16520000] TARGET released SDA sda_o=0 sda_oen=1 sda_i=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(522) @ 16520000: reporter [I3C_TARGET_DRIVER_BFM] DAA: slave assigned dynamic address 0x8
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 16620000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=0] start detected[REPEATED START]@ time=16620000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(557) @ 16620000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START after assignment - consuming 7E+R, driving NACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(776) @ 16620000: reporter [I3C_TARGET_MONITOR_BFM] DAA repeated start detected @ time=16620000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 16620000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=1] start detected[REPEATED START]@ time=16620000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(498) @ 16620000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START - re-entering arb with 7E+R header
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(776) @ 16620000: reporter [I3C_TARGET_MONITOR_BFM] DAA repeated start detected @ time=16620000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 16620000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=2] start detected[REPEATED START]@ time=16620000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(498) @ 16620000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START - re-entering arb with 7E+R header
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(776) @ 16620000: reporter [I3C_TARGET_MONITOR_BFM] DAA repeated start detected @ time=16620000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 16620000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=3] start detected[REPEATED START]@ time=16620000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(498) @ 16620000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START - re-entering arb with 7E+R header
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(776) @ 16620000: reporter [I3C_TARGET_MONITOR_BFM] DAA repeated start detected @ time=16620000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(557) @ 16680000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 1] THIS TARGET WON: dyn_addr=0x8
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(253) @ 16680000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] DAA BFM returned struct -> pid=0xaabbcc0001  bcr=0x0  dcr=0xc2  daa_ack=0  dynamic_address=0x8
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(264) @ 16680000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] DAA tx -> txn_type=DAA  pid=0xaabbcc0001  bcr=0x0  dcr=0xc2  daa_ack=0  dynamic_address=0x8
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(353) @ 16680000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] --> writing to analysis port (scoreboard): txn_type=DAA
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(198) @ 16680000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_cov_h [DEBUG_m_coverage] I3C_target_TX '{use_uvm_seeding:'h1, m_leaf_name:"i3c_target_tx", m_inst_id:2536, m_inst_count:2539, __m_uvm_status_container:{ ref to class uvm_status_container}, events:{ ref to class uvm_object_string_pool#(uvm_pkg::uvm_event)}, begin_event:{ ref to class uvm_event}, end_event:{ ref to class uvm_event}, m_transaction_id:-1, begin_time:18446744073709551615, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:'h0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:'h0, m_depth:-1, m_sequencer:null, m_parent_sequence:null, issued1:'h0, issued2:'h0, print_sequence_info:'h0, m_client_str:"", m_client:null, m_rh:null, type_name:"i3c_target_tx", readData:'{}, targetAddressStatus:ACK, writeDataStatus:'{}, operation:I3C_WRITE, targetAddress:'h0, writeData:'{}, readDataStatus:'{}, size:'h0, txn_type:DAA, pid:'haabbcc0001, bcr:'h0, dcr:'hc2, dynamic_address:'h8, daa_ack:'h0, hotjoin_addr:'h0, ibi_mdb:'h0, hdr_data:'{}, hdr_crc:'h0, hdr_parity:'h0, hdr_tbit:'h0, ibi_num_extra_bytes:'h0, ibi_extra_data:'{}, ibi_t1:'h0, ibi_extra_data_sent:'{}, ibi_extra_t_bits:'{}}
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(89) @ 16680000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] cfg snapshot -> targetAddress=0x68  pid=0xaabbcc0001  bcr=0x0  dcr=0xc2  has_daa=1  pending_sdr=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 17880000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 17880000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 17880000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 17880000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 17960000: reporter [DAA_ACK_DEBUG] [target_id=0] has_address=1 -> driving NACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 17960000: reporter [DAA_ACK_DEBUG] [target_id=1] has_address=0 -> driving  ACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 17960000: reporter [DAA_ACK_DEBUG] [target_id=2] has_address=0 -> driving  ACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 17960000: reporter [DAA_ACK_DEBUG] [target_id=3] has_address=0 -> driving  ACK on 7E+R ACK slot
+[18090000] SEND_7E_R completed, NACK=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(622) @ 25400000: reporter [I3C_TARGET_DRIVER_BFM] DAA ARB: Lost at bit 18 (drove 1, bus=0)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(470) @ 25400000: reporter [I3C_TARGET_DRIVER_BFM] DAA: Lost arbitration
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(622) @ 25720000: reporter [I3C_TARGET_DRIVER_BFM] DAA ARB: Lost at bit 16 (drove 1, bus=0)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(470) @ 25720000: reporter [I3C_TARGET_DRIVER_BFM] DAA: Lost arbitration
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(662) @ 28280000: reporter [I3C_TARGET_DRIVER_BFM] DAA ARB: WON all 64 bits
+[28310000] ARB_BITS completed, Captured Data = 00aabbcc000200c3
+[28350000] ASSIGN completed : PID=00aabbcc0002 BCR=00 DCR=c3 DYN_ADDR=09
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(476) @ 28360000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 2] bus winner PID=0xaabbcc0002 BCR=0x0 DCR=0xc3 | my PID=0xaabbcc0002
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(476) @ 28360000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 2] bus winner PID=0xaabbcc0002 BCR=0x0 DCR=0xc3 | my PID=0xaabbcc0003
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(476) @ 28360000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 2] bus winner PID=0xaabbcc0002 BCR=0x0 DCR=0xc3 | my PID=0xaabbcc0004
+[28370000] LOOP completed : Next Dynamic Address = 0xa
+[28390000] REP_START completed
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(991) @ 29560000: reporter [COUNT_SLAVE] Slave addr assignment done count=          2
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1004) @ 29560000: reporter [I3C_TARGET_DRIVER_BFM] DAA: dynamic addr=9 dyn_add+parity=13 parity OK =1? ACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1260) @ 29640000: reporter [I3C_TARGET_DRIVER_BFM] [29640000] TARGET driving ACK=0 sda_o=1 sda_oen=0 sda_i=1
+[29790000] REP_START completed
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1279) @ 29800000: reporter [I3C_TARGET_DRIVER_BFM] [29800000] TARGET released SDA sda_o=0 sda_oen=1 sda_i=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(522) @ 29800000: reporter [I3C_TARGET_DRIVER_BFM] DAA: slave assigned dynamic address 0x9
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 29900000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=0] start detected[REPEATED START]@ time=29900000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(557) @ 29900000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START after assignment - consuming 7E+R, driving NACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(842) @ 29900000: reporter [I3C_TARGET_MONITOR_BFM] start detected @ time=29900000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(366) @ 29900000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON: already has dynamic address - passively skipping this DAA session
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 29900000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=1] start detected[REPEATED START]@ time=29900000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(557) @ 29900000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START after assignment - consuming 7E+R, driving NACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(776) @ 29900000: reporter [I3C_TARGET_MONITOR_BFM] DAA repeated start detected @ time=29900000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 29900000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=2] start detected[REPEATED START]@ time=29900000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(498) @ 29900000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START - re-entering arb with 7E+R header
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(776) @ 29900000: reporter [I3C_TARGET_MONITOR_BFM] DAA repeated start detected @ time=29900000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 29900000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=3] start detected[REPEATED START]@ time=29900000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(498) @ 29900000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START - re-entering arb with 7E+R header
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(776) @ 29900000: reporter [I3C_TARGET_MONITOR_BFM] DAA repeated start detected @ time=29900000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(557) @ 29960000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 2] THIS TARGET WON: dyn_addr=0x9
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(253) @ 29960000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=1] DAA BFM returned struct -> pid=0xaabbcc0002  bcr=0x0  dcr=0xc3  daa_ack=0  dynamic_address=0x9
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(264) @ 29960000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=1] DAA tx -> txn_type=DAA  pid=0xaabbcc0002  bcr=0x0  dcr=0xc3  daa_ack=0  dynamic_address=0x9
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(353) @ 29960000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=1] --> writing to analysis port (scoreboard): txn_type=DAA
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(198) @ 29960000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_cov_h [DEBUG_m_coverage] I3C_target_TX '{use_uvm_seeding:'h1, m_leaf_name:"i3c_target_tx", m_inst_id:2544, m_inst_count:2547, __m_uvm_status_container:{ ref to class uvm_status_container}, events:{ ref to class uvm_object_string_pool#(uvm_pkg::uvm_event)}, begin_event:{ ref to class uvm_event}, end_event:{ ref to class uvm_event}, m_transaction_id:-1, begin_time:18446744073709551615, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:'h0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:'h0, m_depth:-1, m_sequencer:null, m_parent_sequence:null, issued1:'h0, issued2:'h0, print_sequence_info:'h0, m_client_str:"", m_client:null, m_rh:null, type_name:"i3c_target_tx", readData:'{}, targetAddressStatus:ACK, writeDataStatus:'{}, operation:I3C_WRITE, targetAddress:'h0, writeData:'{}, readDataStatus:'{}, size:'h0, txn_type:DAA, pid:'haabbcc0002, bcr:'h0, dcr:'hc3, dynamic_address:'h9, daa_ack:'h0, hotjoin_addr:'h0, ibi_mdb:'h0, hdr_data:'{}, hdr_crc:'h0, hdr_parity:'h0, hdr_tbit:'h0, ibi_num_extra_bytes:'h0, ibi_extra_data:'{}, ibi_t1:'h0, ibi_extra_data_sent:'{}, ibi_extra_t_bits:'{}}
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(89) @ 29960000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=1] cfg snapshot -> targetAddress=0x6c  pid=0xaabbcc0002  bcr=0x0  dcr=0xc3  has_daa=1  pending_sdr=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 31160000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 31160000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 31160000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 31160000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 31240000: reporter [DAA_ACK_DEBUG] [target_id=0] has_address=1 -> driving NACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 31240000: reporter [DAA_ACK_DEBUG] [target_id=1] has_address=1 -> driving NACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 31240000: reporter [DAA_ACK_DEBUG] [target_id=2] has_address=0 -> driving  ACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 31240000: reporter [DAA_ACK_DEBUG] [target_id=3] has_address=0 -> driving  ACK on 7E+R ACK slot
+[31370000] SEND_7E_R completed, NACK=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(622) @ 38680000: reporter [I3C_TARGET_DRIVER_BFM] DAA ARB: Lost at bit 18 (drove 1, bus=0)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(470) @ 38680000: reporter [I3C_TARGET_DRIVER_BFM] DAA: Lost arbitration
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(662) @ 41560000: reporter [I3C_TARGET_DRIVER_BFM] DAA ARB: WON all 64 bits
+[41590000] ARB_BITS completed, Captured Data = 00aabbcc000300c4
+[41630000] ASSIGN completed : PID=00aabbcc0003 BCR=00 DCR=c4 DYN_ADDR=0a
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(476) @ 41640000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 3] bus winner PID=0xaabbcc0003 BCR=0x0 DCR=0xc4 | my PID=0xaabbcc0003
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(476) @ 41640000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 3] bus winner PID=0xaabbcc0003 BCR=0x0 DCR=0xc4 | my PID=0xaabbcc0004
+[41650000] LOOP completed : Next Dynamic Address = 0xb
+[41670000] REP_START completed
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(991) @ 42840000: reporter [COUNT_SLAVE] Slave addr assignment done count=          3
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1004) @ 42840000: reporter [I3C_TARGET_DRIVER_BFM] DAA: dynamic addr=a dyn_add+parity=15 parity OK =1? ACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1260) @ 42920000: reporter [I3C_TARGET_DRIVER_BFM] [42920000] TARGET driving ACK=0 sda_o=1 sda_oen=0 sda_i=1
+[43070000] REP_START completed
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1279) @ 43080000: reporter [I3C_TARGET_DRIVER_BFM] [43080000] TARGET released SDA sda_o=0 sda_oen=1 sda_i=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(522) @ 43080000: reporter [I3C_TARGET_DRIVER_BFM] DAA: slave assigned dynamic address 0xa
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 43180000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=0] start detected[REPEATED START]@ time=43180000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(557) @ 43180000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START after assignment - consuming 7E+R, driving NACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(735) @ 43180000: reporter [I3C_TARGET_MONITOR_BFM] repeated start detected @ time=43180000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 43180000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=1] start detected[REPEATED START]@ time=43180000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(557) @ 43180000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START after assignment - consuming 7E+R, driving NACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(842) @ 43180000: reporter [I3C_TARGET_MONITOR_BFM] start detected @ time=43180000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(366) @ 43180000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON: already has dynamic address - passively skipping this DAA session
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 43180000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=2] start detected[REPEATED START]@ time=43180000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(557) @ 43180000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START after assignment - consuming 7E+R, driving NACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(776) @ 43180000: reporter [I3C_TARGET_MONITOR_BFM] DAA repeated start detected @ time=43180000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 43180000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=3] start detected[REPEATED START]@ time=43180000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(498) @ 43180000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START - re-entering arb with 7E+R header
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(776) @ 43180000: reporter [I3C_TARGET_MONITOR_BFM] DAA repeated start detected @ time=43180000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(557) @ 43240000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 3] THIS TARGET WON: dyn_addr=0xa
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(253) @ 43240000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=2] DAA BFM returned struct -> pid=0xaabbcc0003  bcr=0x0  dcr=0xc4  daa_ack=0  dynamic_address=0xa
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(264) @ 43240000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=2] DAA tx -> txn_type=DAA  pid=0xaabbcc0003  bcr=0x0  dcr=0xc4  daa_ack=0  dynamic_address=0xa
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(353) @ 43240000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=2] --> writing to analysis port (scoreboard): txn_type=DAA
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(198) @ 43240000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_cov_h [DEBUG_m_coverage] I3C_target_TX '{use_uvm_seeding:'h1, m_leaf_name:"i3c_target_tx", m_inst_id:2552, m_inst_count:2555, __m_uvm_status_container:{ ref to class uvm_status_container}, events:{ ref to class uvm_object_string_pool#(uvm_pkg::uvm_event)}, begin_event:{ ref to class uvm_event}, end_event:{ ref to class uvm_event}, m_transaction_id:-1, begin_time:18446744073709551615, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:'h0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:'h0, m_depth:-1, m_sequencer:null, m_parent_sequence:null, issued1:'h0, issued2:'h0, print_sequence_info:'h0, m_client_str:"", m_client:null, m_rh:null, type_name:"i3c_target_tx", readData:'{}, targetAddressStatus:ACK, writeDataStatus:'{}, operation:I3C_WRITE, targetAddress:'h0, writeData:'{}, readDataStatus:'{}, size:'h0, txn_type:DAA, pid:'haabbcc0003, bcr:'h0, dcr:'hc4, dynamic_address:'ha, daa_ack:'h0, hotjoin_addr:'h0, ibi_mdb:'h0, hdr_data:'{}, hdr_crc:'h0, hdr_parity:'h0, hdr_tbit:'h0, ibi_num_extra_bytes:'h0, ibi_extra_data:'{}, ibi_t1:'h0, ibi_extra_data_sent:'{}, ibi_extra_t_bits:'{}}
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(89) @ 43240000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=2] cfg snapshot -> targetAddress=0x7c  pid=0xaabbcc0003  bcr=0x0  dcr=0xc4  has_daa=1  pending_sdr=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 44440000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 44440000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 44440000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 44440000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 44520000: reporter [DAA_ACK_DEBUG] [target_id=0] has_address=1 -> driving NACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 44520000: reporter [DAA_ACK_DEBUG] [target_id=1] has_address=1 -> driving NACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 44520000: reporter [DAA_ACK_DEBUG] [target_id=2] has_address=1 -> driving NACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 44520000: reporter [DAA_ACK_DEBUG] [target_id=3] has_address=0 -> driving  ACK on 7E+R ACK slot
+[44650000] SEND_7E_R completed, NACK=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(662) @ 54840000: reporter [I3C_TARGET_DRIVER_BFM] DAA ARB: WON all 64 bits
+[54870000] ARB_BITS completed, Captured Data = 00aabbcc000400c5
+[54910000] ASSIGN completed : PID=00aabbcc0004 BCR=00 DCR=c5 DYN_ADDR=0b
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(476) @ 54920000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 4] bus winner PID=0xaabbcc0004 BCR=0x0 DCR=0xc5 | my PID=0xaabbcc0004
+[54930000] LOOP completed : Next Dynamic Address = 0xc
+[54950000] REP_START completed
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(991) @ 56120000: reporter [COUNT_SLAVE] Slave addr assignment done count=          4
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1004) @ 56120000: reporter [I3C_TARGET_DRIVER_BFM] DAA: dynamic addr=b dyn_add+parity=16 parity OK =0? ACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1260) @ 56200000: reporter [I3C_TARGET_DRIVER_BFM] [56200000] TARGET driving ACK=0 sda_o=1 sda_oen=0 sda_i=0
+[56350000] REP_START completed
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1279) @ 56360000: reporter [I3C_TARGET_DRIVER_BFM] [56360000] TARGET released SDA sda_o=0 sda_oen=1 sda_i=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(522) @ 56360000: reporter [I3C_TARGET_DRIVER_BFM] DAA: slave assigned dynamic address 0xb
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 56460000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=0] start detected[REPEATED START]@ time=56460000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(557) @ 56460000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START after assignment - consuming 7E+R, driving NACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(776) @ 56460000: reporter [I3C_TARGET_MONITOR_BFM] DAA repeated start detected @ time=56460000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 56460000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=1] start detected[REPEATED START]@ time=56460000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(557) @ 56460000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START after assignment - consuming 7E+R, driving NACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(735) @ 56460000: reporter [I3C_TARGET_MONITOR_BFM] repeated start detected @ time=56460000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 56460000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=2] start detected[REPEATED START]@ time=56460000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(557) @ 56460000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START after assignment - consuming 7E+R, driving NACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(842) @ 56460000: reporter [I3C_TARGET_MONITOR_BFM] start detected @ time=56460000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(366) @ 56460000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON: already has dynamic address - passively skipping this DAA session
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(853) @ 56460000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=3] start detected[REPEATED START]@ time=56460000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(557) @ 56460000: reporter [I3C_TARGET_DRIVER_BFM] DAA: REP_START after assignment - consuming 7E+R, driving NACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(776) @ 56460000: reporter [I3C_TARGET_MONITOR_BFM] DAA repeated start detected @ time=56460000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(557) @ 56520000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON [round 4] THIS TARGET WON: dyn_addr=0xb
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(253) @ 56520000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=3] DAA BFM returned struct -> pid=0xaabbcc0004  bcr=0x0  dcr=0xc5  daa_ack=0  dynamic_address=0xb
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(264) @ 56520000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=3] DAA tx -> txn_type=DAA  pid=0xaabbcc0004  bcr=0x0  dcr=0xc5  daa_ack=0  dynamic_address=0xb
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(353) @ 56520000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=3] --> writing to analysis port (scoreboard): txn_type=DAA
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(198) @ 56520000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_cov_h [DEBUG_m_coverage] I3C_target_TX '{use_uvm_seeding:'h1, m_leaf_name:"i3c_target_tx", m_inst_id:2560, m_inst_count:2563, __m_uvm_status_container:{ ref to class uvm_status_container}, events:{ ref to class uvm_object_string_pool#(uvm_pkg::uvm_event)}, begin_event:{ ref to class uvm_event}, end_event:{ ref to class uvm_event}, m_transaction_id:-1, begin_time:18446744073709551615, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:'h0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:'h0, m_depth:-1, m_sequencer:null, m_parent_sequence:null, issued1:'h0, issued2:'h0, print_sequence_info:'h0, m_client_str:"", m_client:null, m_rh:null, type_name:"i3c_target_tx", readData:'{}, targetAddressStatus:ACK, writeDataStatus:'{}, operation:I3C_WRITE, targetAddress:'h0, writeData:'{}, readDataStatus:'{}, size:'h0, txn_type:DAA, pid:'haabbcc0004, bcr:'h0, dcr:'hc5, dynamic_address:'hb, daa_ack:'h0, hotjoin_addr:'h0, ibi_mdb:'h0, hdr_data:'{}, hdr_crc:'h0, hdr_parity:'h0, hdr_tbit:'h0, ibi_num_extra_bytes:'h0, ibi_extra_data:'{}, ibi_t1:'h0, ibi_extra_data_sent:'{}, ibi_extra_t_bits:'{}}
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(89) @ 56520000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=3] cfg snapshot -> targetAddress=0x4c  pid=0xaabbcc0004  bcr=0x0  dcr=0xc5  has_daa=1  pending_sdr=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 57720000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 57720000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 57720000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(926) @ 57720000: reporter [I3C_TARGET_DRIVER_BFM] DAA: broadcast read addr = 0xfd (expect 0xFD)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 57800000: reporter [DAA_ACK_DEBUG] [target_id=0] has_address=1 -> driving NACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 57800000: reporter [DAA_ACK_DEBUG] [target_id=1] has_address=1 -> driving NACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 57800000: reporter [DAA_ACK_DEBUG] [target_id=2] has_address=1 -> driving NACK on 7E+R ACK slot
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(937) @ 57800000: reporter [DAA_ACK_DEBUG] [target_id=3] has_address=1 -> driving NACK on 7E+R ACK slot
+[57930000] SEND_7E_R completed, NACK=1
+[57950000] STOP state reached. DAA Finished.
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(871) @ 58060000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=0] detect_rep_start_or_stop(STOP): STOP @ time=58060000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(547) @ 58060000: reporter [I3C_TARGET_DRIVER_BFM] DAA: STOP detected - all devices assigned, exiting
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(81) @ 58060000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=0] DAA done: PID=0xaabbcc0001 BCR=0x0 DCR=0xc2 DynAddr=0x8 ACK=0
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(185) @ 58060000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=0] item_done
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(871) @ 58060000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=1] detect_rep_start_or_stop(STOP): STOP @ time=58060000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(547) @ 58060000: reporter [I3C_TARGET_DRIVER_BFM] DAA: STOP detected - all devices assigned, exiting
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(81) @ 58060000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=1] DAA done: PID=0xaabbcc0002 BCR=0x0 DCR=0xc3 DynAddr=0x9 ACK=0
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(185) @ 58060000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=1] item_done
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(871) @ 58060000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=2] detect_rep_start_or_stop(STOP): STOP @ time=58060000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(547) @ 58060000: reporter [I3C_TARGET_DRIVER_BFM] DAA: STOP detected - all devices assigned, exiting
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(81) @ 58060000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=2] DAA done: PID=0xaabbcc0003 BCR=0x0 DCR=0xc4 DynAddr=0xa ACK=0
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(185) @ 58060000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=2] item_done
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(871) @ 58060000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=3] detect_rep_start_or_stop(STOP): STOP @ time=58060000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(547) @ 58060000: reporter [I3C_TARGET_DRIVER_BFM] DAA: STOP detected - all devices assigned, exiting
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(81) @ 58060000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=3] DAA done: PID=0xaabbcc0004 BCR=0x0 DCR=0xc5 DynAddr=0xb ACK=0
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(185) @ 58060000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=3] item_done
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(89) @ 200250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] cfg snapshot -> targetAddress=0x8  pid=0xaabbcc0001  bcr=0x0  dcr=0xc2  has_daa=1  pending_sdr=1
+UVM_INFO ../../src/hvl_top/target/target_sequences/i3c_target_writeOperationWith8bitsData_seq.sv(20) @ 200250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h@@target_seq_write [i3c_target_writeOperationWith8bitsData_seq] Before randomization - req created
+UVM_INFO ../../src/hvl_top/target/target_sequences/i3c_target_writeOperationWith8bitsData_seq.sv(36) @ 200250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h@@target_seq_write [i3c_target_writeOperationWith8bitsData_seq] Randomization SUCCESS - after overrides
+-----------------------------------------------------------------------------------------------------------------------------------
+Name                           Type           Size  Value                                                                          
+-----------------------------------------------------------------------------------------------------------------------------------
+req                            i3c_target_tx  -     @2593                                                                          
+  begin_time                   time           64    200250000                                                                      
+  depth                        int            32    'd2                                                                            
+  parent sequence (name)       string         16    target_seq_write                                                               
+  parent sequence (full name)  string         79    uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h.target_seq_write
+  sequencer                    string         62    uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h                 
+  txn_type                     string         3     SDR                                                                            
+  targetAddress                integral       7     'h8                                                                            
+  targetAddressStatus          string         3     ACK                                                                            
+  operation                    string         9     I3C_WRITE                                                                      
+  writeDataStatus[0]           string         3     ACK                                                                            
+  writeDataStatus[1]           string         3     ACK                                                                            
+  writeDataStatus[2]           string         3     ACK                                                                            
+  writeDataStatus[3]           string         3     ACK                                                                            
+  writeDataStatus[4]           string         3     ACK                                                                            
+  writeDataStatus[5]           string         3     ACK                                                                            
+  writeDataStatus[6]           string         3     ACK                                                                            
+  writeDataStatus[7]           string         3     ACK                                                                            
+  writeDataStatus[8]           string         3     ACK                                                                            
+  writeDataStatus[9]           string         3     ACK                                                                            
+  writeDataStatus[10]          string         3     ACK                                                                            
+  writeDataStatus[11]          string         3     ACK                                                                            
+  writeDataStatus[12]          string         3     ACK                                                                            
+  writeDataStatus[13]          string         3     ACK                                                                            
+  writeDataStatus[14]          string         3     ACK                                                                            
+  writeDataStatus[15]          string         3     ACK                                                                            
+  writeDataStatus[16]          string         3     ACK                                                                            
+  writeDataStatus[17]          string         3     ACK                                                                            
+  writeDataStatus[18]          string         3     ACK                                                                            
+  writeDataStatus[19]          string         3     ACK                                                                            
+  writeDataStatus[20]          string         3     ACK                                                                            
+  writeDataStatus[21]          string         3     ACK                                                                            
+  writeDataStatus[22]          string         3     ACK                                                                            
+  writeDataStatus[23]          string         3     ACK                                                                            
+  writeDataStatus[24]          string         3     ACK                                                                            
+  writeDataStatus[25]          string         3     ACK                                                                            
+  writeDataStatus[26]          string         3     ACK                                                                            
+  writeDataStatus[27]          string         3     ACK                                                                            
+  writeDataStatus[28]          string         3     ACK                                                                            
+  writeDataStatus[29]          string         3     ACK                                                                            
+  writeDataStatus[30]          string         3     ACK                                                                            
+  writeDataStatus[31]          string         3     ACK                                                                            
+  writeDataStatus[32]          string         3     ACK                                                                            
+  writeDataStatus[33]          string         3     ACK                                                                            
+  writeDataStatus[34]          string         3     ACK                                                                            
+  writeDataStatus[35]          string         3     ACK                                                                            
+  writeDataStatus[36]          string         3     ACK                                                                            
+  writeDataStatus[37]          string         3     ACK                                                                            
+  writeDataStatus[38]          string         3     ACK                                                                            
+  writeDataStatus[39]          string         3     ACK                                                                            
+  writeDataStatus[40]          string         3     ACK                                                                            
+  writeDataStatus[41]          string         3     ACK                                                                            
+  writeDataStatus[42]          string         3     ACK                                                                            
+  writeDataStatus[43]          string         3     ACK                                                                            
+  writeDataStatus[44]          string         3     ACK                                                                            
+  writeDataStatus[45]          string         3     ACK                                                                            
+  writeDataStatus[46]          string         3     ACK                                                                            
+  writeDataStatus[47]          string         3     ACK                                                                            
+  writeDataStatus[48]          string         3     ACK                                                                            
+  writeDataStatus[49]          string         3     ACK                                                                            
+  writeDataStatus[50]          string         3     ACK                                                                            
+  writeDataStatus[51]          string         3     ACK                                                                            
+  writeDataStatus[52]          string         3     ACK                                                                            
+  writeDataStatus[53]          string         3     ACK                                                                            
+  writeDataStatus[54]          string         3     ACK                                                                            
+  writeDataStatus[55]          string         3     ACK                                                                            
+  writeDataStatus[56]          string         3     ACK                                                                            
+  writeDataStatus[57]          string         3     ACK                                                                            
+  writeDataStatus[58]          string         3     ACK                                                                            
+  writeDataStatus[59]          string         3     ACK                                                                            
+  writeDataStatus[60]          string         3     ACK                                                                            
+  writeDataStatus[61]          string         3     ACK                                                                            
+  writeDataStatus[62]          string         3     ACK                                                                            
+  writeDataStatus[63]          string         3     ACK                                                                            
+-----------------------------------------------------------------------------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(57) @ 200250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=0] Got item from sequencer, txn_type=SDR
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(177) @ 200250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=0] SDR transaction
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(219) @ 200270000: reporter [DEBUG_MSHA] drive_apb_setup state = APB_SETUP and state = 2
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(119) @ 200330000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] AFTER :: received req packet 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @2581             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'h30              
+  pwrite                      string         9     APB_WRITE         
+  pwdata                      integral       32    'h3c              
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b1111            
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(219) @ 200350000: reporter [DEBUG_MSHA] drive_apb_setup state = APB_SETUP and state = 2
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(119) @ 200410000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] AFTER :: received req packet 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @2609             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'h30              
+  pwrite                      string         9     APB_WRITE         
+  pwdata                      integral       32    'hbe              
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b1111            
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(219) @ 200430000: reporter [DEBUG_MSHA] drive_apb_setup state = APB_SETUP and state = 2
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(119) @ 200490000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] AFTER :: received req packet 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @2625             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'h30              
+  pwrite                      string         9     APB_WRITE         
+  pwdata                      integral       32    'h1b              
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b1111            
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(219) @ 200510000: reporter [DEBUG_MSHA] drive_apb_setup state = APB_SETUP and state = 2
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(119) @ 200570000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] AFTER :: received req packet 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @2641             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'h30              
+  pwrite                      string         9     APB_WRITE         
+  pwdata                      integral       32    'h2c              
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b1111            
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(219) @ 200590000: reporter [DEBUG_MSHA] drive_apb_setup state = APB_SETUP and state = 2
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(119) @ 200650000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] AFTER :: received req packet 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @2657             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'h30              
+  pwrite                      string         9     APB_WRITE         
+  pwdata                      integral       32    'hc0              
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b1111            
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(219) @ 200670000: reporter [DEBUG_MSHA] drive_apb_setup state = APB_SETUP and state = 2
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(119) @ 200730000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] AFTER :: received req packet 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @2673             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'h30              
+  pwrite                      string         9     APB_WRITE         
+  pwdata                      integral       32    'h65              
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b1111            
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(219) @ 200750000: reporter [DEBUG_MSHA] drive_apb_setup state = APB_SETUP and state = 2
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(119) @ 200810000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] AFTER :: received req packet 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @2689             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'hc               
+  pwrite                      string         9     APB_WRITE         
+  pwdata                      integral       32    'h80000308        
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b1111            
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(219) @ 200830000: reporter [DEBUG_MSHA] drive_apb_setup state = APB_SETUP and state = 2
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(119) @ 200890000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] AFTER :: received req packet 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @2709             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'hc               
+  pwrite                      string         8     APB_READ          
+  pwdata                      integral       32    'h0               
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b0               
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1058) @ 200900000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=0] start detected@ time=200900000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(842) @ 200900000: reporter [I3C_TARGET_MONITOR_BFM] start detected @ time=200900000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(842) @ 200900000: reporter [I3C_TARGET_MONITOR_BFM] start detected @ time=200900000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(366) @ 200900000: reporter [I3C_TARGET_MONITOR_BFM] DAA MON: already has dynamic address - passively skipping this DAA session
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1112) @ 201980000: reporter [I3C_TARGET_DRIVER_BFM] DEBUG :: local_addr = 0x8
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1123) @ 201980000: reporter [I3C_TARGET_DRIVER_BFM] DEBUG :: cfg target_addr = 0x8
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1260) @ 202220000: reporter [I3C_TARGET_DRIVER_BFM] [202220000] TARGET driving ACK=0 sda_o=1 sda_oen=0 sda_i=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1279) @ 202380000: reporter [I3C_TARGET_DRIVER_BFM] [202380000] TARGET released SDA sda_o=0 sda_oen=1 sda_i=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(144) @ 202380000: reporter [I3C_TARGET_DRIVER_BFM] sampleWriteDataAndDriveACK started
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(150) @ 202380000: reporter [sdr_debug] SDR WRITE check
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 202460000: reporter [I3C_TARGET_DRIVER_BFM] [202460000] SAMPLE bit[7] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 202620000: reporter [I3C_TARGET_DRIVER_BFM] [202620000] SAMPLE bit[6] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 202780000: reporter [I3C_TARGET_DRIVER_BFM] [202780000] SAMPLE bit[5] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 202940000: reporter [I3C_TARGET_DRIVER_BFM] [202940000] SAMPLE bit[4] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 203100000: reporter [I3C_TARGET_DRIVER_BFM] [203100000] SAMPLE bit[3] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 203260000: reporter [I3C_TARGET_DRIVER_BFM] [203260000] SAMPLE bit[2] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 203420000: reporter [I3C_TARGET_DRIVER_BFM] [203420000] SAMPLE bit[1] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 203580000: reporter [I3C_TARGET_DRIVER_BFM] [203580000] SAMPLE bit[0] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(213) @ 203580000: reporter [I3C_TARGET_DRIVER_BFM] SDR WRITE: byte[0] = 0x3c (00111100)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(224) @ 203580000: reporter [SDR_PARITY] SDR WRITE PARITY SAMPLE
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(155) @ 203580000: reporter [I3C_TARGET_MONITOR_BFM] SDR WRITE MON: byte[0] = 0x3c (00111100)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(238) @ 203820000: reporter [I3C_TARGET_DRIVER_BFM] SDR WRITE: byte[0]=0x3c parity_rx=1 ^data(exp)=0 PARITY MISMATCH
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(181) @ 203820000: reporter [I3C_TARGET_MONITOR_BFM] SDR WRITE MON: byte[0]=0x3c parity_rx=1 ^data(exp)=0 PARITY MISMATCH
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 203900000: reporter [I3C_TARGET_DRIVER_BFM] [203900000] SAMPLE bit[7] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 204060000: reporter [I3C_TARGET_DRIVER_BFM] [204060000] SAMPLE bit[6] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 204220000: reporter [I3C_TARGET_DRIVER_BFM] [204220000] SAMPLE bit[5] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 204380000: reporter [I3C_TARGET_DRIVER_BFM] [204380000] SAMPLE bit[4] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 204540000: reporter [I3C_TARGET_DRIVER_BFM] [204540000] SAMPLE bit[3] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 204700000: reporter [I3C_TARGET_DRIVER_BFM] [204700000] SAMPLE bit[2] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 204860000: reporter [I3C_TARGET_DRIVER_BFM] [204860000] SAMPLE bit[1] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 205020000: reporter [I3C_TARGET_DRIVER_BFM] [205020000] SAMPLE bit[0] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(213) @ 205020000: reporter [I3C_TARGET_DRIVER_BFM] SDR WRITE: byte[1] = 0xbe (10111110)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(224) @ 205020000: reporter [SDR_PARITY] SDR WRITE PARITY SAMPLE
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(155) @ 205020000: reporter [I3C_TARGET_MONITOR_BFM] SDR WRITE MON: byte[1] = 0xbe (10111110)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(238) @ 205260000: reporter [I3C_TARGET_DRIVER_BFM] SDR WRITE: byte[1]=0xbe parity_rx=1 ^data(exp)=0 PARITY MISMATCH
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(181) @ 205260000: reporter [I3C_TARGET_MONITOR_BFM] SDR WRITE MON: byte[1]=0xbe parity_rx=1 ^data(exp)=0 PARITY MISMATCH
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 205340000: reporter [I3C_TARGET_DRIVER_BFM] [205340000] SAMPLE bit[7] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 205500000: reporter [I3C_TARGET_DRIVER_BFM] [205500000] SAMPLE bit[6] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 205660000: reporter [I3C_TARGET_DRIVER_BFM] [205660000] SAMPLE bit[5] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 205820000: reporter [I3C_TARGET_DRIVER_BFM] [205820000] SAMPLE bit[4] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 205980000: reporter [I3C_TARGET_DRIVER_BFM] [205980000] SAMPLE bit[3] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 206140000: reporter [I3C_TARGET_DRIVER_BFM] [206140000] SAMPLE bit[2] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 206300000: reporter [I3C_TARGET_DRIVER_BFM] [206300000] SAMPLE bit[1] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 206460000: reporter [I3C_TARGET_DRIVER_BFM] [206460000] SAMPLE bit[0] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(213) @ 206460000: reporter [I3C_TARGET_DRIVER_BFM] SDR WRITE: byte[2] = 0x1b (00011011)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(224) @ 206460000: reporter [SDR_PARITY] SDR WRITE PARITY SAMPLE
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(155) @ 206460000: reporter [I3C_TARGET_MONITOR_BFM] SDR WRITE MON: byte[2] = 0x1b (00011011)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(238) @ 206700000: reporter [I3C_TARGET_DRIVER_BFM] SDR WRITE: byte[2]=0x1b parity_rx=1 ^data(exp)=0 PARITY MISMATCH
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(181) @ 206700000: reporter [I3C_TARGET_MONITOR_BFM] SDR WRITE MON: byte[2]=0x1b parity_rx=1 ^data(exp)=0 PARITY MISMATCH
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 206780000: reporter [I3C_TARGET_DRIVER_BFM] [206780000] SAMPLE bit[7] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 206940000: reporter [I3C_TARGET_DRIVER_BFM] [206940000] SAMPLE bit[6] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 207100000: reporter [I3C_TARGET_DRIVER_BFM] [207100000] SAMPLE bit[5] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 207260000: reporter [I3C_TARGET_DRIVER_BFM] [207260000] SAMPLE bit[4] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 207420000: reporter [I3C_TARGET_DRIVER_BFM] [207420000] SAMPLE bit[3] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 207580000: reporter [I3C_TARGET_DRIVER_BFM] [207580000] SAMPLE bit[2] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 207740000: reporter [I3C_TARGET_DRIVER_BFM] [207740000] SAMPLE bit[1] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 207900000: reporter [I3C_TARGET_DRIVER_BFM] [207900000] SAMPLE bit[0] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(213) @ 207900000: reporter [I3C_TARGET_DRIVER_BFM] SDR WRITE: byte[3] = 0x2c (00101100)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(224) @ 207900000: reporter [SDR_PARITY] SDR WRITE PARITY SAMPLE
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(155) @ 207900000: reporter [I3C_TARGET_MONITOR_BFM] SDR WRITE MON: byte[3] = 0x2c (00101100)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(238) @ 208140000: reporter [I3C_TARGET_DRIVER_BFM] SDR WRITE: byte[3]=0x2c parity_rx=0 ^data(exp)=1 PARITY MISMATCH
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(181) @ 208140000: reporter [I3C_TARGET_MONITOR_BFM] SDR WRITE MON: byte[3]=0x2c parity_rx=0 ^data(exp)=1 PARITY MISMATCH
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 208220000: reporter [I3C_TARGET_DRIVER_BFM] [208220000] SAMPLE bit[7] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 208380000: reporter [I3C_TARGET_DRIVER_BFM] [208380000] SAMPLE bit[6] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 208540000: reporter [I3C_TARGET_DRIVER_BFM] [208540000] SAMPLE bit[5] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 208700000: reporter [I3C_TARGET_DRIVER_BFM] [208700000] SAMPLE bit[4] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 208860000: reporter [I3C_TARGET_DRIVER_BFM] [208860000] SAMPLE bit[3] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 209020000: reporter [I3C_TARGET_DRIVER_BFM] [209020000] SAMPLE bit[2] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 209180000: reporter [I3C_TARGET_DRIVER_BFM] [209180000] SAMPLE bit[1] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 209340000: reporter [I3C_TARGET_DRIVER_BFM] [209340000] SAMPLE bit[0] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(213) @ 209340000: reporter [I3C_TARGET_DRIVER_BFM] SDR WRITE: byte[4] = 0xc0 (11000000)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(224) @ 209340000: reporter [SDR_PARITY] SDR WRITE PARITY SAMPLE
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(155) @ 209340000: reporter [I3C_TARGET_MONITOR_BFM] SDR WRITE MON: byte[4] = 0xc0 (11000000)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(238) @ 209580000: reporter [I3C_TARGET_DRIVER_BFM] SDR WRITE: byte[4]=0xc0 parity_rx=1 ^data(exp)=0 PARITY MISMATCH
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(181) @ 209580000: reporter [I3C_TARGET_MONITOR_BFM] SDR WRITE MON: byte[4]=0xc0 parity_rx=1 ^data(exp)=0 PARITY MISMATCH
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 209660000: reporter [I3C_TARGET_DRIVER_BFM] [209660000] SAMPLE bit[7] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 209820000: reporter [I3C_TARGET_DRIVER_BFM] [209820000] SAMPLE bit[6] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 209980000: reporter [I3C_TARGET_DRIVER_BFM] [209980000] SAMPLE bit[5] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 210140000: reporter [I3C_TARGET_DRIVER_BFM] [210140000] SAMPLE bit[4] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 210300000: reporter [I3C_TARGET_DRIVER_BFM] [210300000] SAMPLE bit[3] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 210460000: reporter [I3C_TARGET_DRIVER_BFM] [210460000] SAMPLE bit[2] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 210620000: reporter [I3C_TARGET_DRIVER_BFM] [210620000] SAMPLE bit[1] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 210780000: reporter [I3C_TARGET_DRIVER_BFM] [210780000] SAMPLE bit[0] = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(213) @ 210780000: reporter [I3C_TARGET_DRIVER_BFM] SDR WRITE: byte[5] = 0x65 (01100101)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(224) @ 210780000: reporter [SDR_PARITY] SDR WRITE PARITY SAMPLE
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(155) @ 210780000: reporter [I3C_TARGET_MONITOR_BFM] SDR WRITE MON: byte[5] = 0x65 (01100101)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(238) @ 211020000: reporter [I3C_TARGET_DRIVER_BFM] SDR WRITE: byte[5]=0x65 parity_rx=1 ^data(exp)=0 PARITY MISMATCH
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(181) @ 211020000: reporter [I3C_TARGET_MONITOR_BFM] SDR WRITE MON: byte[5]=0x65 parity_rx=1 ^data(exp)=0 PARITY MISMATCH
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1319) @ 211100000: reporter [I3C_TARGET_DRIVER_BFM] [211100000] SAMPLE bit[7] = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(198) @ 211141000: reporter [I3C_TARGET_DRIVER_BFM] SDR WRITE: STOP detected after byte[5] transfer complete
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(269) @ 211141000: reporter [I3C_TARGET_DRIVER_BFM] sampleWriteDataAndDriveACK done
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(185) @ 211141000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=0] item_done
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(139) @ 211141000: reporter [I3C_TARGET_MONITOR_BFM] SDR WRITE MON: STOP detected after byte[5] transfer complete
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(177) @ 211141000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] SDR BFM returned struct -> targetAddress=0x8  targetAddressStatus=0  operation=WRITE  no_of_bits=48
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(188) @ 211141000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] SDR write data[0] = 0x3c
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(188) @ 211141000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] SDR write data[1] = 0xbe
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(188) @ 211141000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] SDR write data[2] = 0x1b
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(188) @ 211141000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] SDR write data[3] = 0x2c
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(188) @ 211141000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] SDR write data[4] = 0xc0
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(188) @ 211141000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] SDR write data[5] = 0x65
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(198) @ 211141000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] SDR tx -> txn_type=SDR  targetAddress=0x8  targetAddressStatus=0  operation=I3C_WRITE
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(353) @ 211141000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] --> writing to analysis port (scoreboard): txn_type=SDR
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(198) @ 211141000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_cov_h [DEBUG_m_coverage] I3C_target_TX '{use_uvm_seeding:'h1, m_leaf_name:"i3c_target_tx", m_inst_id:2725, m_inst_count:2728, __m_uvm_status_container:{ ref to class uvm_status_container}, events:{ ref to class uvm_object_string_pool#(uvm_pkg::uvm_event)}, begin_event:{ ref to class uvm_event}, end_event:{ ref to class uvm_event}, m_transaction_id:-1, begin_time:18446744073709551615, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:'h0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:'h0, m_depth:-1, m_sequencer:null, m_parent_sequence:null, issued1:'h0, issued2:'h0, print_sequence_info:'h0, m_client_str:"", m_client:null, m_rh:null, type_name:"i3c_target_tx", readData:'{'h0, 'h0, 'h0, 'h0, 'h0, 'h0} , targetAddressStatus:ACK, writeDataStatus:'{ACK, ACK, ACK, ACK, ACK, ACK} , operation:I3C_WRITE, targetAddress:'h8, writeData:'{'h3c, 'hbe, 'h1b, 'h2c, 'hc0, 'h65} , readDataStatus:'{ACK, ACK, ACK, ACK, ACK, ACK} , size:'h0, txn_type:SDR, pid:'h0, bcr:'h0, dcr:'h0, dynamic_address:'h0, daa_ack:'h0, hotjoin_addr:'h0, ibi_mdb:'h0, hdr_data:'{}, hdr_crc:'h0, hdr_parity:'h0, hdr_tbit:'h0, ibi_num_extra_bytes:'h0, ibi_extra_data:'{}, ibi_t1:'h0, ibi_extra_data_sent:'{}, ibi_extra_t_bits:'{}}
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(89) @ 211141000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] cfg snapshot -> targetAddress=0x8  pid=0xaabbcc0001  bcr=0x0  dcr=0xc2  has_daa=1  pending_sdr=0
+UVM_INFO ../../src/hvl_top/target/target_sequences/i3c_target_writeOperationWith8bitsData_seq.sv(41) @ 211141000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h@@target_seq_write [i3c_target_writeOperationWith8bitsData_seq] finish_item returned - item sent to driver
+UVM_INFO ../../src/hvl_top/env/i3c_scoreboard.sv(1617) @ 293890000: uvm_test_top.i3c_env_h.i3c_scoreboard_h [SB_SUMMARY] 
+============= SCOREBOARD SUMMARY =============
+  APB transactions seen      : 10
+  I3C target transactions    : 5
+  -- SDR --
+  Write byte pass / fail     : 6 / 0
+  Read  byte pass / fail     : 0 / 0
+  -- DAA --
+  Devices seen               : 4 / 4 expected
+  Dyn address pass / fail    : 4 / 0
+  Parity/ACK  pass / fail    : 4 / 0
+==============================================
+UVM_INFO ../../src/hvl_top/env/i3c_scoreboard.sv(1818) @ 293890000: uvm_test_top.i3c_env_h.i3c_scoreboard_h [SB_SUMMARY] 
+============= IBI SUMMARY =============
+  IBI pass / fail            : 0 / 0
+========================================
+UVM_INFO ../../src/hvl_top/env/i3c_scoreboard.sv(1841) @ 293890000: uvm_test_top.i3c_env_h.i3c_scoreboard_h [SB_SUMMARY] 
+============= HDR-DDR SUMMARY =============
+  HDR write byte pass / fail : 0 / 0
+  HDR read  byte pass / fail : 0 / 0
+=============================================
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_coverage.sv(129) @ 293890000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_cov_h [apb_master_coverage] APB Master Agent Coverage = 26.04 %
+
+--------------------------------------
+target COVERAGE
+--------------------------------------
+
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(230) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_cov_h [i3c_target_coverage] target Agent SDR Coverage = 33.33 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(233) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_cov_h [i3c_target_coverage] target Agent DAA Coverage = 91.67 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(236) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_cov_h [i3c_target_coverage] target Agent IBI Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(239) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_cov_h [i3c_target_coverage] target Agent HDR-DDR Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(242) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_cov_h [i3c_target_coverage] target Agent Total Coverage = 62.50 %
+
+--------------------------------------
+target COVERAGE
+--------------------------------------
+
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(230) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_cov_h [i3c_target_coverage] target Agent SDR Coverage = 33.33 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(233) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_cov_h [i3c_target_coverage] target Agent DAA Coverage = 91.67 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(236) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_cov_h [i3c_target_coverage] target Agent IBI Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(239) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_cov_h [i3c_target_coverage] target Agent HDR-DDR Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(242) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_cov_h [i3c_target_coverage] target Agent Total Coverage = 62.50 %
+
+--------------------------------------
+target COVERAGE
+--------------------------------------
+
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(230) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_cov_h [i3c_target_coverage] target Agent SDR Coverage = 33.33 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(233) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_cov_h [i3c_target_coverage] target Agent DAA Coverage = 91.67 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(236) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_cov_h [i3c_target_coverage] target Agent IBI Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(239) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_cov_h [i3c_target_coverage] target Agent HDR-DDR Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(242) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[2].i3c_target_cov_h [i3c_target_coverage] target Agent Total Coverage = 62.50 %
+
+--------------------------------------
+target COVERAGE
+--------------------------------------
+
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(230) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_cov_h [i3c_target_coverage] target Agent SDR Coverage = 33.33 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(233) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_cov_h [i3c_target_coverage] target Agent DAA Coverage = 91.67 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(236) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_cov_h [i3c_target_coverage] target Agent IBI Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(239) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_cov_h [i3c_target_coverage] target Agent HDR-DDR Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(242) @ 293890000: uvm_test_top.i3c_env_h.i3c_target_agent_h[3].i3c_target_cov_h [i3c_target_coverage] target Agent Total Coverage = 62.50 %
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  377
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[COUNT_SLAVE]     4
+[DAA_ACK_DEBUG]    20
+[DEBUG_MSHA]    11
+[DEBUG_m_coverage]     5
+[I3C_TARGET_DRIVER_BFM]   181
+[I3C_TARGET_MONITOR_BFM]    57
+[SB_SUMMARY]     3
+[SDR_PARITY]     6
+[TGT_DRV_PROXY]    19
+[apb_master_coverage]     1
+[apb_master_driver_proxy]    10
+[i3c_daa_write_8b_test]     5
+[i3c_target_coverage]    20
+[i3c_target_monitor_proxy]    31
+[i3c_target_writeOperationWith8bitsData_seq]     3
+[sdr_debug]     1
+$finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/base/uvm_root.svh", line 437.
+$finish at simulation time            293890000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 293890000 ps
+CPU Time:      1.640 seconds;       Data structure size:   1.3Mb
+Wed Sep  9 14:01:41 2026

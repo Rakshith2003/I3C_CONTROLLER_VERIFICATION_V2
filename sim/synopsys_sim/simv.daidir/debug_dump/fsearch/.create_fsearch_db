@@ -1,0 +1,9 @@
+#!/bin/sh -h 
+PYTHONHOME=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/search/pyh
+export PYTHONHOME
+PYTHONPATH=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/pylib27
+export PYTHONPATH
+LD_LIBRARY_PATH=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib:/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/pylib27
+export LD_LIBRARY_PATH
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/bin/vcsfind_create_index.exe  -z  "/fetools/work_area/frontend/Batch_10/rakshith_shetty/DV_PROJECTS/PROTOCOL/I3C_CONTROLLER_VERIFICATION_V2/sim/synopsys_sim/simv.daidir/debug_dump/fsearch/./idents_za4riK.xml.gz" "/fetools/work_area/frontend/Batch_10/rakshith_shetty/DV_PROJECTS/PROTOCOL/I3C_CONTROLLER_VERIFICATION_V2/sim/synopsys_sim/simv.daidir/debug_dump/fsearch/./idents_tapi.xml.gz" -o "/fetools/work_area/frontend/Batch_10/rakshith_shetty/DV_PROJECTS/PROTOCOL/I3C_CONTROLLER_VERIFICATION_V2/sim/synopsys_sim/simv.daidir/debug_dump/fsearch/fsearch.db_tmp"
+\mv "/fetools/work_area/frontend/Batch_10/rakshith_shetty/DV_PROJECTS/PROTOCOL/I3C_CONTROLLER_VERIFICATION_V2/sim/synopsys_sim/simv.daidir/debug_dump/fsearch/fsearch.db_tmp" "/fetools/work_area/frontend/Batch_10/rakshith_shetty/DV_PROJECTS/PROTOCOL/I3C_CONTROLLER_VERIFICATION_V2/sim/synopsys_sim/simv.daidir/debug_dump/fsearch/fsearch.db"
