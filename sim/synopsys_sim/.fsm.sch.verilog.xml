@@ -1,0 +1,38 @@
+<Command name="schRTLInfo"  delimiter="."  >
+<RTLBlock >
+<RTLInfo   name="state_0"  type="2"  fileName="../../rtl_dev/src/i3c_sdr_fsm.v"  >
+    <Seg beginLine="66"  endLine="249"  />
+  </RTLInfo>
+<Instance name="hdl_top.dut.x5"  />
+</RTLBlock>
+<RTLBlock >
+<RTLInfo   name="state_1"  type="2"  fileName="../../rtl_dev/src/i3c_ibi_fsm.v"  >
+    <Seg beginLine="46"  endLine="83"  />
+  </RTLInfo>
+<Instance name="hdl_top.dut.x11"  />
+</RTLBlock>
+<RTLBlock >
+<RTLInfo   name="state_2"  type="2"  fileName="../../rtl_dev/src/i3c_scl_gen.v"  >
+    <Seg beginLine="57"  endLine="67"  />
+  </RTLInfo>
+<Instance name="hdl_top.dut.x9"  />
+</RTLBlock>
+<RTLBlock >
+<RTLInfo   name="state_3"  type="2"  fileName="../../rtl_dev/src/i3c_bit_engine.v"  >
+    <Seg beginLine="121"  endLine="141"  />
+  </RTLInfo>
+<Instance name="hdl_top.dut.x8"  />
+</RTLBlock>
+<RTLBlock >
+<RTLInfo   name="state_4"  type="2"  fileName="../../rtl_dev/src/i3c_hdr_fsm.v"  >
+    <Seg beginLine="52"  endLine="68"  />
+  </RTLInfo>
+<Instance name="hdl_top.dut.x13"  />
+</RTLBlock>
+<RTLBlock >
+<RTLInfo   name="state_5"  type="2"  fileName="../../rtl_dev/src/i3c_daa_fsm.v"  >
+    <Seg beginLine="63"  endLine="93"  />
+  </RTLInfo>
+<Instance name="hdl_top.dut.x6"  />
+</RTLBlock>
+</Command>

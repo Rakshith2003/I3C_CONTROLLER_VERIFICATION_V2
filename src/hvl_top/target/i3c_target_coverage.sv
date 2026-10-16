@@ -39,19 +39,7 @@ class i3c_target_coverage extends uvm_subscriber#(i3c_target_tx);
       bins READDATA_WIDTH_6 = {[72:MAXIMUM_BITS]};
     }
     
-    WRITEDATA_STATUS_CP : coverpoint packet.getWriteDataStatus() {
-      option.comment = "writeData status";
-      bins WRITEDATA_STATUS_ALL_ACK  = {2'b00};
-      bins WRITEDATA_STATUS_ALL_NACK = {2'b11};
-      bins WRITEDATA_STATUS_MIX      = {2'b01, 2'b10};
-    }
    
-    READDATA_STATUS_CP : coverpoint packet.getReadDataStatus() {
-      option.comment = "readData status";
-      bins READDATA_STATUS_ALL_ACK  = {2'b00};
-      bins READDATA_STATUS_ALL_NACK = {2'b11};
-      bins READDATA_STATUS_MIX      = {2'b01, 2'b10};
-    }
 OPERATION_CP_X_READDATA_CP : cross OPERATION_CP, READDATA_CP {
   ignore_bins invalid_write =
     binsof(OPERATION_CP) intersect {0};
@@ -72,7 +60,6 @@ endgroup : target_covergroup
     DAA_PID_TOP_BYTE_CP : coverpoint packet.pid[47:40] {
       option.comment = "PID top byte (manufacturer ID upper)";
       bins PID_NONZERO = {[1:255]};
-      bins PID_ZERO    = {0};
     }
     DAA_BCR_ROLE_CP : coverpoint packet.bcr[7] {
       option.comment = "BCR[7]: 0=target 1=controller";

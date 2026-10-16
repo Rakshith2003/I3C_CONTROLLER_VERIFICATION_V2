@@ -70,24 +70,8 @@ class i3c_ral_reg_block extends uvm_reg_block;
 
     status_inst.build();
     status_inst.configure(this);
-
-    status_inst.add_hdl_path_slice("cmd_busy"     ,0 ,1);
-    status_inst.add_hdl_path_slice("sdr_busy"     ,1 ,1);
-    status_inst.add_hdl_path_slice("sdr_done"     ,2 ,1);
-    status_inst.add_hdl_path_slice("daa_done"     ,3 ,1);
-    status_inst.add_hdl_path_slice("daa_busy"     ,4 ,1);
-    status_inst.add_hdl_path_slice("tx_full"      ,5 ,1);
-    status_inst.add_hdl_path_slice("tx_empty"     ,6 ,1);
-    status_inst.add_hdl_path_slice("rx_full"      ,7 ,1);
-    status_inst.add_hdl_path_slice("rx_empty"     ,8 ,1);
-    status_inst.add_hdl_path_slice("sdr_bit_done" ,9 ,1);
-    status_inst.add_hdl_path_slice("sdr_bit_busy" ,10,1);
-    status_inst.add_hdl_path_slice("bus_idle"     ,11,1);
-    status_inst.add_hdl_path_slice("hdr_busy"     ,12,1);
-    status_inst.add_hdl_path_slice("hdr_done"     ,13,1);
-    status_inst.add_hdl_path_slice("hdr_bit_done" ,14,1);
-    status_inst.add_hdl_path_slice("hdr_bit_busy" ,15,1);
-    status_inst.add_hdl_path_slice("irq"          ,16,1);
+// HDL path for REG_STATUS backdoor access
+status_inst.add_hdl_path_slice("x1.STATUS", 0, 17);
 
     default_map = create_map("default_map", 'h000, 4, UVM_LITTLE_ENDIAN);
 
@@ -97,10 +81,10 @@ class i3c_ral_reg_block extends uvm_reg_block;
     default_map.add_reg(dynaddr_inst,  'h064, "RO");
     default_map.add_reg(status_inst,  'h008, "RO");
 
-
-    add_hdl_path("top.dut", "RTL");
+add_hdl_path("hdl_top.dut", "RTL");
     lock_model();
 
   endfunction
 
 endclass
+

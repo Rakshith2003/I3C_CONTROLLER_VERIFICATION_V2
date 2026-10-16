@@ -1,0 +1,3 @@
+Command Line: /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/platform/LINUXAMD64/bin/Novas -ssf novas.fsdb
+uname(Linux feserver.mirafra.com 3.10.0-1160.114.2.el7.x86_64 #1 SMP Wed Mar 20 15:54:52 UTC 2024 x86_64)
+au time 34.995900 4.031351 1.312372 delta 276090880 276090880 total 733904896 733904896

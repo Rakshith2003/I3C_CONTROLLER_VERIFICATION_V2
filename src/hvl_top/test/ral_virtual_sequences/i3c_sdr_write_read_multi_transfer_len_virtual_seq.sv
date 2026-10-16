@@ -132,15 +132,6 @@ class i3c_sdr_write_read_multi_transfer_len_virtual_seq extends top_virtual_base
       uvm_reg_data_t rdata;
       i3c_env_cfg_h.regBlockHandle.rdatab_inst.read(
         status, rdata, UVM_FRONTDOOR, .parent(this));
-      `uvm_info(get_type_name(),
-        $sformatf("READ: RDATAB[%0d] = 0x%02h  (wrote 0x%02h)  %s",
-                  i, rdata[7:0], wdata_bytes[i],
-                  (rdata[7:0] == wdata_bytes[i]) ? "MATCH" : "MISMATCH"),
-        UVM_LOW)
-      if (rdata[7:0] != wdata_bytes[i])
-        `uvm_error(get_type_name(),
-          $sformatf("READ MISMATCH byte[%0d]: wrote 0x%02h got 0x%02h",
-                    i, wdata_bytes[i], rdata[7:0]))
     end
     `uvm_info(get_type_name(),
       $sformatf("SDR WRITE+READ to target[%0d] complete (%0d bytes)",

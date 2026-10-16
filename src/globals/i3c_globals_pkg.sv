@@ -5,7 +5,7 @@ package i3c_globals_pkg;
 
   parameter int NO_OF_CONTROLLERS = 1;
 
-  parameter int NO_OF_TARGETS = 4;
+  parameter int NO_OF_TARGETS = 2;
 
   parameter int NO_OF_REG = 1;
 

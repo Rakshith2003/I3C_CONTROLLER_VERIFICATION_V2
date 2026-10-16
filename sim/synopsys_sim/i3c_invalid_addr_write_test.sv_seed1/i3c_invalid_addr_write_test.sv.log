@@ -1,0 +1,71 @@
+Command: /fetools/work_area/frontend/Batch_10/sinchanabr/I3C_CONTROLLER_VERIFICATION_V2/sim/synopsys_sim/./simv +UVM_TESTNAME=i3c_invalid_addr_write_test.sv +UVM_VERBOSITY=UVM_FULL +ntb_random_seed=1 +define+STANDARD_I3C -cm line+cond+tgl+fsm+branch -cm_dir i3c_invalid_addr_write_test.sv_seed1/i3c_invalid_addr_write_test.sv_seed1.vdb -l i3c_invalid_addr_write_test.sv_seed1/i3c_invalid_addr_write_test.sv.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Oct 16 11:03 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+*Verdi* Loading libsscore_vcs202003.so
+FSDB Dumper for VCS, Release Verdi_Q-2020.03-SP2-8, Linux x86_64/64bit, 08/31/2021
+(C) 1996 - 2021 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'novas.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : Enable +all dumping.
+*Verdi* : End of traversing.
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(67) @ 0: reporter [APB_MASTER_DRIVER_BFM] APB_MASTER_DRIVER_BFM
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_monitor_bfm.sv(63) @ 0: reporter [APB_MASTER_MONITOR_BFM] APB MASTER MONITOR BFM
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_agent_bfm.sv(17) @ 0: reporter [apb master agent bfm] APB MASTER AGENT BFM
+I3C_TARGET_DRIVER_BFM
+I3C_TARGET_MONITOR_BFM
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_agent_bfm.sv(39) @ 0: reporter [TGT_AGENT_BFM] Registering BFMs: drv_key=i3c_target_driver_bfm_0  mon_key=i3c_target_monitor_bfm_0
+i3c_target_agent_bfm: target_ID=0
+I3C_TARGET_DRIVER_BFM
+I3C_TARGET_MONITOR_BFM
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_agent_bfm.sv(39) @ 0: reporter [TGT_AGENT_BFM] Registering BFMs: drv_key=i3c_target_driver_bfm_1  mon_key=i3c_target_monitor_bfm_1
+i3c_target_agent_bfm: target_ID=1
+HDL TOP – multi-slave (2 targets)
+UVM_WARNING @ 0: reporter [BDTYP] Cannot create a component of type 'i3c_invalid_addr_write_test.sv' because it is not registered with the factory.
+UVM_FATAL @ 0: reporter [INVTST] Requested test from command line +UVM_TESTNAME=i3c_invalid_addr_write_test.sv not found.
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    5
+UVM_WARNING :    1
+UVM_ERROR :    0
+UVM_FATAL :    1
+** Report counts by id
+[APB_MASTER_DRIVER_BFM]     1
+[APB_MASTER_MONITOR_BFM]     1
+[BDTYP]     1
+[INVTST]     1
+[TGT_AGENT_BFM]     2
+[apb master agent bfm]     1
+$finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/base/uvm_report_object.svh", line 292.
+$finish at simulation time                    0
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 0 ps
+CPU Time:      1.230 seconds;       Data structure size:   0.8Mb
+Fri Oct 16 11:03:58 2026

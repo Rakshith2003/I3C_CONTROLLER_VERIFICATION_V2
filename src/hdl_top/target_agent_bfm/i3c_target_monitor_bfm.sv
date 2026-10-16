@@ -215,94 +215,65 @@ interface i3c_target_monitor_bfm (
 
 
   // SDR READ
-
-  task sampleReadDataAndAck(
+task sampleReadDataAndAck(
     inout i3c_transfer_bits_s pkt,
-    inout i3c_transfer_cfg_s  cfg
-  );
+    inout i3c_transfer_cfg_s cfg
+);
 
     bit tbit;
     int total_bytes;
 
     total_bytes = 0;
 
-
     for (int i = 0; i < MAXIMUM_BYTES; i++) begin
 
-      sample_read_data(
-        pkt,
-        i,
-        cfg.dataTransferDirection
-      );
+        sample_read_data(
+            pkt,
+            i,
+            cfg.dataTransferDirection
+        );
 
-      total_bytes++;
-
-
-      `uvm_info(
-        name,
-        $sformatf(
-          "SDR READ MON: sampled byte[%0d]=0x%02h (%08b)",
-          i,
-          pkt.readData[i],
-          pkt.readData[i]
-        ),
-        UVM_NONE
-      )
-
-
-      // 9th bit:
-      // Controller-driven T-bit -- monitor just samples.
-      detectEdge_scl(POSEDGE);
-
-      tbit = sda_i;
-
-
-      `uvm_info(
-        name,
-        $sformatf(
-          "SDR READ MON: sampled controller T-bit=%0b (%s) after byte[%0d]",
-          tbit,
-          tbit ? "CONTINUE" : "TERMINATE",
-          i
-        ),
-        UVM_NONE
-      )
-
-
-      pkt.readDataStatus[i] = tbit ? ACK : NACK;
-
-
-      if (!tbit) begin
+        total_bytes++;
 
         `uvm_info(
-          name,
-          $sformatf(
-            "SDR READ MON: stopping after byte[%0d], waiting for STOP",
-            i
-          ),
-          UVM_NONE
+            name,
+            $sformatf(
+                "SDR READ MON: sampled byte[%0d]=0x%02h (%08b)",
+                i, pkt.readData[i], pkt.readData[i]
+            ),
+            UVM_NONE
         )
 
-        break;
+        detectEdge_scl(POSEDGE);
+        tbit = sda_i;
 
-      end
+        `uvm_info(
+            name,
+            $sformatf(
+                "SDR READ MON: T-bit=%0b after byte[%0d]",
+                tbit, i
+            ),
+            UVM_NONE
+        )
+
+        if (tbit)
+            break;
 
     end
 
-
     `uvm_info(
-      name,
-      $sformatf(
-        "SDR READ MON: sampled %0d byte(s), waiting for STOP",
-        total_bytes
-      ),
-      UVM_NONE
+        name,
+        $sformatf(
+            "SDR READ MON: sampled %0d byte(s), waiting for STOP",
+            total_bytes
+        ),
+        UVM_NONE
     )
-
 
     wrDetect_stop();
 
-  endtask : sampleReadDataAndAck
+endtask : sampleReadDataAndAck
+
 
 
   // Addressed flag
@@ -1039,6 +1010,7 @@ interface i3c_target_monitor_bfm (
     ack = sda_i;
 
     detectEdge_scl(NEGEDGE);
+ 
 
   endtask : sampleAddressAck
 
@@ -1110,45 +1082,31 @@ interface i3c_target_monitor_bfm (
   //--------------------------------------------------------------------------
   // Sample READ Data
   //--------------------------------------------------------------------------
-
-  task sample_read_data(
+task sample_read_data(
     inout i3c_transfer_bits_s pkt,
-    input int                  i,
+    input int i,
     input dataTransferDirection_e dir
-  );
-
+);
     bit [I3C_DATA_WIDTH-1:0] rdata;
-
 
     state = I3C_READ_DATA;
 
+    for (int k = 0, bit_no = 0; k < I3C_DATA_WIDTH; k++) begin
+        bit_no = (dir == MSB_FIRST) ? ((I3C_DATA_WIDTH-1)-k) : k;
 
-    for (
-      int k = 0, bit_no = 0;
-      k < I3C_DATA_WIDTH;
-      k++
-    ) begin
+        detectEdge_scl(POSEDGE);
+        rdata[bit_no] = sda_i;
 
-      bit_no =
-        (dir == MSB_FIRST)
-        ? ((I3C_DATA_WIDTH-1) - k)
-        : k;
+        `uvm_info(name,
+            $sformatf("READ SAMPLE: byte[%0d] bit_no=%0d SCL=%0b SDA=%0b time=%0t",
+            i, bit_no, scl_i, sda_i, $time),
+            UVM_NONE)
 
-
-      detectEdge_scl(POSEDGE);
-
-      rdata[bit_no] = sda_i;
-
-      pkt.no_of_i3c_bits_transfer++;
-
+        pkt.no_of_i3c_bits_transfer++;
     end
 
-
     pkt.readData[i] = rdata;
-
-  endtask : sample_read_data
-
-
+endtask
   //--------------------------------------------------------------------------
   // Sample READ ACK
   //--------------------------------------------------------------------------

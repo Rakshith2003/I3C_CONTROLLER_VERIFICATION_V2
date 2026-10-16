@@ -1,3 +1,4 @@
+
 `ifndef I3C_TARGET_DRIVER_BFM_INCLUDED_
 `define I3C_TARGET_DRIVER_BFM_INCLUDED_
 
@@ -27,7 +28,8 @@ interface i3c_target_driver_bfm (
 
   i3c_target_driver_proxy i3c_target_drv_proxy_h;
 
-  bit [I3C_DATA_WIDTH-1:0] targetFIFOMemory[$];
+
+bit [I3C_DATA_WIDTH-1:0] targetFIFOMemory[$];
 
   string name = "I3C_TARGET_DRIVER_BFM";
 
@@ -274,20 +276,103 @@ interface i3c_target_driver_bfm (
 
   endtask : sampleWriteDataAndDriveACK
 
+/*
+ task driveReadDataAndSampleTbit(
+      inout i3c_transfer_bits_s dataPacketStruck,
+      input i3c_transfer_cfg_s  configPacketStruck);
 
-  task driveReadDataAndSampleTbit(
+    bit t_bit;
+    int total_bytes;
+
+    `uvm_info(name, "driveReadDataAndSampleTbit started", UVM_HIGH)
+
+    total_bytes = 0;
+
+    for (int i = 0; i < MAXIMUM_BYTES; i++) begin
+
+      // ----------------------------------------------------------------
+      // Step 1: get byte to send from FIFO or use default
+      // ----------------------------------------------------------------
+      if (targetFIFOMemory.size() == 0)
+        rdata = configPacketStruck.defaultReadData;
+      else
+        rdata = targetFIFOMemory.pop_front();
+
+      // ----------------------------------------------------------------
+      // Step 2: drive 8 data bits
+      //   drive_read_data drives each bit on NEGEDGE (controller samples
+      //   on POSEDGE). Returns after driving bit[0] on the 8th NEGEDGE.
+      // ----------------------------------------------------------------
+      drive_read_data(rdata, dataPacketStruck, i,
+                      configPacketStruck.dataTransferDirection);
+
+      total_bytes++;
+
+      `uvm_info(name,
+        $sformatf("SDR READ: drove byte[%0d]=0x%02h (%08b)", i, rdata, rdata),
+        UVM_NONE)
+
+      // ----------------------------------------------------------------
+      // Step 3: release SDA so controller can drive the T-bit
+      //   drive_read_data ended on the 8th NEGEDGE with bit[0] driven.
+      //   We release SDA on the same NEGEDGE so the controller can
+      //   take over and drive T on this NEGEDGE.
+      // ----------------------------------------------------------------
+      drive_sda(1'b1);   // release — controller now owns SDA for T-bit
+
+      // ----------------------------------------------------------------
+      // Step 4: sample T-bit driven by CONTROLLER on POSEDGE
+      //   NEGEDGE: controller drove T on SDA (already happened above)
+      //   POSEDGE: target samples T-bit here
+      //     T=1 → controller wants more bytes → continue loop
+      //     T=0 → controller signals end of message → exit
+      // ----------------------------------------------------------------
+      detectEdge_scl(POSEDGE);
+      t_bit = sda_i;   // controller-driven T-bit
+
+      `uvm_info(name,
+        $sformatf("SDR READ: T-bit=%0b (%s) sampled from controller",
+                  t_bit, t_bit ? "LAST BYTE" : "MORE BYTES"),
+        UVM_NONE)
+
+//       dataPacketStruck.readDataStatus[i] = t_bit ? ACK : NACK;
+
+      // ----------------------------------------------------------------
+      // Step 5: exit on T=0 (controller signals last byte)
+      // ----------------------------------------------------------------
+      if (t_bit) begin
+        `uvm_info(name,
+                  $sformatf("SDR READ: T-bit=1 after byte[%0d] — last byte, waiting for STOP", i),
+          UVM_NONE)
+        break;
+      end
+
+      // T=1: controller wants more → loop continues
+      // drive_read_data for next byte starts at NEGEDGE (bit[7] setup)
+      // which it handles internally via detectEdge_scl(NEGEDGE)
+
+    end // for
+
+    `uvm_info(name,
+      $sformatf("SDR READ: drove %0d byte(s), waiting for STOP", total_bytes),
+      UVM_NONE)
+
+    wrDetect_stop();
+
+    `uvm_info(name, "driveReadDataAndSampleTbit done", UVM_HIGH)
+
+  endtask : driveReadDataAndSampleTbit
+*/
+
+task driveReadDataAndSampleTbit(
     inout i3c_transfer_bits_s dataPacketStruck,
-    input i3c_transfer_cfg_s configPacketStruck
+    input i3c_transfer_cfg_s  configPacketStruck
   );
 
     bit t_bit;
     int total_bytes;
 
-    `uvm_info(
-      name,
-      "driveReadDataAndSampleTbit started",
-      UVM_HIGH
-    )
+    `uvm_info(name, "driveReadDataAndSampleTbit started", UVM_HIGH)
 
     total_bytes = 0;
 
@@ -298,6 +383,8 @@ interface i3c_target_driver_bfm (
       else
         rdata = targetFIFOMemory.pop_front();
 
+      // drive_read_data now ends after the LAST bit's NEGEDGE
+      // (the NEGEDGE is consumed at the start of each bit in the loop)
       drive_read_data(
         rdata,
         dataPacketStruck,
@@ -307,84 +394,46 @@ interface i3c_target_driver_bfm (
 
       total_bytes++;
 
-      `uvm_info(
-        name,
-        $sformatf(
-          "SDR READ: drove byte[%0d]=0x%02h (%08b)",
-          i,
-          rdata,
-          rdata
-        ),
-        UVM_NONE
-      )
+      `uvm_info(name,
+        $sformatf("SDR READ: drove byte[%0d]=0x%02h (%08b)",
+                  i, rdata, rdata),
+        UVM_NONE)
 
-      // The TARGET drives the T-bit, not the controller.
-      // T=1 -> target has more data -> continue
-      // T=0 -> target signals last byte -> end message
+      // Release SDA — controller drives T-bit on next POSEDGE
+      sda_oen = TRISTATE_BUF_OFF;
+      sda_o   = 1'b1;
 
-      t_bit = (
-        targetFIFOMemory.size() > 0 &&
-        (i + 1) < MAXIMUM_BYTES
-      ) ? 1'b1 : 1'b0;
+      // Next POSEDGE is the T-bit sample point
+      detectEdge_scl(POSEDGE);
+      t_bit = sda_i;
 
-      drive_sda(t_bit);
+      `uvm_info(name,
+        $sformatf("SDR READ: byte[%0d]=0x%02h T-bit=%0b (%s)",
+                  i, rdata, t_bit,
+                  t_bit ? "LAST BYTE" : "MORE BYTES"),
+        UVM_NONE)
 
-      `uvm_info(
-        name,
-        $sformatf(
-          "SDR READ: T-bit=%0b (%s) driven on SDA",
-          t_bit,
-          t_bit ? "MORE BYTES" : "LAST BYTE"
-        ),
-        UVM_NONE
-      )
-
-      `uvm_info(
-        "read_sdr_t_bit",
-        $sformatf("t bit=%d", t_bit),
-        UVM_NONE
-      )
-
-      dataPacketStruck.readDataStatus[i] =
-        t_bit ? ACK : NACK;
-
-      if (!t_bit) begin
-
-        `uvm_info(
-          name,
-          $sformatf(
-            "SDR READ: T-bit=0 after byte[%0d] — last byte, waiting for STOP",
-            i
-          ),
-          UVM_NONE
-        )
-
+      if (t_bit) begin
+        `uvm_info(name,
+          $sformatf("SDR READ: T-bit=1 after byte[%0d] — last byte",i),
+          UVM_NONE)
         break;
-
       end
+
+      // T=0 → more bytes: the NEGEDGE after T-bit POSEDGE will be
+      // consumed at the start of the next byte's drive_read_data loop
 
     end
 
-    `uvm_info(
-      name,
-      $sformatf(
-        "SDR READ: drove %0d byte(s), waiting for STOP",
-        total_bytes
-      ),
-      UVM_NONE
-    )
+    `uvm_info(name,
+      $sformatf("SDR READ: drove %0d byte(s), waiting for STOP", total_bytes),
+      UVM_NONE)
 
     wrDetect_stop();
 
-    `uvm_info(
-      name,
-      "driveReadDataAndSampleTbit done",
-      UVM_HIGH
-    )
+    `uvm_info(name, "driveReadDataAndSampleTbit done", UVM_HIGH)
 
   endtask : driveReadDataAndSampleTbit
-
-
   // DAA TRANSACTION (multi-slave arbitration)
 
   bit has_address = 0;
@@ -1354,8 +1403,7 @@ interface i3c_target_driver_bfm (
     drive_sda(1'b1);
 
   endtask : driveWdataAck
-
-
+/*
   task drive_read_data(
     input bit [I3C_DATA_WIDTH-1:0] rdata_in,
     inout i3c_transfer_bits_s pkt,
@@ -1376,9 +1424,12 @@ interface i3c_target_driver_bfm (
         ((I3C_DATA_WIDTH - 1) - k) :
         k;
 
+detectEdge_scl(NEGEDGE);
+
       drive_sda(rdata_in[bit_no]);
 
-      detectEdge_scl(NEGEDGE);
+     detectEdge_scl(POSEDGE);
+
 
       pkt.no_of_i3c_bits_transfer++;
 
@@ -1387,6 +1438,36 @@ interface i3c_target_driver_bfm (
     pkt.readData[i] = rdata_in;
 
   endtask : drive_read_data
+
+
+*/
+task drive_read_data(
+    input bit [I3C_DATA_WIDTH-1:0] rdata_in,
+    inout i3c_transfer_bits_s pkt,
+    input int i,
+    input dataTransferDirection_e dir
+);
+    state = I3C_READ_DATA;
+
+    if (i > 0)
+        detectEdge_scl(NEGEDGE);
+
+    for (int k = 0, bit_no = 0; k < I3C_DATA_WIDTH; k++) begin
+        bit_no = (dir == MSB_FIRST) ? ((I3C_DATA_WIDTH-1)-k) : k;
+
+        drive_sda(rdata_in[bit_no]);
+
+        `uvm_info(name,
+            $sformatf("READ DRIVE: byte[%0d] bit_no=%0d data=%0b time=%0t",
+            i, bit_no, rdata_in[bit_no], $time),
+            UVM_NONE)
+
+        detectEdge_scl(NEGEDGE);
+        pkt.no_of_i3c_bits_transfer++;
+    end
+
+    pkt.readData[i] = rdata_in;
+endtask
 
 
   task sample_ack(
@@ -1505,8 +1586,7 @@ interface i3c_target_driver_bfm (
 
 
   task drive_scl(
-    input bit value
-  );
+    input bit value);
 
     scl_oen <= value ?
                TRISTATE_BUF_OFF :

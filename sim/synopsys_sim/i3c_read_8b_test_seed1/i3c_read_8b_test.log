@@ -1,0 +1,833 @@
+Command: /fetools/work_area/frontend/Batch_10/sinchanabr/I3C_CONTROLLER_VERIFICATION_V2/sim/synopsys_sim/./simv +UVM_TESTNAME=i3c_read_8b_test +UVM_VERBOSITY=UVM_FULL +ntb_random_seed=1 +define+STANDARD_I3C -cm line+cond+tgl+fsm+branch -cm_dir i3c_read_8b_test_seed1/i3c_read_8b_test_seed1.vdb -l i3c_read_8b_test_seed1/i3c_read_8b_test.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Oct 16 11:01 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+*Verdi* Loading libsscore_vcs202003.so
+FSDB Dumper for VCS, Release Verdi_Q-2020.03-SP2-8, Linux x86_64/64bit, 08/31/2021
+(C) 1996 - 2021 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'novas.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : Enable +all dumping.
+*Verdi* : End of traversing.
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(67) @ 0: reporter [APB_MASTER_DRIVER_BFM] APB_MASTER_DRIVER_BFM
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_monitor_bfm.sv(63) @ 0: reporter [APB_MASTER_MONITOR_BFM] APB MASTER MONITOR BFM
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_agent_bfm.sv(17) @ 0: reporter [apb master agent bfm] APB MASTER AGENT BFM
+I3C_TARGET_DRIVER_BFM
+I3C_TARGET_MONITOR_BFM
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_agent_bfm.sv(39) @ 0: reporter [TGT_AGENT_BFM] Registering BFMs: drv_key=i3c_target_driver_bfm_0  mon_key=i3c_target_monitor_bfm_0
+i3c_target_agent_bfm: target_ID=0
+I3C_TARGET_DRIVER_BFM
+I3C_TARGET_MONITOR_BFM
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_agent_bfm.sv(39) @ 0: reporter [TGT_AGENT_BFM] Registering BFMs: drv_key=i3c_target_driver_bfm_1  mon_key=i3c_target_monitor_bfm_1
+i3c_target_agent_bfm: target_ID=1
+HDL TOP – multi-slave (2 targets)
+UVM_INFO @ 0: reporter [RNTST] Running test i3c_read_8b_test...
+UVM_INFO ../../src/hvl_top/test/i3c_base_test.sv(77) @ 0: uvm_test_top [i3c_read_8b_test] target_agent_cfg[0]:
+----------------------------------------------------------------------
+Name                       Type                     Size  Value       
+----------------------------------------------------------------------
+i3c_target_agent_cfg_h[0]  i3c_target_agent_config  -     @511        
+  isActive                 string                   10    UVM_ACTIVE  
+  dataTransferDirection    string                   9     MSB_FIRST   
+  hasCoverage              string                   4     TRUE        
+  targetAddress            integral                 7     'h68        
+  target_id                integral                 32    'd0         
+  daa_accept_address       integral                 1     'b1         
+  pending_hot_join         integral                 1     'b0         
+  hotjoin_addr             integral                 7     'h20        
+  pending_ibi              integral                 1     'b0         
+  ibi_mdb                  integral                 8     'h17        
+  ibi_num_extra_bytes      integral                 32    'd0         
+  pending_sdr              integral                 1     'b0         
+  pending_hdr_write        integral                 1     'b0         
+  pending_hdr_read         integral                 1     'b0         
+  hdr_mode                 integral                 1     'b0         
+  pid                      integral                 48    'haabbcc0001
+  bcr                      integral                 8     'h0         
+  dcr                      integral                 8     'hc2        
+----------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/test/i3c_base_test.sv(77) @ 0: uvm_test_top [i3c_read_8b_test] target_agent_cfg[1]:
+----------------------------------------------------------------------
+Name                       Type                     Size  Value       
+----------------------------------------------------------------------
+i3c_target_agent_cfg_h[1]  i3c_target_agent_config  -     @512        
+  isActive                 string                   10    UVM_ACTIVE  
+  dataTransferDirection    string                   9     MSB_FIRST   
+  hasCoverage              string                   4     TRUE        
+  targetAddress            integral                 7     'h6c        
+  target_id                integral                 32    'd1         
+  daa_accept_address       integral                 1     'b1         
+  pending_hot_join         integral                 1     'b0         
+  hotjoin_addr             integral                 7     'h20        
+  pending_ibi              integral                 1     'b0         
+  ibi_mdb                  integral                 8     'h17        
+  ibi_num_extra_bytes      integral                 32    'd0         
+  pending_sdr              integral                 1     'b0         
+  pending_hdr_write        integral                 1     'b0         
+  pending_hdr_read         integral                 1     'b0         
+  hdr_mode                 integral                 1     'b0         
+  pid                      integral                 48    'haabbcc0002
+  bcr                      integral                 8     'h0         
+  dcr                      integral                 8     'hc3        
+----------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/test/i3c_base_test.sv(85) @ 0: uvm_test_top [i3c_read_8b_test] i3c_env_cfg:
+----------------------------------------------------
+Name                     Type            Size  Value
+----------------------------------------------------
+i3c_env_cfg_h            i3c_env_config  -     @492 
+  has_scoreboard         integral        1     1    
+  has_virtual_sequencer  integral        1     1    
+  no_of_targets          integral        32    'd2  
+  has_daa                integral        1     'd0  
+  no_of_daa_devices      integral        32    'd0  
+----------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/env/i3c_scoreboard.sv(201) @ 0: uvm_test_top.i3c_env_h.i3c_scoreboard_h [SB] Scoreboard built for 2 target(s)
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(33) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_drv_proxy_h [TGT_DRV_PROXY] Looking up BFM with key: i3c_target_driver_bfm_0
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(50) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [TGT_MON_PROXY] [target_id=0] Looking up monitor BFM with key: i3c_target_monitor_bfm_0
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(33) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_drv_proxy_h [TGT_DRV_PROXY] Looking up BFM with key: i3c_target_driver_bfm_1
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(50) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_mon_proxy_h [TGT_MON_PROXY] [target_id=1] Looking up monitor BFM with key: i3c_target_monitor_bfm_1
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+---------------------------------------------------------------------------------
+Name                              Type                                Size  Value
+---------------------------------------------------------------------------------
+uvm_test_top                      i3c_read_8b_test                    -     @484 
+  i3c_env_h                       i3c_env                             -     @493 
+    apb_master_agent_h            apb_master_agent                    -     @524 
+      apb_master_cov_h            apb_master_coverage                 -     @929 
+        analysis_imp              uvm_analysis_imp                    -     @937 
+      apb_master_drv_proxy_h      apb_master_driver_proxy             -     @763 
+        rsp_port                  uvm_analysis_port                   -     @780 
+        seq_item_port             uvm_seq_item_pull_port              -     @771 
+      apb_master_mon_proxy_h      apb_master_monitor_proxy            -     @912 
+        apb_master_analysis_port  uvm_analysis_port                   -     @920 
+      apb_master_seqr_h           apb_master_sequencer                -     @789 
+        rsp_export                uvm_analysis_export                 -     @797 
+        seq_item_export           uvm_seq_item_pull_imp               -     @903 
+        arbitration_queue         array                               0     -    
+        lock_queue                array                               0     -    
+        num_last_reqs             integral                            32    'd1  
+        num_last_rsps             integral                            32    'd1  
+    i3c_scoreboard_h              i3c_scoreboard                      -     @671 
+      apb_analysis_fifo           uvm_tlm_analysis_fifo #(T)          -     @955 
+        analysis_export           uvm_analysis_imp                    -     @999 
+        get_ap                    uvm_analysis_port                   -     @990 
+        get_peek_export           uvm_get_peek_imp                    -     @972 
+        put_ap                    uvm_analysis_port                   -     @981 
+        put_export                uvm_put_imp                         -     @963 
+      ibi_analysis_fifo_0         uvm_tlm_analysis_fifo #(T)          -     @1114
+        analysis_export           uvm_analysis_imp                    -     @1158
+        get_ap                    uvm_analysis_port                   -     @1149
+        get_peek_export           uvm_get_peek_imp                    -     @1131
+        put_ap                    uvm_analysis_port                   -     @1140
+        put_export                uvm_put_imp                         -     @1122
+      ibi_analysis_fifo_1         uvm_tlm_analysis_fifo #(T)          -     @1167
+        analysis_export           uvm_analysis_imp                    -     @1211
+        get_ap                    uvm_analysis_port                   -     @1202
+        get_peek_export           uvm_get_peek_imp                    -     @1184
+        put_ap                    uvm_analysis_port                   -     @1193
+        put_export                uvm_put_imp                         -     @1175
+      target_analysis_fifo_0      uvm_tlm_analysis_fifo #(T)          -     @1008
+        analysis_export           uvm_analysis_imp                    -     @1052
+        get_ap                    uvm_analysis_port                   -     @1043
+        get_peek_export           uvm_get_peek_imp                    -     @1025
+        put_ap                    uvm_analysis_port                   -     @1034
+        put_export                uvm_put_imp                         -     @1016
+      target_analysis_fifo_1      uvm_tlm_analysis_fifo #(T)          -     @1061
+        analysis_export           uvm_analysis_imp                    -     @1105
+        get_ap                    uvm_analysis_port                   -     @1096
+        get_peek_export           uvm_get_peek_imp                    -     @1078
+        put_ap                    uvm_analysis_port                   -     @1087
+        put_export                uvm_put_imp                         -     @1069
+    i3c_target_agent_h[0]         i3c_target_agent                    -     @532 
+      i3c_target_cov_h            i3c_target_coverage                 -     @1400
+        analysis_imp              uvm_analysis_imp                    -     @1408
+      i3c_target_drv_proxy_h      i3c_target_driver_proxy             -     @1251
+        rsp_port                  uvm_analysis_port                   -     @1268
+        seq_item_port             uvm_seq_item_pull_port              -     @1259
+      i3c_target_mon_proxy_h      i3c_target_monitor_proxy            -     @1221
+        ibi_analysis_port         uvm_analysis_port                   -     @1238
+        target_analysis_port      uvm_analysis_port                   -     @1229
+      i3c_target_seqr_h           i3c_target_sequencer                -     @1277
+        rsp_export                uvm_analysis_export                 -     @1285
+        seq_item_export           uvm_seq_item_pull_imp               -     @1391
+        arbitration_queue         array                               0     -    
+        lock_queue                array                               0     -    
+        num_last_reqs             integral                            32    'd1  
+        num_last_rsps             integral                            32    'd1  
+    i3c_target_agent_h[1]         i3c_target_agent                    -     @540 
+      i3c_target_cov_h            i3c_target_coverage                 -     @1602
+        analysis_imp              uvm_analysis_imp                    -     @1610
+      i3c_target_drv_proxy_h      i3c_target_driver_proxy             -     @1453
+        rsp_port                  uvm_analysis_port                   -     @1470
+        seq_item_port             uvm_seq_item_pull_port              -     @1461
+      i3c_target_mon_proxy_h      i3c_target_monitor_proxy            -     @1423
+        ibi_analysis_port         uvm_analysis_port                   -     @1440
+        target_analysis_port      uvm_analysis_port                   -     @1431
+      i3c_target_seqr_h           i3c_target_sequencer                -     @1479
+        rsp_export                uvm_analysis_export                 -     @1487
+        seq_item_export           uvm_seq_item_pull_imp               -     @1593
+        arbitration_queue         array                               0     -    
+        lock_queue                array                               0     -    
+        num_last_reqs             integral                            32    'd1  
+        num_last_rsps             integral                            32    'd1  
+    topPredictor                  uvm_reg_predictor #(apb_master_tx)  -     @680 
+      bus_in                      uvm_analysis_imp                    -     @692 
+      reg_ap                      uvm_analysis_port                   -     @701 
+    top_virtual_seqr_h            top_virtual_sequencer               -     @548 
+      rsp_export                  uvm_analysis_export                 -     @556 
+      seq_item_export             uvm_seq_item_pull_imp               -     @662 
+      arbitration_queue           array                               0     -    
+      lock_queue                  array                               0     -    
+      num_last_reqs               integral                            32    'd1  
+      num_last_rsps               integral                            32    'd1  
+---------------------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_monitor_proxy.sv(84) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_mon_proxy_h [apb_master_monitor_proxy] Inside the master_monitor_proxy
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_seqr_h [PHASESEQ] No default phase sequence for phase 'run'
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(72) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] Monitor Proxy running
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'run'
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(72) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=1] Monitor Proxy running
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'run'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h [PHASESEQ] No default phase sequence for phase 'run'
+UVM_INFO ../../src/hvl_top/test/i3c_read_8b_test.sv(15) @ 0: uvm_test_top [i3c_read_8b_test] Starting ONLY SDR READ sequence
+UVM_INFO ../../src/hvl_top/env/i3c_scoreboard.sv(1021) @ 0: uvm_test_top.i3c_env_h.i3c_scoreboard_h [SB_IBI] Watching for IBI (In-Band Interrupt) result(s)
+UVM_INFO ../../src/hvl_top/test/ral_virtual_sequences/i3c_sdr_read_virtual_seq.sv(15) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h@@sdrReadSeq [i3c_sdr_read_virtual_seq] Starting SDR READ test
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/reg/uvm_reg_map.svh(2114) @ 0: reporter [uvm_reg_map] Writing 'h800080e8 at 'hc via map "regmodel.default_map"...
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_adapter.sv(60) @ 0: reporter [apb_master_adapter] The converted reg2bus packet is -------------------------------------------------------------
+Name                          Type           Size  Value     
+-------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @1654     
+  pselx                       string         7     SLAVE_0   
+  paddr                       integral       32    'hc       
+  pwrite                      string         9     APB_WRITE 
+  pwdata                      integral       32    'h800080e8
+  transfer_size               string         0     ""        
+  pstrb                       integral       4     'b1111    
+  pprot                       string         0     ""        
+  prdata                      integral       32    'h0       
+  pslverr                     string         8     NO_ERROR  
+  no_of_wait_states_detected  integral       32    'd0       
+-------------------------------------------------------------
+
+
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_reset'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_reset'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_reset'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_reset'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_seqr_h [PHASESEQ] No default phase sequence for phase 'reset'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'reset'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'reset'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h [PHASESEQ] No default phase sequence for phase 'reset'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_seqr_h [PHASESEQ] No default phase sequence for phase 'post_reset'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'post_reset'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'post_reset'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h [PHASESEQ] No default phase sequence for phase 'post_reset'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_configure'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_configure'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_configure'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_configure'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_seqr_h [PHASESEQ] No default phase sequence for phase 'configure'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'configure'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'configure'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h [PHASESEQ] No default phase sequence for phase 'configure'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_seqr_h [PHASESEQ] No default phase sequence for phase 'post_configure'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'post_configure'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'post_configure'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h [PHASESEQ] No default phase sequence for phase 'post_configure'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_main'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_main'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_main'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_main'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_seqr_h [PHASESEQ] No default phase sequence for phase 'main'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'main'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'main'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h [PHASESEQ] No default phase sequence for phase 'main'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_seqr_h [PHASESEQ] No default phase sequence for phase 'post_main'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'post_main'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'post_main'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h [PHASESEQ] No default phase sequence for phase 'post_main'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_seqr_h [PHASESEQ] No default phase sequence for phase 'shutdown'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'shutdown'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'shutdown'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h [PHASESEQ] No default phase sequence for phase 'shutdown'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_seqr_h [PHASESEQ] No default phase sequence for phase 'post_shutdown'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'post_shutdown'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_seqr_h [PHASESEQ] No default phase sequence for phase 'post_shutdown'
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.i3c_env_h.top_virtual_seqr_h [PHASESEQ] No default phase sequence for phase 'post_shutdown'
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(80) @ 30000: reporter [APB_MASTER_DRIVER_BFM] SYSTEM RESET DETECTED
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_monitor_bfm.sv(80) @ 30000: reporter [APB_MASTER_MONITOR_BFM] system reset detected
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(88) @ 70000: reporter [APB_MASTER_DRIVER_BFM] SYSTEM RESET DEACTIVATED
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_monitor_bfm.sv(88) @ 70000: reporter [APB_MASTER_MONITOR_BFM] system reset deactivated
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_cfg_converter.sv(38) @ 70000: reporter [apb_master_cfg_converter] after randomizing addr = 
+          0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(65) @ 90000: reporter [I3C_TARGET_DRIVER_BFM] inside idle state
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(89) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] cfg snapshot -> targetAddress=0x68  pid=0xaabbcc0001  bcr=0x0  dcr=0xc2  has_daa=0  pending_sdr=1
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(173) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=0] Waiting to sample SDR transaction (pending_sdr gated)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(65) @ 90000: reporter [I3C_TARGET_DRIVER_BFM] inside idle state
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(89) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=1] cfg snapshot -> targetAddress=0x6c  pid=0xaabbcc0002  bcr=0x0  dcr=0xc3  has_daa=0  pending_sdr=0
+UVM_INFO ../../src/hvl_top/target/i3c_target_monitor_proxy.sv(319) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_mon_proxy_h [i3c_target_monitor_proxy] [target_id=1] Waiting to sample SDR transaction (fallback, has_daa=0)
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(154) @ 90000: reporter [APB_MASTER_DRIVER_BFM] DROVE THE IDLE STATE
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(161) @ 90000: reporter [DEBUG_MSHA] drive_apb_idle state = APB_IDLE and state = 1
+UVM_INFO ../../src/hvl_top/target/target_sequences/i3c_target_readOperationWith8bitsData_seq.sv(22) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h@@target_seq_read [i3c_target_readOperationWith8bitsData_seq] Before randomization - req created
+UVM_INFO ../../src/hvl_top/target/target_sequences/i3c_target_readOperationWith8bitsData_seq.sv(37) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h@@target_seq_read [i3c_target_readOperationWith8bitsData_seq] Read seq ready: 1 bytes
+----------------------------------------------------------------------------------------------------------------------------------
+Name                           Type           Size  Value                                                                         
+----------------------------------------------------------------------------------------------------------------------------------
+req                            i3c_target_tx  -     @1663                                                                         
+  begin_time                   time           64    90000                                                                         
+  depth                        int            32    'd2                                                                           
+  parent sequence (name)       string         15    target_seq_read                                                               
+  parent sequence (full name)  string         78    uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h.target_seq_read
+  sequencer                    string         62    uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_seqr_h                
+  txn_type                     string         3     SDR                                                                           
+  targetAddress                integral       7     'h68                                                                          
+  targetAddressStatus          string         3     ACK                                                                           
+  operation                    string         8     I3C_READ                                                                      
+  readData[0]                  integral       8     'h0                                                                           
+----------------------------------------------------------------------------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(108) @ 90000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] REQ-MASTER_TX 
+ -------------------------------------------------------------
+Name                          Type           Size  Value     
+-------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @1654     
+  pselx                       string         7     SLAVE_0   
+  paddr                       integral       32    'hc       
+  pwrite                      string         9     APB_WRITE 
+  pwdata                      integral       32    'h800080e8
+  transfer_size               string         0     ""        
+  pstrb                       integral       4     'b1111    
+  pprot                       string         0     ""        
+  prdata                      integral       32    'h0       
+  pslverr                     string         8     NO_ERROR  
+  no_of_wait_states_detected  integral       32    'd0       
+-------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(39) @ 90000: reporter [apb_master_seq_item_conv_class] -------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(43) @ 90000: reporter [apb_master_seq_item_conv_class] After randomize pprot =  000
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(47) @ 90000: reporter [apb_master_seq_item_conv_class] After randomize pselx =  1
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(50) @ 90000: reporter [apb_master_seq_item_conv_class] After randomizing pwrite =  1
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(53) @ 90000: reporter [apb_master_seq_item_conv_class] after writnig addr =  c
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(56) @ 90000: reporter [apb_master_seq_item_conv_class] after randomizing pwdata =  800080e8
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(59) @ 90000: reporter [apb_master_seq_item_conv_class] After randomize pstrb =  1111
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(63) @ 90000: reporter [apb_master_seq_item_conv_class] After randomize pslverr =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(66) @ 90000: reporter [apb_master_seq_item_conv_class] Before randomize prdata =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(69) @ 90000: reporter [apb_master_seq_item_conv_class] After randomize no_of_wait_states =            0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(72) @ 90000: reporter [apb_master_seq_item_conv_class] -------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_cfg_converter.sv(38) @ 90000: reporter [apb_master_cfg_converter] after randomizing addr = 
+          0
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(111) @ 90000: reporter [APB_MASTER_DRIVER_BFM] data_packet=
+'{pwrite:'h1, pslverr:'h0, pprot:'h0, pselx:'h1, pstrb:'hf, prdata:'h0, paddr:'hc, pwdata:'h800080e8, no_of_wait_states:0}
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(117) @ 90000: reporter [APB_MASTER_DRIVER_BFM] cfg_packet=
+'{min_address:'h0, max_address:'h0, paddr:'h0, slave_id:0}
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(123) @ 90000: reporter [APB_MASTER_DRIVER_BFM] DRIVE TO BFM TASK
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(57) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=0] Got item from sequencer, txn_type=SDR
+UVM_INFO ../../src/hvl_top/target/i3c_target_driver_proxy.sv(177) @ 90000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_drv_proxy_h [TGT_DRV_PROXY] [target_id=0] SDR transaction
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(93) @ 90000: reporter [I3C_TARGET_DRIVER_BFM] target txn started
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1090) @ 90000: reporter [I3C_TARGET_DRIVER_BFM] detect_start waiting
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(188) @ 110000: reporter [APB_MASTER_DRIVER_BFM] DRIVING THE SETUP STATE
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(219) @ 110000: reporter [DEBUG_MSHA] drive_apb_setup state = APB_SETUP and state = 2
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(247) @ 130000: reporter [APB_MASTER_DRIVER_BFM] INSIDE ACCESS STATE
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(259) @ 130000: reporter [DEBUG_NADEEM] pready=0
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_monitor_bfm.sv(135) @ 140000: reporter [APB_MASTER_MONITOR_BFM] Inside while loop: penable=1, pready=0, pselx=1
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(303) @ 150000: reporter [APB_MASTER_DRIVER_BFM] DETECT_WAIT_STATE
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(312) @ 150000: reporter [APB_MASTER_DRIVER_BFM] WAIT_STATE_DETECTED
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_monitor_bfm.sv(183) @ 160000: reporter [APB_MASTER_MONITOR_BFM] MASTER_SAMPLE_DATA='{pwrite:'h1, pslverr:'h0, pprot:'h0, pselx:'h1, pstrb:'hf, prdata:'h0, paddr:'hc, pwdata:'h800080e8, no_of_wait_states:1}
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(85) @ 160000: reporter [apb_master_seq_item_conv] -------------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(88) @ 160000: reporter [apb_master_seq_item_conv_class] After randomize pprot =  000
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(91) @ 160000: reporter [apb_master_seq_item_conv_class] After randomize pselx =  0000000000000001
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(94) @ 160000: reporter [apb_master_seq_item_conv_class] After randomize pwrite =  1
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(97) @ 160000: reporter [apb_master_seq_item_conv_class] After randomize paddr =  c
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(100) @ 160000: reporter [apb_master_seq_item_conv_class] After randomize pwdata =  800080e8
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(103) @ 160000: reporter [apb_master_seq_item_conv_class] After randomize pwdta =  1111
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(106) @ 160000: reporter [apb_master_seq_item_conv_class] After randomize pslverr =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(109) @ 160000: reporter [apb_master_seq_item_conv_class] After randomize prdata =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(112) @ 160000: reporter [apb_master_seq_item_conv_class] After randomize no_of_wait_states =            1
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(115) @ 160000: reporter [apb_master_seq_item_conv] -------------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_monitor_proxy.sv(98) @ 160000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_mon_proxy_h [apb_master_monitor_proxy] Received packet from master monitor bfm: , 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+master_packet                 apb_master_tx  -     @1633             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'hc               
+  pwrite                      string         9     APB_WRITE         
+  pwdata                      integral       32    'h800080e8        
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b1111            
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_monitor_proxy.sv(102) @ 160000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_mon_proxy_h [apb_master_monitor_proxy] Sending packet via analysis_port: , 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+master_packet                 apb_master_tx  -     @1772             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'hc               
+  pwrite                      string         9     APB_WRITE         
+  pwdata                      integral       32    'h800080e8        
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b1111            
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd0               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_coverage.sv(118) @ 160000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_cov_h [apb_master_coverage] Before calling SAMPLE METHOD
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_coverage.sv(120) @ 160000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_cov_h [apb_master_coverage] After calling SAMPLE METHOD
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_adapter.sv(95) @ 160000: reporter [apb_master_adapter] The converted bus2reg packet is ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+master_packet                 apb_master_tx  -     @1772             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'hc               
+  pwrite                      string         9     APB_WRITE         
+  pwdata                      integral       32    'h800080e8        
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b1111            
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd0               
+---------------------------------------------------------------------
+
+
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/reg/uvm_reg_predictor.svh(218) @ 160000: uvm_test_top.i3c_env_h.topPredictor [REG_PREDICT] Observed WRITE transaction to register regmodel.ctrl_inst: value='h800080e8 : updated value = 'h800080e8
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_cfg_converter.sv(38) @ 160000: reporter [apb_master_cfg_converter] after randomizing addr = 
+          0
+UVM_INFO ../../src/hvl_top/env/i3c_scoreboard.sv(317) @ 160000: uvm_test_top.i3c_env_h.i3c_scoreboard_h [SB] CTRL decoded: addr=0x68 dir=1 len=1 cmd_type=0x0 ccc=0x0
+UVM_INFO ../../src/hvl_top/env/i3c_scoreboard.sv(1310) @ 160000: uvm_test_top.i3c_env_h.i3c_scoreboard_h [SB_SDR] SDR: collecting from target_analysis_fifo[0] addr=0x68
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(328) @ 170000: reporter [APB_MASTER_DRIVER_BFM] DATA READY TO TRANSFER
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(85) @ 170000: reporter [apb_master_seq_item_conv] -------------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(88) @ 170000: reporter [apb_master_seq_item_conv_class] After randomize pprot =  000
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(91) @ 170000: reporter [apb_master_seq_item_conv_class] After randomize pselx =  0000000000000001
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(94) @ 170000: reporter [apb_master_seq_item_conv_class] After randomize pwrite =  1
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(97) @ 170000: reporter [apb_master_seq_item_conv_class] After randomize paddr =  c
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(100) @ 170000: reporter [apb_master_seq_item_conv_class] After randomize pwdata =  800080e8
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(103) @ 170000: reporter [apb_master_seq_item_conv_class] After randomize pwdta =  1111
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(106) @ 170000: reporter [apb_master_seq_item_conv_class] After randomize pslverr =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(109) @ 170000: reporter [apb_master_seq_item_conv_class] After randomize prdata =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(112) @ 170000: reporter [apb_master_seq_item_conv_class] After randomize no_of_wait_states =            1
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(115) @ 170000: reporter [apb_master_seq_item_conv] -------------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(119) @ 170000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] AFTER :: received req packet 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @1654             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'hc               
+  pwrite                      string         9     APB_WRITE         
+  pwdata                      integral       32    'h800080e8        
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b1111            
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_adapter.sv(95) @ 170000: reporter [apb_master_adapter] The converted bus2reg packet is ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @1654             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'hc               
+  pwrite                      string         9     APB_WRITE         
+  pwdata                      integral       32    'h800080e8        
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b1111            
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/reg/uvm_reg_map.svh(2167) @ 170000: reporter [uvm_reg_map] Wrote 'h800080e8 at 'hc via map "regmodel.default_map": UVM_IS_OK...
+UVM_INFO @ 170000: reporter [RegModel] Wrote register via map regmodel.default_map: regmodel.ctrl_inst=0x800080e8
+UVM_INFO ../../src/hvl_top/test/ral_virtual_sequences/i3c_sdr_read_virtual_seq.sv(33) @ 170000: uvm_test_top.i3c_env_h.top_virtual_seqr_h@@sdrReadSeq [i3c_sdr_read_virtual_seq] SDR READ command issued
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1107) @ 260000: reporter [I3C_TARGET_DRIVER_BFM] [target_id=0] start detected@ time=260000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1129) @ 260000: reporter [I3C_TARGET_DRIVER_BFM] sample_target_address started
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(813) @ 260000: reporter [I3C_TARGET_MONITOR_BFM] start detected @ time=260000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(813) @ 260000: reporter [I3C_TARGET_MONITOR_BFM] start detected @ time=260000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 420000: reporter [TARGET_DRIVER_BFM] scl POSEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1147) @ 420000: reporter [I3C_TARGET_DRIVER_BFM] sampled bit 6 = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 580000: reporter [TARGET_DRIVER_BFM] scl POSEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1147) @ 580000: reporter [I3C_TARGET_DRIVER_BFM] sampled bit 5 = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 740000: reporter [TARGET_DRIVER_BFM] scl POSEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1147) @ 740000: reporter [I3C_TARGET_DRIVER_BFM] sampled bit 4 = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 900000: reporter [TARGET_DRIVER_BFM] scl POSEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1147) @ 900000: reporter [I3C_TARGET_DRIVER_BFM] sampled bit 3 = 1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 1060000: reporter [TARGET_DRIVER_BFM] scl POSEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1147) @ 1060000: reporter [I3C_TARGET_DRIVER_BFM] sampled bit 2 = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 1220000: reporter [TARGET_DRIVER_BFM] scl POSEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1147) @ 1220000: reporter [I3C_TARGET_DRIVER_BFM] sampled bit 1 = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 1380000: reporter [TARGET_DRIVER_BFM] scl POSEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1147) @ 1380000: reporter [I3C_TARGET_DRIVER_BFM] sampled bit 0 = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1161) @ 1380000: reporter [I3C_TARGET_DRIVER_BFM] DEBUG :: local_addr = 0x68
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1172) @ 1380000: reporter [I3C_TARGET_DRIVER_BFM] DEBUG :: cfg target_addr = 0x68
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1196) @ 1380000: reporter [I3C_TARGET_DRIVER_BFM] address match ACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 1540000: reporter [TARGET_DRIVER_BFM] scl POSEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1236) @ 1540000: reporter [I3C_TARGET_DRIVER_BFM] operation = READ
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1294) @ 1540000: reporter [I3C_TARGET_DRIVER_BFM] driveAddressAck = 0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 1620000: reporter [TARGET_DRIVER_BFM] scl NEGEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1309) @ 1620000: reporter [I3C_TARGET_DRIVER_BFM] [1620000] TARGET driving ACK=0 sda_o=1 sda_oen=0 sda_i=1
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 1700000: reporter [TARGET_DRIVER_BFM] scl POSEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 1780000: reporter [TARGET_DRIVER_BFM] scl NEGEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1328) @ 1780000: reporter [I3C_TARGET_DRIVER_BFM] [1780000] TARGET released SDA sda_o=0 sda_oen=1 sda_i=0
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(105) @ 1780000: reporter [I3C_TARGET_DRIVER_BFM] targetAddressStatus is ACK
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(375) @ 1780000: reporter [I3C_TARGET_DRIVER_BFM] driveReadDataAndSampleTbit started
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1460) @ 1780000: reporter [I3C_TARGET_DRIVER_BFM] READ DRIVE: byte[0] bit_no=7 data=1 time=1780000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 1860000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=7 SCL=1 SDA=1 time=1860000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 1860000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=7 SCL=1 SDA=1 time=1860000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 1940000: reporter [TARGET_DRIVER_BFM] scl NEGEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1460) @ 1940000: reporter [I3C_TARGET_DRIVER_BFM] READ DRIVE: byte[0] bit_no=6 data=1 time=1940000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2020000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=6 SCL=1 SDA=1 time=2020000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2020000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=6 SCL=1 SDA=1 time=2020000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 2100000: reporter [TARGET_DRIVER_BFM] scl NEGEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1460) @ 2100000: reporter [I3C_TARGET_DRIVER_BFM] READ DRIVE: byte[0] bit_no=5 data=1 time=2100000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2180000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=5 SCL=1 SDA=1 time=2180000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2180000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=5 SCL=1 SDA=1 time=2180000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 2260000: reporter [TARGET_DRIVER_BFM] scl NEGEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1460) @ 2260000: reporter [I3C_TARGET_DRIVER_BFM] READ DRIVE: byte[0] bit_no=4 data=1 time=2260000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2340000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=4 SCL=1 SDA=1 time=2340000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2340000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=4 SCL=1 SDA=1 time=2340000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 2420000: reporter [TARGET_DRIVER_BFM] scl NEGEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1460) @ 2420000: reporter [I3C_TARGET_DRIVER_BFM] READ DRIVE: byte[0] bit_no=3 data=1 time=2420000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2500000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=3 SCL=1 SDA=1 time=2500000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2500000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=3 SCL=1 SDA=1 time=2500000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 2580000: reporter [TARGET_DRIVER_BFM] scl NEGEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1460) @ 2580000: reporter [I3C_TARGET_DRIVER_BFM] READ DRIVE: byte[0] bit_no=2 data=1 time=2580000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2660000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=2 SCL=1 SDA=1 time=2660000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2660000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=2 SCL=1 SDA=1 time=2660000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 2740000: reporter [TARGET_DRIVER_BFM] scl NEGEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1460) @ 2740000: reporter [I3C_TARGET_DRIVER_BFM] READ DRIVE: byte[0] bit_no=1 data=1 time=2740000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2820000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=1 SCL=1 SDA=1 time=2820000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2820000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=1 SCL=1 SDA=1 time=2820000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 2900000: reporter [TARGET_DRIVER_BFM] scl NEGEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1460) @ 2900000: reporter [I3C_TARGET_DRIVER_BFM] READ DRIVE: byte[0] bit_no=0 data=1 time=2900000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2980000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=0 SCL=1 SDA=1 time=2980000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(238) @ 2980000: reporter [I3C_TARGET_MONITOR_BFM] SDR READ MON: sampled byte[0]=0xff (11111111)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 2980000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[0] bit_no=0 SCL=1 SDA=1 time=2980000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(238) @ 2980000: reporter [I3C_TARGET_MONITOR_BFM] SDR READ MON: sampled byte[0]=0xff (11111111)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 3060000: reporter [TARGET_DRIVER_BFM] scl NEGEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(397) @ 3060000: reporter [I3C_TARGET_DRIVER_BFM] SDR READ: drove byte[0]=0xff (11111111)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 3140000: reporter [TARGET_DRIVER_BFM] scl POSEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(410) @ 3140000: reporter [I3C_TARGET_DRIVER_BFM] SDR READ: byte[0]=0xff T-bit=0 (MORE BYTES)
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(250) @ 3140000: reporter [I3C_TARGET_MONITOR_BFM] SDR READ MON: T-bit=0 after byte[0]
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(250) @ 3140000: reporter [I3C_TARGET_MONITOR_BFM] SDR READ MON: T-bit=0 after byte[0]
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1616) @ 3220000: reporter [TARGET_DRIVER_BFM] scl NEGEDGE detected
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_driver_bfm.sv(1460) @ 3220000: reporter [I3C_TARGET_DRIVER_BFM] READ DRIVE: byte[1] bit_no=7 data=1 time=3220000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 3300000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[1] bit_no=7 SCL=1 SDA=0 time=3300000
+UVM_INFO ../../src/hdl_top/target_agent_bfm/i3c_target_monitor_bfm.sv(1100) @ 3300000: reporter [I3C_TARGET_MONITOR_BFM] READ SAMPLE: byte[1] bit_no=7 SCL=1 SDA=0 time=3300000
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/reg/uvm_reg_map.svh(2247) @ 5170000: reporter [uvm_reg_map] Reading address 'h40 via map "regmodel.default_map"...
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_adapter.sv(60) @ 5170000: reporter [apb_master_adapter] The converted reg2bus packet is -----------------------------------------------------------
+Name                          Type           Size  Value   
+-----------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @1789   
+  pselx                       string         7     SLAVE_0 
+  paddr                       integral       32    'h40    
+  pwrite                      string         8     APB_READ
+  pwdata                      integral       32    'h0     
+  transfer_size               string         0     ""      
+  pstrb                       integral       4     'b0     
+  pprot                       string         0     ""      
+  prdata                      integral       32    'h0     
+  pslverr                     string         8     NO_ERROR
+  no_of_wait_states_detected  integral       32    'd0     
+-----------------------------------------------------------
+
+
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(108) @ 5170000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] REQ-MASTER_TX 
+ -----------------------------------------------------------
+Name                          Type           Size  Value   
+-----------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @1789   
+  pselx                       string         7     SLAVE_0 
+  paddr                       integral       32    'h40    
+  pwrite                      string         8     APB_READ
+  pwdata                      integral       32    'h0     
+  transfer_size               string         0     ""      
+  pstrb                       integral       4     'b0     
+  pprot                       string         0     ""      
+  prdata                      integral       32    'h0     
+  pslverr                     string         8     NO_ERROR
+  no_of_wait_states_detected  integral       32    'd0     
+-----------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(39) @ 5170000: reporter [apb_master_seq_item_conv_class] -------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(43) @ 5170000: reporter [apb_master_seq_item_conv_class] After randomize pprot =  000
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(47) @ 5170000: reporter [apb_master_seq_item_conv_class] After randomize pselx =  1
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(50) @ 5170000: reporter [apb_master_seq_item_conv_class] After randomizing pwrite =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(53) @ 5170000: reporter [apb_master_seq_item_conv_class] after writnig addr =  40
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(56) @ 5170000: reporter [apb_master_seq_item_conv_class] after randomizing pwdata =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(59) @ 5170000: reporter [apb_master_seq_item_conv_class] After randomize pstrb =  0000
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(63) @ 5170000: reporter [apb_master_seq_item_conv_class] After randomize pslverr =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(66) @ 5170000: reporter [apb_master_seq_item_conv_class] Before randomize prdata =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(69) @ 5170000: reporter [apb_master_seq_item_conv_class] After randomize no_of_wait_states =            0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(72) @ 5170000: reporter [apb_master_seq_item_conv_class] -------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_cfg_converter.sv(38) @ 5170000: reporter [apb_master_cfg_converter] after randomizing addr = 
+          0
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(111) @ 5170000: reporter [APB_MASTER_DRIVER_BFM] data_packet=
+'{pwrite:'h0, pslverr:'h0, pprot:'h0, pselx:'h1, pstrb:'h0, prdata:'h0, paddr:'h40, pwdata:'h0, no_of_wait_states:0}
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(117) @ 5170000: reporter [APB_MASTER_DRIVER_BFM] cfg_packet=
+'{min_address:'h0, max_address:'h0, paddr:'h0, slave_id:0}
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(123) @ 5170000: reporter [APB_MASTER_DRIVER_BFM] DRIVE TO BFM TASK
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(188) @ 5190000: reporter [APB_MASTER_DRIVER_BFM] DRIVING THE SETUP STATE
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(219) @ 5190000: reporter [DEBUG_MSHA] drive_apb_setup state = APB_SETUP and state = 2
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(247) @ 5210000: reporter [APB_MASTER_DRIVER_BFM] INSIDE ACCESS STATE
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(259) @ 5210000: reporter [DEBUG_NADEEM] pready=0
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_monitor_bfm.sv(135) @ 5220000: reporter [APB_MASTER_MONITOR_BFM] Inside while loop: penable=1, pready=0, pselx=1
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(303) @ 5230000: reporter [APB_MASTER_DRIVER_BFM] DETECT_WAIT_STATE
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(312) @ 5230000: reporter [APB_MASTER_DRIVER_BFM] WAIT_STATE_DETECTED
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_monitor_bfm.sv(183) @ 5240000: reporter [APB_MASTER_MONITOR_BFM] MASTER_SAMPLE_DATA='{pwrite:'h0, pslverr:'h0, pprot:'h0, pselx:'h1, pstrb:'h0, prdata:'h0, paddr:'h40, pwdata:'h800080e8, no_of_wait_states:2}
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(85) @ 5240000: reporter [apb_master_seq_item_conv] -------------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(88) @ 5240000: reporter [apb_master_seq_item_conv_class] After randomize pprot =  000
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(91) @ 5240000: reporter [apb_master_seq_item_conv_class] After randomize pselx =  0000000000000001
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(94) @ 5240000: reporter [apb_master_seq_item_conv_class] After randomize pwrite =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(97) @ 5240000: reporter [apb_master_seq_item_conv_class] After randomize paddr =  40
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(100) @ 5240000: reporter [apb_master_seq_item_conv_class] After randomize pwdata =  800080e8
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(103) @ 5240000: reporter [apb_master_seq_item_conv_class] After randomize pwdta =  0000
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(106) @ 5240000: reporter [apb_master_seq_item_conv_class] After randomize pslverr =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(109) @ 5240000: reporter [apb_master_seq_item_conv_class] After randomize prdata =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(112) @ 5240000: reporter [apb_master_seq_item_conv_class] After randomize no_of_wait_states =            2
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(115) @ 5240000: reporter [apb_master_seq_item_conv] -------------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_monitor_proxy.sv(98) @ 5240000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_mon_proxy_h [apb_master_monitor_proxy] Received packet from master monitor bfm: , 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+master_packet                 apb_master_tx  -     @1633             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'h40              
+  pwrite                      string         8     APB_READ          
+  pwdata                      integral       32    'h800080e8        
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b0               
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd2               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_monitor_proxy.sv(102) @ 5240000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_mon_proxy_h [apb_master_monitor_proxy] Sending packet via analysis_port: , 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+master_packet                 apb_master_tx  -     @1793             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'h40              
+  pwrite                      string         8     APB_READ          
+  pwdata                      integral       32    'h800080e8        
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b0               
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd0               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_coverage.sv(118) @ 5240000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_cov_h [apb_master_coverage] Before calling SAMPLE METHOD
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_coverage.sv(120) @ 5240000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_cov_h [apb_master_coverage] After calling SAMPLE METHOD
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_adapter.sv(95) @ 5240000: reporter [apb_master_adapter] The converted bus2reg packet is ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+master_packet                 apb_master_tx  -     @1793             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'h40              
+  pwrite                      string         8     APB_READ          
+  pwdata                      integral       32    'h800080e8        
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b0               
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd0               
+---------------------------------------------------------------------
+
+
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/reg/uvm_reg_predictor.svh(223) @ 5240000: uvm_test_top.i3c_env_h.topPredictor [REG_PREDICT] Observed READ transaction to register regmodel.rdatab_inst: value='h0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_cfg_converter.sv(38) @ 5240000: reporter [apb_master_cfg_converter] after randomizing addr = 
+          0
+UVM_INFO ../../src/hdl_top/apb_master_agent_bfm/apb_master_driver_bfm.sv(328) @ 5250000: reporter [APB_MASTER_DRIVER_BFM] DATA READY TO TRANSFER
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(85) @ 5250000: reporter [apb_master_seq_item_conv] -------------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(88) @ 5250000: reporter [apb_master_seq_item_conv_class] After randomize pprot =  000
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(91) @ 5250000: reporter [apb_master_seq_item_conv_class] After randomize pselx =  0000000000000001
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(94) @ 5250000: reporter [apb_master_seq_item_conv_class] After randomize pwrite =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(97) @ 5250000: reporter [apb_master_seq_item_conv_class] After randomize paddr =  40
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(100) @ 5250000: reporter [apb_master_seq_item_conv_class] After randomize pwdata =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(103) @ 5250000: reporter [apb_master_seq_item_conv_class] After randomize pwdta =  0000
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(106) @ 5250000: reporter [apb_master_seq_item_conv_class] After randomize pslverr =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(109) @ 5250000: reporter [apb_master_seq_item_conv_class] After randomize prdata =  0
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(112) @ 5250000: reporter [apb_master_seq_item_conv_class] After randomize no_of_wait_states =            1
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_seq_item_converter.sv(115) @ 5250000: reporter [apb_master_seq_item_conv] -------------------------------------------------------------------
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_driver_proxy.sv(119) @ 5250000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_drv_proxy_h [apb_master_driver_proxy] AFTER :: received req packet 
+ ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @1789             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'h40              
+  pwrite                      string         8     APB_READ          
+  pwdata                      integral       32    'h0               
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b0               
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_adapter.sv(95) @ 5250000: reporter [apb_master_adapter] The converted bus2reg packet is ---------------------------------------------------------------------
+Name                          Type           Size  Value             
+---------------------------------------------------------------------
+apb_master_tx                 apb_master_tx  -     @1789             
+  pselx                       string         7     SLAVE_0           
+  paddr                       integral       32    'h40              
+  pwrite                      string         8     APB_READ          
+  pwdata                      integral       32    'h0               
+  transfer_size               string         0     ""                
+  pstrb                       integral       4     'b0               
+  pprot                       string         18    NORMAL_SECURE_DATA
+  prdata                      integral       32    'h0               
+  pslverr                     string         8     NO_ERROR          
+  no_of_wait_states_detected  integral       32    'd1               
+---------------------------------------------------------------------
+
+
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/reg/uvm_reg_map.svh(2301) @ 5250000: reporter [uvm_reg_map] Read 'h0 at 'h40 via map "regmodel.default_map": UVM_IS_OK...
+UVM_INFO @ 5250000: reporter [RegModel] Read  register via map regmodel.default_map: regmodel.rdatab_inst=0
+UVM_INFO ../../src/hvl_top/test/ral_virtual_sequences/i3c_sdr_read_virtual_seq.sv(42) @ 5250000: uvm_test_top.i3c_env_h.top_virtual_seqr_h@@sdrReadSeq [RDATAB_DEBUG] RDATAB read value (DUT)   = 0
+UVM_INFO ../../src/hvl_top/test/ral_virtual_sequences/i3c_sdr_read_virtual_seq.sv(45) @ 5250000: uvm_test_top.i3c_env_h.top_virtual_seqr_h@@sdrReadSeq [RDATAB_DEBUG] RDATAB get() value (RAL)  = 0
+UVM_INFO ../../src/hvl_top/test/ral_virtual_sequences/i3c_sdr_read_virtual_seq.sv(48) @ 5250000: uvm_test_top.i3c_env_h.top_virtual_seqr_h@@sdrReadSeq [RDATAB_DEBUG] RDATAB mirror value (RAL) = 0
+UVM_INFO ../../src/hvl_top/test/ral_virtual_sequences/i3c_sdr_read_virtual_seq.sv(57) @ 5250000: uvm_test_top.i3c_env_h.top_virtual_seqr_h@@sdrReadSeq [i3c_sdr_read_virtual_seq] SDR READ completed successfully
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/base/uvm_objection.svh(1250) @ 58250000: reporter [TEST_DONE] All end-of-test objections have been dropped. Calling stop tasks
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/base/uvm_objection.svh(1274) @ 58250000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../../src/hvl_top/env/i3c_scoreboard.sv(1617) @ 58250000: uvm_test_top.i3c_env_h.i3c_scoreboard_h [SB_SUMMARY] 
+============= SCOREBOARD SUMMARY =============
+  APB transactions seen      : 1
+  I3C target transactions    : 0
+  -- SDR --
+  Write byte pass / fail     : 0 / 0
+  Read  byte pass / fail     : 0 / 0
+  -- DAA --
+  Devices seen               : 0 / 0 expected
+  Dyn address pass / fail    : 0 / 0
+  Parity/ACK  pass / fail    : 0 / 0
+==============================================
+UVM_INFO ../../src/hvl_top/env/i3c_scoreboard.sv(1818) @ 58250000: uvm_test_top.i3c_env_h.i3c_scoreboard_h [SB_SUMMARY] 
+============= IBI SUMMARY =============
+  IBI pass / fail            : 0 / 0
+========================================
+UVM_INFO ../../src/hvl_top/env/i3c_scoreboard.sv(1841) @ 58250000: uvm_test_top.i3c_env_h.i3c_scoreboard_h [SB_SUMMARY] 
+============= HDR-DDR SUMMARY =============
+  HDR write byte pass / fail : 0 / 0
+  HDR read  byte pass / fail : 0 / 0
+=============================================
+UVM_INFO ../../src/hvl_top/env/i3c_scoreboard.sv(1889) @ 58250000: uvm_test_top.i3c_env_h.i3c_scoreboard_h [SB_SUMMARY] check_phase complete
+UVM_INFO ../../src/hvl_top/apb_master/apb_master_coverage.sv(129) @ 58250000: uvm_test_top.i3c_env_h.apb_master_agent_h.apb_master_cov_h [apb_master_coverage] APB Master Agent Coverage = 26.04 %
+
+--------------------------------------
+target COVERAGE
+--------------------------------------
+
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(217) @ 58250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_cov_h [i3c_target_coverage] target Agent SDR Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(220) @ 58250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_cov_h [i3c_target_coverage] target Agent DAA Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(223) @ 58250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_cov_h [i3c_target_coverage] target Agent IBI Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(226) @ 58250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_cov_h [i3c_target_coverage] target Agent HDR-DDR Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(229) @ 58250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[0].i3c_target_cov_h [i3c_target_coverage] target Agent Total Coverage = 0.00 %
+
+--------------------------------------
+target COVERAGE
+--------------------------------------
+
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(217) @ 58250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_cov_h [i3c_target_coverage] target Agent SDR Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(220) @ 58250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_cov_h [i3c_target_coverage] target Agent DAA Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(223) @ 58250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_cov_h [i3c_target_coverage] target Agent IBI Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(226) @ 58250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_cov_h [i3c_target_coverage] target Agent HDR-DDR Coverage = 0.00 %
+UVM_INFO ../../src/hvl_top/target/i3c_target_coverage.sv(229) @ 58250000: uvm_test_top.i3c_env_h.i3c_target_agent_h[1].i3c_target_cov_h [i3c_target_coverage] target Agent Total Coverage = 0.00 %
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  310
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[APB_MASTER_DRIVER_BFM]    20
+[APB_MASTER_MONITOR_BFM]     7
+[DEBUG_MSHA]     3
+[DEBUG_NADEEM]     2
+[I3C_TARGET_DRIVER_BFM]    33
+[I3C_TARGET_MONITOR_BFM]    24
+[PHASESEQ]    52
+[RDATAB_DEBUG]     3
+[REG_PREDICT]     2
+[RNTST]     1
+[RegModel]     2
+[SB]     2
+[SB_IBI]     1
+[SB_SDR]     1
+[SB_SUMMARY]     4
+[TARGET_DRIVER_BFM]    21
+[TEST_DONE]     2
+[TGT_AGENT_BFM]     2
+[TGT_DRV_PROXY]     4
+[TGT_MON_PROXY]     2
+[UVMTOP]     1
+[apb master agent bfm]     1
+[apb_master_adapter]     6
+[apb_master_cfg_converter]     5
+[apb_master_coverage]     5
+[apb_master_driver_proxy]     4
+[apb_master_monitor_proxy]     5
+[apb_master_seq_item_conv]     8
+[apb_master_seq_item_conv_class]    58
+[i3c_read_8b_test]     4
+[i3c_sdr_read_virtual_seq]     3
+[i3c_target_coverage]    10
+[i3c_target_monitor_proxy]     6
+[i3c_target_readOperationWith8bitsData_seq]     2
+[uvm_reg_map]     4
+$finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.1/base/uvm_root.svh", line 437.
+$finish at simulation time             58250000
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 58250000 ps
+CPU Time:      1.630 seconds;       Data structure size:   1.0Mb
+Fri Oct 16 11:01:54 2026

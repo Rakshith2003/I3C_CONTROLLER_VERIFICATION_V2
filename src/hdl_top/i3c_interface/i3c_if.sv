@@ -22,4 +22,35 @@ interface i3c_if #(parameter int NO_OF_TARGETS = 1)
 
   assign scl_i = SCL;
   assign sda_i = SDA;
+
+/*
+property p_i3c_start_condition;
+  @(negedge SDA) disable iff (!areset)
+    SCL && (!SDA until $fell(SCL));
+endproperty
+
+property p_i3c_start_condition;
+  @(negedge SDA) disable iff (!areset)
+ SCL && (!SDA until $fell(SCL));
+
+endproperty
+
+assert property (p_i3c_start_condition)
+  else $error("Invalid START condition detected");
+*/
+/*
+//property2
+property p_i3c_stop_condition;
+  @(posedge pclk) disable iff (!areset)
+    ($rose(SDA) && SCL)
+      |-> (SDA until_with $fell(SCL));
+endproperty
+
+assert property (p_i3c_stop_condition)
+else
+  $error("[%0t] Invalid STOP condition detected",
+         $time);
+
+*/
+
 endinterface : i3c_if
